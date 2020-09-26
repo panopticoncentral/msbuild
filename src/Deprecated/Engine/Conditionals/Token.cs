@@ -24,8 +24,8 @@ namespace Microsoft.Build.BuildEngine
             EndOfInput
         };
 
-        private TokenType tokenType;
-        private string tokenString;
+        private readonly TokenType tokenType;
+        private readonly string tokenString;
 
         /// <summary>
         /// Constructor takes the token type and the string that

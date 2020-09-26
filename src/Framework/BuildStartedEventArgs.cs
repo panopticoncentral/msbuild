@@ -20,7 +20,7 @@ namespace Microsoft.Build.Framework
     [Serializable]
     public class BuildStartedEventArgs : BuildStatusEventArgs
     {
-        private IDictionary<string, string> environmentOnBuildStart;
+        private readonly IDictionary<string, string> environmentOnBuildStart;
 
         /// <summary>
         /// Default constructor

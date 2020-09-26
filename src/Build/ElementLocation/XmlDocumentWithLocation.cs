@@ -23,12 +23,12 @@ namespace Microsoft.Build.Construction
         /// <summary>
         /// Used to cache strings used in attribute values and comments.
         /// </summary>
-        private static ProjectStringCache s_globalStringCache = new ProjectStringCache();
+        private static readonly ProjectStringCache s_globalStringCache = new ProjectStringCache();
 
         /// <summary>
         /// Used to cache tag names in loaded files.
         /// </summary>
-        private static NameTable s_nameTable = new XmlNameTableThreadSafe();
+        private static readonly NameTable s_nameTable = new XmlNameTableThreadSafe();
 
         /// <summary>
         /// Whether we can selectively load as read-only (eg just when in program files directory)

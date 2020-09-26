@@ -88,7 +88,7 @@ namespace Microsoft.Build.BuildEngine
 
         // A unique ID for this project object that can be used to distinguish projects that
         // have the same file path but different global properties
-        private int projectId;
+        private readonly int projectId;
 
         // indicates if the project (file) and all its imported files are validated against a schema
         private bool                        isValidated;
@@ -111,8 +111,8 @@ namespace Microsoft.Build.BuildEngine
         // on the <Project> node.  We separate the ones in the main project from
         // the ones in the imported projects to make the object model more sensible.
         // These ArrayLists contain strings.
-        private ArrayList                   initialTargetNamesInMainProject;
-        private ArrayList                   initialTargetNamesInImportedProjects;
+        private readonly ArrayList                   initialTargetNamesInMainProject;
+        private readonly ArrayList                   initialTargetNamesInImportedProjects;
 
         // The fully qualified path to the project file for this project.
         // If the project was loaded from in-memory XML, this will empty string.
@@ -133,11 +133,11 @@ namespace Microsoft.Build.BuildEngine
         private BuildPropertyGroup               reservedProperties;
 
         // The raw persisted <PropertyGroup>'s in the project file.
-        private BuildPropertyGroupCollection     rawPropertyGroups;
+        private readonly BuildPropertyGroupCollection     rawPropertyGroups;
 
         // The set of all <Target>s in the project file after they've been evaluated
         // and made useful for end-users.
-        private TargetCollection            targets;
+        private readonly TargetCollection            targets;
 
         // The name of the first target in the main project. This is used as the default
         // target when one isn't specified in some other way.
@@ -155,13 +155,13 @@ namespace Microsoft.Build.BuildEngine
         // property, we keep the list of string values that the property is
         // being tested against.  This is how the IDE gets at the list of
         // configurations for a project.
-        private Hashtable                   conditionedPropertiesTable;
+        private readonly Hashtable                   conditionedPropertiesTable;
 
         // The raw persisted <ItemGroup>'s in the project file.
-        private BuildItemGroupCollection         rawItemGroups;
+        private readonly BuildItemGroupCollection         rawItemGroups;
 
         // The raw collection of all grouping elements (ItemGroup, BuildPropertyGroup, and Choose.
-        private GroupingCollection          rawGroups;
+        private readonly GroupingCollection          rawGroups;
 
         // Each entry in this contains an BuildItemGroup.  Each of these
         // ItemGroups represents a list of "BuildItem" objects all of the same item type.
@@ -230,7 +230,7 @@ namespace Microsoft.Build.BuildEngine
         // the project file and all the imported files.  When we
         // object model for these things has been worked out, there should
         // be an actual class here that we define, rather than an array list.
-        private UsingTaskCollection         usingTasks;
+        private readonly UsingTaskCollection         usingTasks;
 
         // holds all the tasks the project knows about and the assemblies they exist in
         // NOTE: tasks and their assemblies are declared in a project with the <UsingTask> tag
@@ -242,7 +242,7 @@ namespace Microsoft.Build.BuildEngine
         // This hash table simply keeps track of the list of imported project
         // files so that we can detect a circular import to prevent infinite
         // recursion.
-        private ImportCollection            imports;
+        private readonly ImportCollection            imports;
 
         // Tells us if anything has changed that would require us to re-read and re-
         // process the XML.  The main scenario here would be the addition or removal

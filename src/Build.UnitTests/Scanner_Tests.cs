@@ -13,7 +13,7 @@ namespace Microsoft.Build.UnitTests
 {
     public class ScannerTest
     {
-        private MockElementLocation _elementLocation = MockElementLocation.Instance;
+        private readonly MockElementLocation _elementLocation = MockElementLocation.Instance;
         /// <summary>
         /// Tests that we give a useful error position (not 0 for example)
         /// </summary>

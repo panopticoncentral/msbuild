@@ -422,15 +422,15 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // This is normally the name of the project file to which the cached entries refer
-        private string scopeName;
+        private readonly string scopeName;
         // The version of the toolset the project uses
-        private string scopeToolsVersion;
+        private readonly string scopeToolsVersion;
         // This is normally a set of properties for the project file to which the cached entries refer
-        private BuildPropertyGroup scopeProperties;
+        private readonly BuildPropertyGroup scopeProperties;
         // This dictionary contains all the cached items within the current scope
-        private Hashtable cacheContents;
+        private readonly Hashtable cacheContents;
         // Synchronization between multiple threads
-        private static ReaderWriterLock cacheScopeReaderWriterLock = new ReaderWriterLock();
+        private static readonly ReaderWriterLock cacheScopeReaderWriterLock = new ReaderWriterLock();
         #endregion
     }
 }

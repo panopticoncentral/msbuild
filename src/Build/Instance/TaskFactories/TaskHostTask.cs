@@ -37,49 +37,49 @@ namespace Microsoft.Build.BackEnd
         /// Logging context for logging errors / issues 
         /// encountered in the TaskHostTask itself. 
         /// </summary>
-        private TaskLoggingContext _taskLoggingContext;
+        private readonly TaskLoggingContext _taskLoggingContext;
 
         /// <summary>
         /// Location of the task in the project file. 
         /// </summary>
-        private IElementLocation _taskLocation;
+        private readonly IElementLocation _taskLocation;
 
         /// <summary>
         ///  The provider for the task host nodes. 
         /// </summary>
-        private IBuildComponentHost _buildComponentHost;
+        private readonly IBuildComponentHost _buildComponentHost;
 
         /// <summary>
         /// The packet factory.
         /// </summary>
-        private NodePacketFactory _packetFactory;
+        private readonly NodePacketFactory _packetFactory;
 
         /// <summary>
         /// The event which is set when we receive packets.
         /// </summary>
-        private AutoResetEvent _packetReceivedEvent;
+        private readonly AutoResetEvent _packetReceivedEvent;
 
         /// <summary>
         /// The packet that is the end result of the task host task execution process
         /// </summary>
-        private ConcurrentQueue<INodePacket> _receivedPackets;
+        private readonly ConcurrentQueue<INodePacket> _receivedPackets;
 
         /// <summary>
         /// The set of parameters used to decide which host to launch.  
         /// </summary>
-        private IDictionary<string, string> _taskHostParameters;
+        private readonly IDictionary<string, string> _taskHostParameters;
 
         /// <summary>
         /// The type of the task that we are wrapping.  
         /// </summary>
-        private LoadedType _taskType;
+        private readonly LoadedType _taskType;
 
 #if FEATURE_APPDOMAIN
         /// <summary>
         /// The AppDomainSetup we'll want to apply to the AppDomain that we may 
         /// want to load the OOP task into. 
         /// </summary>
-        private AppDomainSetup _appDomainSetup;
+        private readonly AppDomainSetup _appDomainSetup;
 #endif
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Lock object to serialize access to the task host. 
         /// </summary>
-        private Object _taskHostLock;
+        private readonly Object _taskHostLock;
 
         /// <summary>
         /// Keeps track of whether the wrapped task has had cancel called against it. 
@@ -112,7 +112,7 @@ namespace Microsoft.Build.BackEnd
         /// The set of parameters that has been set to this wrapped task -- save them 
         /// here so that we can forward them on to the task host. 
         /// </summary>
-        private IDictionary<string, object> _setParameters;
+        private readonly IDictionary<string, object> _setParameters;
 
         /// <summary>
         /// Did the task succeed? 

@@ -14,7 +14,7 @@ namespace Microsoft.Build.Evaluation
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
     internal sealed class NumericExpressionNode : OperandExpressionNode
     {
-        private string _value;
+        private readonly string _value;
 
         internal NumericExpressionNode(string value)
         {

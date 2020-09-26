@@ -154,7 +154,7 @@ namespace Microsoft.Build.UnitTests.Logging
             /// This helps us verify that a logger is correctly forwarding 
             /// an event.
             /// </summary>
-            private BuildEventArgs _expectedEvent;
+            private readonly BuildEventArgs _expectedEvent;
 
             #endregion
 

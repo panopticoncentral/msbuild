@@ -15,7 +15,7 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         /// Default event to use in tests.
         /// </summary>
-        private BuildStartedEventArgs _baseStartedEvent = new BuildStartedEventArgs("Message", "HelpKeyword");
+        private readonly BuildStartedEventArgs _baseStartedEvent = new BuildStartedEventArgs("Message", "HelpKeyword");
 
         /// <summary>
         /// Trivially exercise event args default ctors to boost Frameworks code coverage

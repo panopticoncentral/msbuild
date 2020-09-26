@@ -21,7 +21,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
 {
     public class BuildRequestConfiguration_Tests : IDisposable
     {
-        private TestEnvironment _env;
+        private readonly TestEnvironment _env;
 
         public BuildRequestConfiguration_Tests(ITestOutputHelper testOutput)
         {

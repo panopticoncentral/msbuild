@@ -27,17 +27,17 @@ namespace Microsoft.Build.Construction
         /// <summary>
         /// Store interned strings, and also a ref count, one per document using them.
         /// </summary>
-        private RetrievableEntryHashSet<StringCacheEntry> _strings = new RetrievableEntryHashSet<StringCacheEntry>(InitialSize, StringComparer.Ordinal);
+        private readonly RetrievableEntryHashSet<StringCacheEntry> _strings = new RetrievableEntryHashSet<StringCacheEntry>(InitialSize, StringComparer.Ordinal);
 
         /// <summary>
         /// Store all the strings a document is using, so their ref count can be decremented.
         /// </summary>
-        private Dictionary<XmlDocument, HashSet<StringCacheEntry>> _documents = new Dictionary<XmlDocument, HashSet<StringCacheEntry>>();
+        private readonly Dictionary<XmlDocument, HashSet<StringCacheEntry>> _documents = new Dictionary<XmlDocument, HashSet<StringCacheEntry>>();
 
         /// <summary>
         /// Locking object for this shared cache
         /// </summary>
-        private Object _locker = new Object();
+        private readonly Object _locker = new Object();
 
         /// <summary>
         /// Public constructor.
@@ -228,7 +228,7 @@ namespace Microsoft.Build.Construction
             /// <summary>
             /// Cached string
             /// </summary>
-            private string _cachedString;
+            private readonly string _cachedString;
 
             /// <summary>
             /// Number of XmlDocuments where this string is included.

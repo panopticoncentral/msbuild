@@ -28,12 +28,12 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// The list of resx files.
         /// </summary>
-        private Dependencies resXFiles = new Dependencies();
+        private readonly Dependencies resXFiles = new Dependencies();
 
         /// <summary>
         /// A list of portable libraries and the ResW files they can produce.
         /// </summary>
-        private Dependencies portableLibraries = new Dependencies();
+        private readonly Dependencies portableLibraries = new Dependencies();
 
         /// <summary>
         /// A newly-created ResGenDependencies is not dirty.
@@ -192,7 +192,7 @@ namespace Microsoft.Build.Tasks
         internal sealed class ResXFile : DependencyFile
         {
             // Files contained within this resx file.
-            private string[] linkedFiles;
+            private readonly string[] linkedFiles;
 
             internal string[] LinkedFiles => linkedFiles;
 

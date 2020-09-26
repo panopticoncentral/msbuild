@@ -141,9 +141,9 @@ namespace Microsoft.Build.Shared
         #endregion
 
         // the type that was loaded
-        private Type _type;
+        private readonly Type _type;
         // the assembly the type was loaded from
-        private AssemblyLoadInfo _assembly;
+        private readonly AssemblyLoadInfo _assembly;
 
         // whether the loadinseparateappdomain attribute is applied to this type
         private bool? _hasLoadInSeparateAppDomainAttribute;
@@ -155,6 +155,6 @@ namespace Microsoft.Build.Shared
         /// Assembly, if any, that we loaded for this type.
         /// We use this information to help created AppDomains to resolve types that it could not load successfully
         /// </summary>
-        private Assembly _loadedAssembly;
+        private readonly Assembly _loadedAssembly;
     }
 }

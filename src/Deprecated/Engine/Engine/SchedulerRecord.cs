@@ -153,17 +153,17 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // Key to the current object
-        private ScheduleRecordKey recordKey;
+        private readonly ScheduleRecordKey recordKey;
         // Key to the parent object
-        private ScheduleRecordKey parentKey;
+        private readonly ScheduleRecordKey parentKey;
         // Name of the project
-        private string projectName;
+        private readonly string projectName;
         // Toolset version
-        private string toolsVersion;
+        private readonly string toolsVersion;
         // Targets being build
-        private string[] targetsBuild;
+        private readonly string[] targetsBuild;
         // Node on which the request is being build
-        private int evaluationNode;
+        private readonly int evaluationNode;
         // Marks the request as blocked
         private bool blockedFlag;
         // Dictionary of child requests (lazily initialized)
@@ -229,9 +229,9 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // Handle Id
-        private int handleId;
+        private readonly int handleId;
         // Request Id
-        private int requestId;
+        private readonly int requestId;
         #endregion
     }
 }

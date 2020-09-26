@@ -8,8 +8,8 @@ namespace Microsoft.Build.Engine.UnitTests
 {
     public class FileUtilitiesRegex_Tests
     {
-        private string _directoryStart = new string(MSBuildConstants.BackslashChar[0], 2);
-        private string _altDirectoryStart = new string(MSBuildConstants.ForwardSlash[0], 2);
+        private readonly string _directoryStart = new string(MSBuildConstants.BackslashChar[0], 2);
+        private readonly string _altDirectoryStart = new string(MSBuildConstants.ForwardSlash[0], 2);
 
         //below are the legacy regex used before explcitly checking these patterns to reduce allocations
 

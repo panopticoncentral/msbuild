@@ -7,7 +7,7 @@ namespace Microsoft.Build.UnitTests
 {
     public class BinaryLoggerTests : IDisposable
     {
-        private static string s_testProject = @"
+        private static readonly string s_testProject = @"
          <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003'>
             <PropertyGroup>
                <TestProperty>Test</TestProperty>
@@ -23,7 +23,7 @@ namespace Microsoft.Build.UnitTests
             </Target>
          </Project>";
         private readonly TestEnvironment _env;
-        private string _logFile;
+        private readonly string _logFile;
 
         public BinaryLoggerTests(ITestOutputHelper output)
         {

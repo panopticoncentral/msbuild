@@ -65,12 +65,12 @@ namespace Microsoft.Build.BuildEngine
         }
 
         // the XML for the imported project
-        private XmlDocument projectXml;
+        private readonly XmlDocument projectXml;
 
         // the last time the imported project file was modified
-        private DateTime lastWriteTime;
+        private readonly DateTime lastWriteTime;
 
         // the size of the imported project file
-        private long fileSize;
+        private readonly long fileSize;
     }
 }

@@ -24,9 +24,9 @@ namespace Microsoft.Build.Tasks
         /// Key: Component path on disk
         /// Value: DateTime struct
         /// </summary>
-        private Hashtable componentTimestamps;
-        private string tlbImpLocation;
-        private string axImpLocation;
+        private readonly Hashtable componentTimestamps;
+        private readonly string tlbImpLocation;
+        private readonly string axImpLocation;
 
         /// <summary>
         /// indicates whether the cache contents have changed since it's been created

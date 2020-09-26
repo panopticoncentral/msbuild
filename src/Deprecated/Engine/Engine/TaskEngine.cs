@@ -1589,28 +1589,28 @@ namespace Microsoft.Build.BuildEngine
         #region Member data
 
         // the XML backing the task
-        private XmlElement taskNode;
+        private readonly XmlElement taskNode;
         // the .NET class that defines the task
         private LoadedType taskClass;
         // The optional host object for this task.
-        private ITaskHost hostObject;
+        private readonly ITaskHost hostObject;
         // the logging services provider
-        private EngineLoggingServices loggingServices;
+        private readonly EngineLoggingServices loggingServices;
         // the id for the proxy data
-        private int handleId;
+        private readonly int handleId;
         // event contextual information where the event is fired from
         private BuildEventContext buildEventContext;
         // The node on which this task engine is running.
-        private TaskExecutionModule parentModule;
+        private readonly TaskExecutionModule parentModule;
         // indicates whether to ignore task execution failures
         private bool continueOnError;
         // the conditional expression that controls task execution
-        private XmlAttribute conditionAttribute;
+        private readonly XmlAttribute conditionAttribute;
         // the project file that the task XML was defined in -- this file could be different from the file of this task's parent
         // project if the task was defined in an imported project file, or if the task only exists in-memory
-        private string projectFileOfTaskNode;
+        private readonly string projectFileOfTaskNode;
         // Full name of the project file containing the task
-        private string parentProjectFullFileName;
+        private readonly string parentProjectFullFileName;
         // Hash to contain a list of properties from all of the batches
         private Hashtable lookupHash = null;
 

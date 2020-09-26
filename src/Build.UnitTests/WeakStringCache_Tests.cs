@@ -16,7 +16,7 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         /// The weak string cache under test.
         /// </summary>
-        private WeakStringCache _cache = new WeakStringCache();
+        private readonly WeakStringCache _cache = new WeakStringCache();
 
         public void Dispose()
         {

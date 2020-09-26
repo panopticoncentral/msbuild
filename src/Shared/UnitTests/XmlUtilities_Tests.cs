@@ -11,7 +11,7 @@ namespace Microsoft.Build.UnitTests
     public class XmlUtilities_Tests
     {
         // Various invalid names, with the first invalid character listed for each
-        private string[,] _invalidNames = new string[,] {
+        private readonly string[,] _invalidNames = new string[,] {
             {"foo.bar", "."},
             {"1baz", "1"},
             {"+", "+"},

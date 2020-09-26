@@ -20,13 +20,13 @@ namespace Microsoft.Build.UnitTests.BackEnd
         private class MockHost : IBuildComponentHost, INodePacketFactory
         {
             private DataReceivedContext _dataReceivedContext;
-            private AutoResetEvent _dataReceivedEvent;
-            private BuildParameters _buildParameters;
+            private readonly AutoResetEvent _dataReceivedEvent;
+            private readonly BuildParameters _buildParameters;
 
             /// <summary>
             /// Retrieves the LegacyThreadingData associated with a particular component host
             /// </summary>
-            private LegacyThreadingData _legacyThreadingData;
+            private readonly LegacyThreadingData _legacyThreadingData;
 
 
             public MockHost()
@@ -160,8 +160,8 @@ namespace Microsoft.Build.UnitTests.BackEnd
             }
         }
 
-        private Dictionary<INodeEndpoint, LinkStatusContext> _linkStatusTable;
-        private MockHost _host;
+        private readonly Dictionary<INodeEndpoint, LinkStatusContext> _linkStatusTable;
+        private readonly MockHost _host;
 
         [Fact]
         public void ConstructionWithValidHost()

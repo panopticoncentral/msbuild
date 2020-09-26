@@ -914,7 +914,7 @@ namespace Microsoft.Build.BackEnd.Logging
             /// The frames member is contained by FrameStack and does
             /// all the heavy lifting for FrameStack.
             /// </summary>
-            private System.Collections.Stack _frames;
+            private readonly System.Collections.Stack _frames;
 
             /// <summary>
             /// Create a new, empty, FrameStack.

@@ -20,7 +20,7 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// Factory which is wrapped by the wrapper
         /// </summary>
-        private ITaskFactory _taskFactory;
+        private readonly ITaskFactory _taskFactory;
 
         /// <summary>
         /// Cache of names of required properties on this type
@@ -45,13 +45,13 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// The name of the task this factory can create.
         /// </summary>
-        private string _taskName;
+        private readonly string _taskName;
 
         /// <summary>
         /// The set of special parameters that, along with the name, contribute to the identity of 
         /// this factory.
         /// </summary>
-        private IDictionary<string, string> _factoryIdentityParameters;
+        private readonly IDictionary<string, string> _factoryIdentityParameters;
 
         #endregion
 

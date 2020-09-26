@@ -10,7 +10,7 @@ namespace Microsoft.Build.BuildEngine
     /// </summary>
     internal sealed class StringExpressionNode : OperandExpressionNode
     {
-        private string value;
+        private readonly string value;
         private string cachedExpandedValue;
 
         internal StringExpressionNode(string value)

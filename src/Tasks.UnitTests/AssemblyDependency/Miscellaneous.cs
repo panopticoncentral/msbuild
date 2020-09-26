@@ -22,7 +22,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
     /// </summary>
     public sealed class Miscellaneous : ResolveAssemblyReferenceTestFixture
     {
-        private static List<string> s_assemblyFolderExTestVersions = new List<string>
+        private static readonly List<string> s_assemblyFolderExTestVersions = new List<string>
         {
             "v1.0",
             "v2.0.50727",
@@ -57,7 +57,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
             "v00001.0"
         };
 
-        private string _fullRedistListContents =
+        private readonly string _fullRedistListContents =
             "<FileList Redist='Microsoft-Windows-CLRCoreComp' >" +
             "<File AssemblyName='System.Xml' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +
             "<File AssemblyName='Microsoft.Build.Engine' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +
@@ -66,7 +66,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         /// <summary>
         /// The contents of a subsetFile which only contain the Microsoft.Build.Engine assembly in the white list
         /// </summary>
-        private string _engineOnlySubset =
+        private readonly string _engineOnlySubset =
             "<FileList Redist='Microsoft-Windows-CLRCoreComp' >" +
             "<File AssemblyName='Microsoft.Build.Engine' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +
             "</FileList >";
@@ -74,7 +74,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         /// <summary>
         /// The contents of a subsetFile which only contain the System.Xml assembly in the white list
         /// </summary>
-        private string _xmlOnlySubset =
+        private readonly string _xmlOnlySubset =
             "<FileList Redist='Microsoft-Windows-CLRCoreComp' >" +
             "<File AssemblyName='System.Xml' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +
             "</FileList >";
@@ -82,7 +82,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         /// <summary>
         /// The contents of a subsetFile which contain both the Microsoft.Build.Engine and System.Xml assemblies in the white list
         /// </summary>
-        private string _engineAndXmlSubset =
+        private readonly string _engineAndXmlSubset =
             "<FileList Redist='Microsoft-Windows-CLRCoreComp' >" +
             "<File AssemblyName='Microsoft.Build.Engine' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +
             "<File AssemblyName='System.Xml' Version='2.0.0.0' PublicKeyToken='b03f5f7f11d50a3a' Culture='Neutral' FileVersion='2.0.50727.208' InGAC='true' />" +

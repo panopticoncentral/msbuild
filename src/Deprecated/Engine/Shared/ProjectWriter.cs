@@ -198,6 +198,6 @@ namespace Microsoft.Build.BuildEngine.Shared
         private bool writeXmlDeclaration;
 
         // encoding of the document, if specified when constructing
-        private Encoding documentEncoding = null;
+        private readonly Encoding documentEncoding = null;
     }
 }

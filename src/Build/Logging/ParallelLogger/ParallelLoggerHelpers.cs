@@ -15,12 +15,12 @@ namespace Microsoft.Build.BackEnd.Logging
     internal class BuildEventManager
     {
         #region Data
-        private Dictionary<BuildEventContext, ProjectStartedEventMinimumFields> _projectStartedEvents;
-        private Dictionary<BuildEventContext, TargetStartedEventMinimumFields> _targetStartedEvents;
-        private Dictionary<string, int> _projectTargetKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-        private Dictionary<string, int> _projectKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-        private static ComparerContextNodeId<BuildEventContext> s_compareContextNodeId = new ComparerContextNodeId<BuildEventContext>();
-        private static ComparerContextNodeIdTargetId<BuildEventContext> s_compareContextNodeIdTargetId = new ComparerContextNodeIdTargetId<BuildEventContext>();
+        private readonly Dictionary<BuildEventContext, ProjectStartedEventMinimumFields> _projectStartedEvents;
+        private readonly Dictionary<BuildEventContext, TargetStartedEventMinimumFields> _targetStartedEvents;
+        private readonly Dictionary<string, int> _projectTargetKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, int> _projectKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        private static readonly ComparerContextNodeId<BuildEventContext> s_compareContextNodeId = new ComparerContextNodeId<BuildEventContext>();
+        private static readonly ComparerContextNodeIdTargetId<BuildEventContext> s_compareContextNodeIdTargetId = new ComparerContextNodeIdTargetId<BuildEventContext>();
         private int _projectIncrementKey;
         #endregion
 
@@ -297,15 +297,15 @@ namespace Microsoft.Build.BackEnd.Logging
     internal class ProjectStartedEventMinimumFields
     {
         #region Data
-        private DateTime _timeStamp;
-        private string _targetNames;
-        private string _projectFile;
+        private readonly DateTime _timeStamp;
+        private readonly string _targetNames;
+        private readonly string _projectFile;
         private bool _showProjectFinishedEvent;
         private bool _errorInProject;
-        private int _projectId;
-        private ProjectFullKey _projectFullKey;
-        private BuildEventContext _buildEventContext;
-        private ProjectStartedEventMinimumFields _parentProjectStartedEvent;
+        private readonly int _projectId;
+        private readonly ProjectFullKey _projectFullKey;
+        private readonly BuildEventContext _buildEventContext;
+        private readonly ProjectStartedEventMinimumFields _parentProjectStartedEvent;
         #endregion
 
         #region Properties
@@ -435,15 +435,15 @@ namespace Microsoft.Build.BackEnd.Logging
     internal class TargetStartedEventMinimumFields
     {
         #region Data
-        private DateTime _timeStamp;
-        private string _targetName;
-        private string _targetFile;
-        private string _projectFile;
-        private string _parentTarget;
+        private readonly DateTime _timeStamp;
+        private readonly string _targetName;
+        private readonly string _targetFile;
+        private readonly string _projectFile;
+        private readonly string _parentTarget;
         private bool _showTargetFinishedEvent;
         private bool _errorInTarget;
-        private string _message;
-        private BuildEventContext _buildEventContext;
+        private readonly string _message;
+        private readonly BuildEventContext _buildEventContext;
         #endregion
 
         #region Properties
@@ -555,9 +555,9 @@ namespace Microsoft.Build.BackEnd.Logging
     internal class ErrorWarningSummaryDictionaryKey
     {
         #region Data
-        private BuildEventContext _entryPointContext;
-        private string _targetName;
-        private static ComparerContextNodeId<BuildEventContext> s_eventComparer = new ComparerContextNodeId<BuildEventContext>();
+        private readonly BuildEventContext _entryPointContext;
+        private readonly string _targetName;
+        private static readonly ComparerContextNodeId<BuildEventContext> s_eventComparer = new ComparerContextNodeId<BuildEventContext>();
         #endregion
 
         #region Constructor

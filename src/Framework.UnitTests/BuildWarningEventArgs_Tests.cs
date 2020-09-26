@@ -16,7 +16,7 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         /// Default event to use in tests.
         /// </summary>
-        private BuildWarningEventArgs _baseWarningEvent = new BuildWarningEventArgs("Subcategory", "Code", "File", 1, 2, 3, 4, "Message", "HelpKeyword", "sender");
+        private readonly BuildWarningEventArgs _baseWarningEvent = new BuildWarningEventArgs("Subcategory", "Code", "File", 1, 2, 3, 4, "Message", "HelpKeyword", "sender");
 
         /// <summary>
         /// Trivially exercise event args default ctors to boost Frameworks code coverage

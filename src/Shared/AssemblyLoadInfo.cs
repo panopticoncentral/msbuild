@@ -123,7 +123,7 @@ namespace Microsoft.Build.Shared
             /// <summary>
             /// Assembly name
             /// </summary>
-            private string _assemblyName;
+            private readonly string _assemblyName;
 
             /// <summary>
             /// Constructor
@@ -167,7 +167,7 @@ namespace Microsoft.Build.Shared
             /// <summary>
             /// Path to assembly
             /// </summary>
-            private string _assemblyFile;
+            private readonly string _assemblyFile;
 
             /// <summary>
             /// Constructor

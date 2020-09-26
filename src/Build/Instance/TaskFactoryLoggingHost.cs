@@ -37,7 +37,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Is the system running in multi-process mode and requires events to be serializable
         /// </summary>
-        private bool _isRunningWithMultipleNodes;
+        private readonly bool _isRunningWithMultipleNodes;
 
 #if FEATURE_APPDOMAIN
         /// <summary>

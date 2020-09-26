@@ -50,7 +50,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Keeps track of the processes we've already checked for nodes so we don't check them again.
         /// </summary>
-        private HashSet<string> _processesToIgnore = new HashSet<string>();
+        private readonly HashSet<string> _processesToIgnore = new HashSet<string>();
 
         /// <summary>
         /// Delegate used to tell the node provider that a context has terminated.
@@ -489,48 +489,48 @@ namespace Microsoft.Build.BackEnd
         internal class NodeContext
         {
             // The pipe(s) used to communicate with the node.
-            private Stream _clientToServerStream;
-            private Stream _serverToClientStream;
+            private readonly Stream _clientToServerStream;
+            private readonly Stream _serverToClientStream;
 
             /// <summary>
             /// The factory used to create packets from data read off the pipe.
             /// </summary>
-            private INodePacketFactory _packetFactory;
+            private readonly INodePacketFactory _packetFactory;
 
             /// <summary>
             /// The node id assigned by the node provider.
             /// </summary>
-            private int _nodeId;
+            private readonly int _nodeId;
 
             /// <summary>
             /// The process id
             /// </summary>
-            private int _processId;
+            private readonly int _processId;
 
             /// <summary>
             /// An array used to store the header byte for each packet when read.
             /// </summary>
-            private byte[] _headerByte;
+            private readonly byte[] _headerByte;
 
             /// <summary>
             /// A buffer typically big enough to handle a packet body.
             /// </summary>
-            private byte[] _smallReadBuffer;
+            private readonly byte[] _smallReadBuffer;
 
             /// <summary>
             /// Event indicating the node has terminated.
             /// </summary>
-            private ManualResetEvent _nodeTerminated;
+            private readonly ManualResetEvent _nodeTerminated;
 
             /// <summary>
             /// Delegate called when the context terminates.
             /// </summary>
-            private NodeContextTerminateDelegate _terminateDelegate;
+            private readonly NodeContextTerminateDelegate _terminateDelegate;
 
             /// <summary>
             /// Per node read buffers
             /// </summary>
-            private SharedReadBuffer _sharedReadBuffer;
+            private readonly SharedReadBuffer _sharedReadBuffer;
 
             /// <summary>
             /// Constructor.

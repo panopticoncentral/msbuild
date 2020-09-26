@@ -80,7 +80,7 @@ namespace Microsoft.Build.Tasks
         internal const string InvalidIdentifier = "InvalidIdentifier";
 
         private static SR s_loader = null;
-        private MainAssemblyFallbackResourceManager _resources;
+        private readonly MainAssemblyFallbackResourceManager _resources;
 
         /// <summary>
         /// The containing assembly is set to lookup resources for the neutral language in satellite assemblies, not in the main assembly.

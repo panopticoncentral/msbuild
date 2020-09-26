@@ -418,13 +418,13 @@ namespace Microsoft.Build.BuildEngine
         // multiple Project objects with the same full path is because they 
         // may each be using a different set of global properties, and we can't
         // have them tromp on each other.
-        private Hashtable projects;
+        private readonly Hashtable projects;
         // Once the project is loaded on the remote node, all versions of the project
         // will be loaded and processed on the same node to reuse the XML. This table
         // stores a record of between nodes and projects
-        private Hashtable nodeToProjectsMapping;
+        private readonly Hashtable nodeToProjectsMapping;
         // Table of projects that have been unloaded during the current build
-        private Hashtable unloadedProjects;
+        private readonly Hashtable unloadedProjects;
         #endregion
 
         #region Helper class 

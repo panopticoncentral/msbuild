@@ -20,7 +20,7 @@ namespace Microsoft.Build.UnitTests.ResolveSDKReference_Tests
 {
     public class ResolveSDKReferenceTestFixture
     {
-        private Microsoft.Build.UnitTests.MockEngine.GetStringDelegate _resourceDelegate = new Microsoft.Build.UnitTests.MockEngine.GetStringDelegate(AssemblyResources.GetString);
+        private readonly Microsoft.Build.UnitTests.MockEngine.GetStringDelegate _resourceDelegate = new Microsoft.Build.UnitTests.MockEngine.GetStringDelegate(AssemblyResources.GetString);
 
         private readonly string _sdkPath = NativeMethodsShared.IsWindows
                                      ? @"c:\SDKDirectory\GoodTestSDK\2.0\"

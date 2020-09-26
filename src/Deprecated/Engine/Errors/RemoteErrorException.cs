@@ -80,7 +80,7 @@ namespace Microsoft.Build.BuildEngine
         #endregion
 
         #region Data
-        private BuildEventContext buildEventContext;
+        private readonly BuildEventContext buildEventContext;
         #endregion
     }
 }

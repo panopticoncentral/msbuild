@@ -32,7 +32,7 @@ namespace System.Collections.Immutable
         /// <summary>
         /// The underlying dictionary.
         /// </summary>
-        private Dictionary<K, V> _backing;
+        private readonly Dictionary<K, V> _backing;
 
         #region Read-only Operations
 

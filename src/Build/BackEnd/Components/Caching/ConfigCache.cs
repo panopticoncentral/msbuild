@@ -20,7 +20,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Object used for locking.
         /// </summary>
-        private object _lockObject = new object();
+        private readonly object _lockObject = new object();
 
         /// <summary>
         /// Lookup which can be used to find a configuration with the specified metadata.
@@ -30,7 +30,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The maximum cache entries allowed before a sweep can occur.
         /// </summary>
-        private int _sweepThreshhold;
+        private readonly int _sweepThreshhold;
 
         /// <summary>
         /// Creates a new build configuration cache.

@@ -101,15 +101,15 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // The handle Id for the parent context
-        private int parentHandleId;
+        private readonly int parentHandleId;
         // The node from the triggering build request (overwritten on the build request during routing)
-        private int parentNodeIndex;
+        private readonly int parentNodeIndex;
         // The request Id from the triggering build request (overwritten on the build request during routing)
-        private int parentRequestId;
+        private readonly int parentRequestId;
         // The build request being routed
-        private BuildRequest triggeringBuildRequest;
+        private readonly BuildRequest triggeringBuildRequest;
         // The cache scope where the result should be stored
-        private CacheScope cacheScope;
+        private readonly CacheScope cacheScope;
         #endregion
     }
 }

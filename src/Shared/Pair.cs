@@ -23,12 +23,12 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// Key
         /// </summary>
-        private TKey _key;
+        private readonly TKey _key;
 
         /// <summary>
         /// Value
         /// </summary>
-        private TValue _value;
+        private readonly TValue _value;
 
         /// <summary>
         /// Constructor

@@ -16,12 +16,12 @@ namespace Microsoft.Build.BackEnd.Logging
         /// What kind of LoggerMode are the logging services when created.
         /// They could be Synchronous or Asynchronous
         /// </summary>
-        private LoggerMode _logMode = LoggerMode.Synchronous;
+        private readonly LoggerMode _logMode = LoggerMode.Synchronous;
 
         /// <summary>
         /// What node is this logging service being created on.
         /// </summary>
-        private int _nodeId = 0;
+        private readonly int _nodeId = 0;
         #endregion
 
         #region Constructor

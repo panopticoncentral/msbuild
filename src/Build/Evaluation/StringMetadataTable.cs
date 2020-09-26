@@ -18,7 +18,7 @@ namespace Microsoft.Build.Evaluation
         /// Unqualified are considered to apply to all item types.
         /// May be null, if empty.
         /// </summary>
-        private Dictionary<string, string> _metadata;
+        private readonly Dictionary<string, string> _metadata;
 
         /// <summary>
         /// Constructor taking a table of metadata in which keys

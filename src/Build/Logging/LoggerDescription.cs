@@ -324,7 +324,7 @@ namespace Microsoft.Build.Logging
         private AssemblyLoadInfo _loggerAssembly;
         private LoggerVerbosity _verbosity;
         private int _loggerId;
-        private bool _isOptional;
+        private readonly bool _isOptional;
         #endregion
 
         #region CustomSerializationToStream

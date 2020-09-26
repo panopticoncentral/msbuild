@@ -15,18 +15,18 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The node ID
         /// </summary>
-        private int _nodeId;
+        private readonly int _nodeId;
 
         /// <summary>
         /// The provider type
         /// </summary>
-        private NodeProviderType _providerType;
+        private readonly NodeProviderType _providerType;
 
         /// <summary>
         /// The configuration IDs the node knows about.  These are not necessarily the ones
         /// currently assigned to the node, as that can change.
         /// </summary>
-        private HashSet<int> _configurationIDs;
+        private readonly HashSet<int> _configurationIDs;
 
         /// <summary>
         /// Constructor.

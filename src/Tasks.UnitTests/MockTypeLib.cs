@@ -45,7 +45,7 @@ namespace Microsoft.Build.UnitTests
     /// </summary>
     public class MockTypeLib : ITypeLib, ITypeLib2
     {
-        private List<MockTypeInfo> _containedTypeInfos;
+        private readonly List<MockTypeInfo> _containedTypeInfos;
 
         public List<MockTypeInfo> ContainedTypeInfos
         {
@@ -76,10 +76,10 @@ namespace Microsoft.Build.UnitTests
         }
 
         // helper class for unmanaged allocations and leak tracking
-        private MockUnmanagedMemoryHelper _memoryHelper;
+        private readonly MockUnmanagedMemoryHelper _memoryHelper;
 
         // helper class for injecting failures into chosen method calls
-        private MockFaultInjectionHelper<MockTypeLibrariesFailurePoints> _faultInjector;
+        private readonly MockFaultInjectionHelper<MockTypeLibrariesFailurePoints> _faultInjector;
 
         /// <summary>
         /// Public constructor

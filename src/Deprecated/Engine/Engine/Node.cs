@@ -623,34 +623,34 @@ namespace Microsoft.Build.BuildEngine
 
         #region Member data
         // Interface provided by the host that is used to communicate with the parent engine
-        private IEngineCallback parentCallback;
+        private readonly IEngineCallback parentCallback;
         // Id of this node
-        private int nodeId;
+        private readonly int nodeId;
         // This event is used to communicate between the thread calling shutdown method and the thread running the Engine.BuildLoop.
-        private ManualResetEvent exitNodeEvent;
+        private readonly ManualResetEvent exitNodeEvent;
         // The engine being used to process build requests
         private Engine localEngine;
         // The queue of build requests arriving from the parent. The queue is needed to buffer the requests while the local engine is 
         // being created and initialized
-        private Queue<BuildRequest> buildRequests;
+        private readonly Queue<BuildRequest> buildRequests;
         // This flag is true if the thread that will be running the Engine.BuildLoop has been launched
         private bool launchedEngineLoopThread;
         // The logging service that is used to send the event to the parent engine. It maybe hooked up directly to the local engine or cascaded with
         // another logging service depending on configuration
         private EngineLoggingServicesOutProc outProcLoggingService;
-        private Hashtable requestToLocalIdMapping;
+        private readonly Hashtable requestToLocalIdMapping;
         private int lastRequestIdUsed;
 
         // Initializes to false by default
         private bool logOnlyCriticalEvents;
         private bool centralizedLogging;
         private bool useBreadthFirstTraversal;
-        private LoggerDescription[] nodeLoggers;
+        private readonly LoggerDescription[] nodeLoggers;
         private bool buildInProgress;
         private bool nodeShutdown;
-        private BuildPropertyGroup parentGlobalProperties;
-        private ToolsetDefinitionLocations toolsetSearchLocations;
-        private string parentStartupDirectory;
+        private readonly BuildPropertyGroup parentGlobalProperties;
+        private readonly ToolsetDefinitionLocations toolsetSearchLocations;
+        private readonly string parentStartupDirectory;
         private int totalTaskTime;
 
         #endregion

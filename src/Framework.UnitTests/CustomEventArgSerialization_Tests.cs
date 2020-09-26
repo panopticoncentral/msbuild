@@ -34,7 +34,7 @@ namespace Microsoft.Build.UnitTests
         private BinaryWriter _writer;
         private BinaryReader _reader;
 
-        private int _eventArgVersion = (Environment.Version.Major * 10) + Environment.Version.Minor;
+        private readonly int _eventArgVersion = (Environment.Version.Major * 10) + Environment.Version.Minor;
 
 
         public CustomEventArgSerialization_Tests()

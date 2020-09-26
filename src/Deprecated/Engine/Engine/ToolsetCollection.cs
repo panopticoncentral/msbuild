@@ -18,10 +18,10 @@ namespace Microsoft.Build.BuildEngine
     public class ToolsetCollection : ICollection<Toolset>
     {
         // the parent engine 
-        private Engine parentEngine = null;
+        private readonly Engine parentEngine = null;
 
         // underlying map keyed off toolsVersion
-        private Dictionary<string, Toolset> toolsetMap = null;
+        private readonly Dictionary<string, Toolset> toolsetMap = null;
 
         /// <summary>
         /// Private default Ctor. Other classes should not be constructing 

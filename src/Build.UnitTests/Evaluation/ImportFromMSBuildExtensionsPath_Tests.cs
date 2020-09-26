@@ -24,7 +24,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
     /// </summary>
     public class ImportFromMSBuildExtensionsPathTests : IDisposable
     {
-        string toolsVersionToUse = null;
+        readonly string toolsVersionToUse = null;
 
         public ImportFromMSBuildExtensionsPathTests()
         {

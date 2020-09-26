@@ -590,11 +590,11 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// This hashtable contains the all the executionContexts for the current process
         /// </summary>
-        private Hashtable executionContexts = new Hashtable();
+        private readonly Hashtable executionContexts = new Hashtable();
         /// <summary>
         /// List of contexts that should be removed from the hashtable by the engine thread
         /// </summary>
-        private List<ExecutionContext> freedContexts = new List<ExecutionContext>(2*freeListThreshold);
+        private readonly List<ExecutionContext> freedContexts = new List<ExecutionContext>(2*freeListThreshold);
         /// <summary>
         /// The counter used to generate unique identifiers for each context
         /// </summary>
@@ -602,7 +602,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The pointer to the engine to which this callback class corresponds
         /// </summary>
-        private Engine parentEngine;
+        private readonly Engine parentEngine;
         /// <summary>
         /// The count of objects on the free list which triggers a deletion
         /// </summary>

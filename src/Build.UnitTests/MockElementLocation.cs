@@ -13,9 +13,9 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         /// Single instance
         /// </summary>
-        private static MockElementLocation s_instance = new MockElementLocation();
+        private static readonly MockElementLocation s_instance = new MockElementLocation();
 
-        private string _file = "mock.targets";
+        private readonly string _file = "mock.targets";
 
 
         /// <summary>

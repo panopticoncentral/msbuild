@@ -17,8 +17,8 @@ namespace Microsoft.Build.BuildEngine
     {
         #region Fields
 
-        private Hashtable imports;
-        private Project parentProject;
+        private readonly Hashtable imports;
+        private readonly Project parentProject;
 
         #endregion
 

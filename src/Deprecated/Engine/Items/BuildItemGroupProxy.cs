@@ -18,7 +18,7 @@ namespace Microsoft.Build.BuildEngine
     internal class BuildItemGroupProxy : IEnumerable
     {
         // Item group that this proxies
-        private BuildItemGroup backingItemGroup;
+        private readonly BuildItemGroup backingItemGroup;
 
         private BuildItemGroupProxy()
         { 

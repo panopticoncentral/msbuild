@@ -15,12 +15,12 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// The Id of the central logger to which this event should be forwarded
         /// </summary>
-        private int _centralLoggerId;
+        private readonly int _centralLoggerId;
 
         /// <summary>
         /// The sink which will consume the messages
         /// </summary>
-        private IBuildEventSink _sink;
+        private readonly IBuildEventSink _sink;
         #endregion
 
         #region Constructors

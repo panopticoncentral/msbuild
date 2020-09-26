@@ -88,13 +88,13 @@ namespace Microsoft.Build.BuildEngine
 
         // When using this class to replace the item vector specification with the actual
         // list of items, we use this table to get the items
-        private ReadOnlyLookup readOnlyLookup;
+        private readonly ReadOnlyLookup readOnlyLookup;
 
         // used when expanding item metadata during transforms
         private BuildItem itemUnderTransformation;
 
         // the XML node whose contents are being operated on by this class
-        private XmlNode parentNode;
+        private readonly XmlNode parentNode;
 
         #endregion
 

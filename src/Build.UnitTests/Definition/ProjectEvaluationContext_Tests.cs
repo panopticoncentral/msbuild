@@ -206,7 +206,7 @@ namespace Microsoft.Build.UnitTests.Definition
             }
         }
 
-        private static string[] _sdkResolutionProjects =
+        private static readonly string[] _sdkResolutionProjects =
         {
             "<Project Sdk=\"foo\"></Project>",
             "<Project Sdk=\"bar\"></Project>",
@@ -286,7 +286,7 @@ namespace Microsoft.Build.UnitTests.Definition
             }
         }
 
-        private static string[] _projectsWithGlobs =
+        private static readonly string[] _projectsWithGlobs =
         {
             @"<Project>
                 <ItemGroup>
@@ -664,7 +664,7 @@ namespace Microsoft.Build.UnitTests.Definition
                 );
         }
 
-        private static string[] _projectsWithGlobImports =
+        private static readonly string[] _projectsWithGlobImports =
         {
             @"<Project>
                 <Import Project=`*.props` />
@@ -702,7 +702,7 @@ namespace Microsoft.Build.UnitTests.Definition
                 );
         }
 
-        private static string[] _projectsWithConditions =
+        private static readonly string[] _projectsWithConditions =
         {
             @"<Project>
                 <PropertyGroup Condition=`Exists('0.cs')`>

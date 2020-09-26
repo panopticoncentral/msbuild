@@ -121,8 +121,8 @@ namespace Microsoft.Build.BuildEngine.Shared
         #endregion
 
         // the assembly's identity
-        private string assemblyName;
+        private readonly string assemblyName;
         // the assembly filename/path
-        private string assemblyFile;
+        private readonly string assemblyFile;
     }
 }

@@ -48,9 +48,9 @@ namespace Microsoft.Build.CommandLine
 
         #region Data
         // Central logger
-        private ILogger _centralLogger;
+        private readonly ILogger _centralLogger;
         // Description of the forwarding logger
-        private LoggerDescription _forwardingLoggerDescription;
+        private readonly LoggerDescription _forwardingLoggerDescription;
         #endregion
     }
 }

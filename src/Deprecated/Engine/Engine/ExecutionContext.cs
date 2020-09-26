@@ -62,11 +62,11 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // The handle for the context
-        private int handleId;
+        private readonly int handleId;
         // The node of execution
-        private int nodeIndex;
+        private readonly int nodeIndex;
         // The logging context
-        private BuildEventContext buildEventContext;
+        private readonly BuildEventContext buildEventContext;
         #endregion
     }
 }

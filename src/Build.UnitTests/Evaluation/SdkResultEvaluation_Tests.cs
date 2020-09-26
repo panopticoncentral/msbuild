@@ -19,12 +19,12 @@ namespace Microsoft.Build.UnitTests.Evaluation
 {
     public class SdkResultEvaluation_Tests : IDisposable
     {
-        private TestEnvironment _env;
+        private readonly TestEnvironment _env;
         private readonly string _testFolder;
-        private MockLogger _logger;
-        private ProjectCollection _projectCollection;
-        private ITestOutputHelper _log;
-        private bool _originalWarnOnUnitializedProperty;
+        private readonly MockLogger _logger;
+        private readonly ProjectCollection _projectCollection;
+        private readonly ITestOutputHelper _log;
+        private readonly bool _originalWarnOnUnitializedProperty;
 
         public SdkResultEvaluation_Tests(ITestOutputHelper log)
         {

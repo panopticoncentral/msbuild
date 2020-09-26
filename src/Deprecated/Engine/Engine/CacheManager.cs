@@ -239,11 +239,11 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // Array of cache contents per namespace
-        private Hashtable[] cacheContents;
+        private readonly Hashtable[] cacheContents;
         // Lock object for the cache manager
-        private object cacheManagerLock = new object();
+        private readonly object cacheManagerLock = new object();
         // The default toolset version
-        private string defaultToolsVersion;
+        private readonly string defaultToolsVersion;
         #endregion
     }
 }

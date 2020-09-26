@@ -44,7 +44,7 @@ namespace Microsoft.Build.Tasks
 #endif
 
 #if !FEATURE_ASSEMBLYLOADCONTEXT && !MONO
-        private static string s_targetFrameworkAttribute = "System.Runtime.Versioning.TargetFrameworkAttribute";
+        private static readonly string s_targetFrameworkAttribute = "System.Runtime.Versioning.TargetFrameworkAttribute";
 #endif
 #if !FEATURE_ASSEMBLYLOADCONTEXT
         // Borrowed from genman.

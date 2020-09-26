@@ -18,7 +18,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The MSBuild error code corresponding with this exception.
         /// </summary>
-        private string errorCode = null;
+        private readonly string errorCode = null;
 
         /// <summary>
         /// Basic constructor.

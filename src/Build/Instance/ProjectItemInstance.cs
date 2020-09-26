@@ -772,7 +772,7 @@ namespace Microsoft.Build.Execution
             /// it is used to calculate built-in metadata. Otherwise,
             /// the current directory is used.
             /// </summary>
-            private string _projectDirectory;
+            private readonly string _projectDirectory;
 
             /// <summary>
             /// Whether the task item is immutable.
@@ -1803,7 +1803,7 @@ namespace Microsoft.Build.Execution
                 /// <summary>
                 /// The project to which item instances created by this factory will belong.
                 /// </summary>
-                private ProjectInstance _project;
+                private readonly ProjectInstance _project;
 
                 /// <summary>
                 /// Constructor not taking an item type.
@@ -1950,7 +1950,7 @@ namespace Microsoft.Build.Execution
                 /// <summary>
                 /// The singleton instance.
                 /// </summary>
-                private static TaskItemFactory s_instance = new TaskItemFactory();
+                private static readonly TaskItemFactory s_instance = new TaskItemFactory();
 
                 /// <summary>
                 /// Private constructor for singleton creation.
@@ -2077,12 +2077,12 @@ namespace Microsoft.Build.Execution
                 /// <summary>
                 /// Item type
                 /// </summary>
-                private string _itemType;
+                private readonly string _itemType;
 
                 /// <summary>
                 /// Backing item
                 /// </summary>
-                private TaskItem _item;
+                private readonly TaskItem _item;
 
                 /// <summary>
                 /// Constructor.
@@ -2141,7 +2141,7 @@ namespace Microsoft.Build.Execution
             /// <summary>
             /// The singleton comparer.
             /// </summary>
-            private static ProjectItemInstanceEqualityComparer s_comparer = new ProjectItemInstanceEqualityComparer();
+            private static readonly ProjectItemInstanceEqualityComparer s_comparer = new ProjectItemInstanceEqualityComparer();
 
             /// <summary>
             /// Constructor.

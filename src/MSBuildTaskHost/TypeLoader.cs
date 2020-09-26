@@ -17,17 +17,17 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// Cache to keep track of the assemblyLoadInfos based on a given typeFilter.
         /// </summary>
-        private static Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfLoadedTypesByFilter = new Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
+        private static readonly Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfLoadedTypesByFilter = new Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
 
         /// <summary>
         /// Cache to keep track of the assemblyLoadInfos based on a given type filter for assemblies which are to be loaded for reflectionOnlyLoads.
         /// </summary>
-        private static Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfReflectionOnlyLoadedTypesByFilter = new Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
+        private static readonly Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfReflectionOnlyLoadedTypesByFilter = new Concurrent.ConcurrentDictionary<TypeFilter, Concurrent.ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
 
         /// <summary>
         /// Typefilter for this typeloader
         /// </summary>
-        private TypeFilter _isDesiredType;
+        private readonly TypeFilter _isDesiredType;
 
         /// <summary>
         /// Constructor.
@@ -185,22 +185,22 @@ namespace Microsoft.Build.Shared
             /// <summary>
             /// Type filter to pick the correct types out of an assembly
             /// </summary>
-            private TypeFilter _isDesiredType;
+            private readonly TypeFilter _isDesiredType;
 
             /// <summary>
             /// Assembly load information so we can load an assembly
             /// </summary>
-            private AssemblyLoadInfo _assemblyLoadInfo;
+            private readonly AssemblyLoadInfo _assemblyLoadInfo;
 
             /// <summary>
             /// What is the type for the given type name, this may be null if the typeName does not map to a type.
             /// </summary>
-            private Concurrent.ConcurrentDictionary<string, Type> _typeNameToType;
+            private readonly Concurrent.ConcurrentDictionary<string, Type> _typeNameToType;
 
             /// <summary>
             /// List of public types in the assembly which match the typefilter and their corresponding types
             /// </summary>
-            private Dictionary<string, Type> _publicTypeNameToType;
+            private readonly Dictionary<string, Type> _publicTypeNameToType;
 
             /// <summary>
             /// Have we scanned the public types for this assembly yet.

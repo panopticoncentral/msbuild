@@ -16,7 +16,7 @@ namespace Microsoft.Build.UnitTests
 {
     public sealed class ToolTask_Tests
     {
-        private ITestOutputHelper _output;
+        private readonly ITestOutputHelper _output;
 
         public ToolTask_Tests(ITestOutputHelper testOutput)
         {

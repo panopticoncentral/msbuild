@@ -20,7 +20,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Configuration cache
         /// </summary>
-        private IConfigCache _configCache;
+        private readonly IConfigCache _configCache;
 
         /// <summary>
         /// Logging service which will do the actual logging
@@ -30,22 +30,22 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Request engine to process the build requests
         /// </summary>
-        private IBuildRequestEngine _requestEngine;
+        private readonly IBuildRequestEngine _requestEngine;
 
         /// <summary>
         /// Target Builder
         /// </summary>
-        private ITargetBuilder _targetBuilder;
+        private readonly ITargetBuilder _targetBuilder;
 
         /// <summary>
         /// The build parameters.
         /// </summary>
-        private BuildParameters _buildParameters;
+        private readonly BuildParameters _buildParameters;
 
         /// <summary>
         /// Cache of requests
         /// </summary>
-        private IResultsCache _resultsCache;
+        private readonly IResultsCache _resultsCache;
 
         /// <summary>
         /// Builder which will do the actual building of the requests
@@ -55,9 +55,9 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Holds the data for legacy threading semantics
         /// </summary>
-        private LegacyThreadingData _legacyThreadingData;
+        private readonly LegacyThreadingData _legacyThreadingData;
 
-        private ISdkResolverService _sdkResolverService;
+        private readonly ISdkResolverService _sdkResolverService;
 
         #region SystemParameterFields
 

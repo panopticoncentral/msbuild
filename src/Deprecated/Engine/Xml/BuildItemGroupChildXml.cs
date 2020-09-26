@@ -26,7 +26,7 @@ namespace Microsoft.Build.BuildEngine
         // The Remove attribute on it, if any, to save lookup
         private XmlAttribute removeAttribute;
         // Whether this is represents an add, remove, or modify
-        private ChildType childType;
+        private readonly ChildType childType;
 
         #endregion
 

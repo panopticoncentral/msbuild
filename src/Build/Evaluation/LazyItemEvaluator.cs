@@ -35,7 +35,7 @@ namespace Microsoft.Build.Evaluation
 
         private int _nextElementOrder = 0;
 
-        private Dictionary<string, LazyItemList> _itemLists = Traits.Instance.EscapeHatches.UseCaseSensitiveItemNames ?
+        private readonly Dictionary<string, LazyItemList> _itemLists = Traits.Instance.EscapeHatches.UseCaseSensitiveItemNames ?
             new Dictionary<string, LazyItemList>() :
             new Dictionary<string, LazyItemList>(StringComparer.OrdinalIgnoreCase);
 

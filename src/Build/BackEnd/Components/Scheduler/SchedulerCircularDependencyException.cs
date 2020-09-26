@@ -17,12 +17,12 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The ancestors which led to this circular dependency.
         /// </summary>
-        private IList<SchedulableRequest> _ancestors;
+        private readonly IList<SchedulableRequest> _ancestors;
 
         /// <summary>
         /// The request which caused the circular dependency.
         /// </summary>
-        private BuildRequest _request;
+        private readonly BuildRequest _request;
 
         /// <summary>
         /// Constructor.

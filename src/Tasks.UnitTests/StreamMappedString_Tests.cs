@@ -262,7 +262,7 @@ namespace Microsoft.Build.UnitTests
         private class RestartCountingStream : Stream
         {
             private int _resetCount;
-            private Stream _stream;
+            private readonly Stream _stream;
 
             public RestartCountingStream(Stream stream)
             {

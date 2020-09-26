@@ -292,7 +292,7 @@ namespace Microsoft.Build.Shared
             /// <summary>
             /// Callstacks of those handed out and not returned yet
             /// </summary>
-            private static ConcurrentDictionary<StringBuilder, string> s_handouts = new ConcurrentDictionary<StringBuilder, string>();
+            private static readonly ConcurrentDictionary<StringBuilder, string> s_handouts = new ConcurrentDictionary<StringBuilder, string>();
 #endif
             /// <summary>
             /// Obtains a string builder which may or may not already

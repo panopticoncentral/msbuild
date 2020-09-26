@@ -949,7 +949,7 @@ namespace Microsoft.Build.UnitTests.Definition
 
         private readonly Dictionary<string, string> _defaultTasksFileMap;
 
-        private DefaultTasksFile[] _defaultTasksFileCandidates =
+        private readonly DefaultTasksFile[] _defaultTasksFileCandidates =
             {
                 new DefaultTasksFile(NativeMethodsShared.IsWindows
                                          ? "c:\\directory1\\directory2\\a.tasks"

@@ -107,16 +107,16 @@ namespace Microsoft.Build.BuildEngine
         // Dictionary of toolset states
         // K: tools version
         // V: matching toolset state
-        private Dictionary<string, ToolsetState> toolsetStateMap;
+        private readonly Dictionary<string, ToolsetState> toolsetStateMap;
 
         // The collection of toolsets registered with this engine.
-        private ToolsetCollection toolsets;
+        private readonly ToolsetCollection toolsets;
 
         // The name of the current default toolsVersion. Starts with Constants.defaultVersion
         private string defaultToolsVersion;
 
         // The node Id which the engine is running on
-        private int nodeId;
+        private readonly int nodeId;
 
         // the engine's version stamp
         private static Version engineVersion;
@@ -132,10 +132,10 @@ namespace Microsoft.Build.BuildEngine
         private readonly BuildPropertyGroup environmentProperties;
 
         // A list of projects currently loaded, indexed by project file fullpath.
-        private Hashtable projectsLoadedByHost;
+        private readonly Hashtable projectsLoadedByHost;
 
         // A list of projects that are part of the current build.
-        private ProjectManager cacheOfBuildingProjects;
+        private readonly ProjectManager cacheOfBuildingProjects;
 
         // The number of projects that are currently in the process of building.
         private int numberOfProjectsInProgress = 0;
@@ -159,27 +159,27 @@ namespace Microsoft.Build.BuildEngine
         private EngineLoggingServices externalLoggingServices;
 
         // An event used by the logging service to indicate that it should be flushed
-        private ManualResetEvent flushRequestEvent;
+        private readonly ManualResetEvent flushRequestEvent;
 
-        private DualQueue<BuildRequest> buildRequests;
+        private readonly DualQueue<BuildRequest> buildRequests;
 
-        private ManualResetEvent engineAbortEvent = new ManualResetEvent(false);
+        private readonly ManualResetEvent engineAbortEvent = new ManualResetEvent(false);
 
         // a cached version of the engineAbortEvent so we don't have to wait on it to determine the value.
         // If we do have to wait for something to happen we still need the event though.
         private volatile bool engineAbortCachedValue = false;
 
-        private object engineAbortLock = new object();
+        private readonly object engineAbortLock = new object();
 
-        private DualQueue<EngineCommand> engineCommands;
+        private readonly DualQueue<EngineCommand> engineCommands;
 
-        private DualQueue<TaskExecutionContext> taskOutputUpdates;
+        private readonly DualQueue<TaskExecutionContext> taskOutputUpdates;
 
-        private Scheduler scheduler;
+        private readonly Scheduler scheduler;
 
-        private Router router;
+        private readonly Router router;
 
-        private EngineCallback engineCallback;
+        private readonly EngineCallback engineCallback;
 
         // the engine's event source
         private readonly EventSource eventSource;
@@ -193,9 +193,9 @@ namespace Microsoft.Build.BuildEngine
         private ArrayList forwardingLoggers;
 
         // Node manager for the engine, directs requests to and from remote nodes
-        private NodeManager nodeManager;
+        private readonly NodeManager nodeManager;
 
-        private CacheManager cacheManager;
+        private readonly CacheManager cacheManager;
 
         // this seed is used to generate unique logger ids for each distributed logger
         private int lastUsedLoggerId;
@@ -204,18 +204,18 @@ namespace Microsoft.Build.BuildEngine
         private bool enabledCentralLogging;
 
         // The class used to observe engine operation to collect data and detect errors
-        private Introspector introspector;
+        private readonly Introspector introspector;
 
         // Last time stamp of activity in the engine build loop
         private long lastLoopActivity;
 
         // Number of CPUs this engine is instantiated with
-        private int numberOfCpus;
+        private readonly int numberOfCpus;
 
         // The current directory at the time the Engine was constructed -- 
         // if msbuild.exe is hosting, this is the current directory when
         // msbuild.exe was started
-        private string startupDirectory;
+        private readonly string startupDirectory;
 
         // Next TaskId for tasks which will be run on this engine instance
         private int nextTaskId = 0;
@@ -237,7 +237,7 @@ namespace Microsoft.Build.BuildEngine
         private string fatalErrorProjectName;
 
         // parameters used to configure the local node provider
-        private string localNodeProviderParameters;
+        private readonly string localNodeProviderParameters;
 
         // Set to true once the local node provider has been initialize
         private bool initializedLocaLNodeProvider;
@@ -245,17 +245,17 @@ namespace Microsoft.Build.BuildEngine
         internal static bool debugMode = (Environment.GetEnvironmentVariable("MSBUILDDEBUG") == "1");
 
         // True if timing data for the build should be collected
-        private bool profileBuild = (Environment.GetEnvironmentVariable("MSBUILDPROFILE") == "1");
+        private readonly bool profileBuild = (Environment.GetEnvironmentVariable("MSBUILDPROFILE") == "1");
 
         /// <summary>
         /// A array of string which list the properties that should be serialized accross from the child node
         /// </summary>
-        private string[] propertyListToSerialize;
+        private readonly string[] propertyListToSerialize;
 
         /// <summary>
         ///  A ; delimited string which says which properties should be serialized accross from the child node
         /// </summary>
-        private string forwardPropertiesFromChild = null;
+        private readonly string forwardPropertiesFromChild = null;
         #endregion
 
         #region Constructors

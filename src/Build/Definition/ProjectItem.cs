@@ -1082,7 +1082,7 @@ namespace Microsoft.Build.Evaluation
             /// <summary>
             /// Backing item
             /// </summary>
-            private ProjectItem _item;
+            private readonly ProjectItem _item;
 
             /// <summary>
             /// Constructor.

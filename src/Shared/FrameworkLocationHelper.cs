@@ -96,7 +96,7 @@ namespace Microsoft.Build.Shared
         private const string dotNetFrameworkRegistryKeyV20 = dotNetFrameworkSetupRegistryPath + "\\" + dotNetFrameworkVersionV20;
 
         internal static string dotNetFrameworkVersionFolderPrefixV30 = NativeMethodsShared.IsWindows ? "v3.0" : "3.0"; // v3.0 is for WinFx.
-        private static string s_dotNetFrameworkRegistryKeyV30 = dotNetFrameworkSetupRegistryPath + "\\" + dotNetFrameworkVersionFolderPrefixV30 + "\\Setup";
+        private static readonly string s_dotNetFrameworkRegistryKeyV30 = dotNetFrameworkSetupRegistryPath + "\\" + dotNetFrameworkVersionFolderPrefixV30 + "\\Setup";
 
 #if FEATURE_WIN32_REGISTRY
         private const string fallbackDotNetFrameworkSdkRegistryInstallPath = "SOFTWARE\\Microsoft\\Microsoft SDKs\\Windows";
@@ -110,7 +110,7 @@ namespace Microsoft.Build.Shared
         private const string fullDotNetFrameworkSdkRegistryPathForV35ToolsOnManagedToolsSDK80A = "HKEY_LOCAL_MACHINE\\" + dotNetFrameworkSdkRegistryPathForV35ToolsOnManagedToolsSDK80A;
 
         internal static string dotNetFrameworkVersionFolderPrefixV35 = NativeMethodsShared.IsWindows ? "v3.5" : "3.5"; // v3.5 is for Orcas.
-        private static string s_dotNetFrameworkRegistryKeyV35 = dotNetFrameworkSetupRegistryPath + "\\" + dotNetFrameworkVersionFolderPrefixV35;
+        private static readonly string s_dotNetFrameworkRegistryKeyV35 = dotNetFrameworkSetupRegistryPath + "\\" + dotNetFrameworkVersionFolderPrefixV35;
 
         internal const string fullDotNetFrameworkSdkRegistryKeyV35OnVS10 = fullDotNetFrameworkSdkRegistryPathForV35ToolsOnWinSDK70A;
         internal const string fullDotNetFrameworkSdkRegistryKeyV35OnVS11 = fullDotNetFrameworkSdkRegistryPathForV35ToolsOnManagedToolsSDK80A;

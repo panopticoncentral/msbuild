@@ -952,7 +952,7 @@ namespace Microsoft.Build.BuildEngine
         private bool disposed;
 
         // Is the memory read only or write only
-        private SharedMemoryType type;
+        private readonly SharedMemoryType type;
 
         // Because we are using reflection to get the writeToStream and readFromStream methods from the classes in the framework assembly we found
         // we were spending a lot of time reflecting for these methods. The loggingTypeCache, caches the methodInfo for the classes and then look them

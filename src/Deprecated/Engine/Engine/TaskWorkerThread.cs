@@ -586,7 +586,7 @@ namespace Microsoft.Build.BuildEngine
         private bool threadActive;
         private LinkedList<BuildResult> postedBuildResults;
         private TaskExecutionState currentWorkitem;
-        private bool profileExecution;
+        private readonly bool profileExecution;
 
         // Private cache arrays of handles
         private WaitHandle[] BaseActiveThreadWaitHandles;
@@ -595,15 +595,15 @@ namespace Microsoft.Build.BuildEngine
 
         // Data shared between worked threads for one TEM, this data is initialized by the first 
         // thread
-        private ManualResetEvent exitTaskThreads;          // Used to signal all threads to exit
-        private ExitTaskCache exitTaskThreadsCache;        // cached value to avoid waiting on the kernel event
-        private Queue<TaskWorkerThread> workerThreadQueue; // Queue of idle worker thread ready to be activated
-        private Hashtable handleIdToWorkerThread;           // Table mapping in progress Ids to worker threads
-        private Queue<TaskExecutionState> workItemQueue;   // Queue of workitems that need to be executed
-        private ManualResetEvent workItemInsertionEvent;   // Used to signal a new work item
-        private Hashtable waitingTasks;                    // Hastable containing information about in progress
+        private readonly ManualResetEvent exitTaskThreads;          // Used to signal all threads to exit
+        private readonly ExitTaskCache exitTaskThreadsCache;        // cached value to avoid waiting on the kernel event
+        private readonly Queue<TaskWorkerThread> workerThreadQueue; // Queue of idle worker thread ready to be activated
+        private readonly Hashtable handleIdToWorkerThread;           // Table mapping in progress Ids to worker threads
+        private readonly Queue<TaskExecutionState> workItemQueue;   // Queue of workitems that need to be executed
+        private readonly ManualResetEvent workItemInsertionEvent;   // Used to signal a new work item
+        private readonly Hashtable waitingTasks;                    // Hastable containing information about in progress
                                                            // task, used for determining if all threads are blocked
-        private TaskExecutionModule parentModule;          // A pointer to the parent TEM
+        private readonly TaskExecutionModule parentModule;          // A pointer to the parent TEM
 
         #endregion
 

@@ -19,7 +19,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// <summary>
         /// ParameterGroup with no parameters inside
         /// </summary>
-        private static string s_contentEmptyParameterGroup = @"
+        private static readonly string s_contentEmptyParameterGroup = @"
                     <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003' >
                         <UsingTask TaskName='SuperTask' AssemblyFile='af' TaskFactory='AssemblyFactory'>
                            <ParameterGroup/>
@@ -30,7 +30,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// <summary>
         /// ParameterGroup with duplicate child parameters
         /// </summary>
-        private static string s_contentDuplicateParameters = @"
+        private static readonly string s_contentDuplicateParameters = @"
                     <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003' >
                         <UsingTask TaskName='SuperTask' AssemblyFile='af' TaskFactory='AssemblyFactory'>
                            <ParameterGroup>
@@ -44,7 +44,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// <summary>
         /// ParameterGroup with multiple parameters
         /// </summary>
-        private static string s_contentMultipleParameters = @"
+        private static readonly string s_contentMultipleParameters = @"
                     <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003' >
                         <UsingTask TaskName='SuperTask' AssemblyFile='af' TaskFactory='AssemblyFactory'>
                            <ParameterGroup>

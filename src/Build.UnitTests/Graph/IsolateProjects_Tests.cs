@@ -123,8 +123,8 @@ BuildEngine5.BuildProjectFilesInParallel(
                 </Project>";
 
         private readonly ITestOutputHelper _testOutput;
-        private TestEnvironment _env;
-        private BuildParameters _buildParametersPrototype;
+        private readonly TestEnvironment _env;
+        private readonly BuildParameters _buildParametersPrototype;
 
         public IsolateProjectsTests(ITestOutputHelper testOutput)
         {

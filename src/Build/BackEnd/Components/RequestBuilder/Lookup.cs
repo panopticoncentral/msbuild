@@ -69,7 +69,7 @@ namespace Microsoft.Build.BackEnd
         /// We have to keep them separate, because the adds and removes etc need to be applied to the table
         /// below when we leave a scope.
         /// </summary>
-        private LinkedList<Lookup.Scope> _lookupScopes = new LinkedList<Lookup.Scope>();
+        private readonly LinkedList<Lookup.Scope> _lookupScopes = new LinkedList<Lookup.Scope>();
 
         /// <summary>
         /// When we are asked for all the items of a certain type using the GetItems() method, we may have to handle items
@@ -1012,7 +1012,7 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// A set of explicitly-specified modifications.
             /// </summary>
-            private Dictionary<string, MetadataModification> _modifications;
+            private readonly Dictionary<string, MetadataModification> _modifications;
 
             /// <summary>
             /// Constructor.
@@ -1323,23 +1323,23 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The managed thread id which entered this scope.
             /// </summary>
-            private int _threadIdThatEnteredScope;
+            private readonly int _threadIdThatEnteredScope;
 
             /// <summary>
             /// A description of this scope, for error checking
             /// </summary>
-            private string _description;
+            private readonly string _description;
 
             /// <summary>
             /// The lookup which owns this scope, for error checking.
             /// </summary>
-            private Lookup _owningLookup;
+            private readonly Lookup _owningLookup;
 
             /// <summary>
             /// Indicates whether or not further levels in the Lookup should be consulted beyond this one
             /// to find the actual value for the desired item or property.
             /// </summary>
-            private bool _truncateLookupsAtThisScope;
+            private readonly bool _truncateLookupsAtThisScope;
 
             internal Scope(Lookup lookup, string description, ItemDictionary<ProjectItemInstance> items, PropertyDictionary<ProjectPropertyInstance> properties)
             {

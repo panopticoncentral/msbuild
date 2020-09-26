@@ -236,8 +236,8 @@ namespace Microsoft.Build.BuildEngine
         #region Data
         private SharedMemory sharedMemoryToNode;
         private SharedMemory sharedMemoryFromNode;
-        private DualQueue<LocalCallDescriptor> nodeCommandQueue;
-        private DualQueue<LocalCallDescriptor> nodeHiPriCommandQueue;
+        private readonly DualQueue<LocalCallDescriptor> nodeCommandQueue;
+        private readonly DualQueue<LocalCallDescriptor> nodeHiPriCommandQueue;
         private EventWaitHandle nodeReserveHandle;
         private bool communicationFailed;
 

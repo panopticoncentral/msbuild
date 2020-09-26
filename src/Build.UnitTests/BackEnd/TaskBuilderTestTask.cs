@@ -503,7 +503,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
             /// <summary>
             /// Type of the task wrapped by the task factory
             /// </summary>
-            private Type _type = typeof(TaskBuilderTestTask);
+            private readonly Type _type = typeof(TaskBuilderTestTask);
 
             /// <summary>
             /// Should the task throw on execution

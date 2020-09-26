@@ -451,7 +451,7 @@ namespace Microsoft.Build.Evaluation
             /// If there are none above this is null.
             /// If the project has not been reevaluated since the last modification this value may be incorrect.
             /// </summary>
-            private ProjectProperty _predecessor;
+            private readonly ProjectProperty _predecessor;
 
             /// <summary>
             /// Creates a regular evaluated property, with backing XML.

@@ -37,12 +37,12 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The event used to signal that this request should immediately terminate.
         /// </summary>
-        private ManualResetEvent _terminateEvent;
+        private readonly ManualResetEvent _terminateEvent;
 
         /// <summary>
         /// The event used to signal that this request should wake up from its wait state.
         /// </summary>
-        private AutoResetEvent _continueEvent;
+        private readonly AutoResetEvent _continueEvent;
 
         /// <summary>
         /// The results used when a build request entry continues.

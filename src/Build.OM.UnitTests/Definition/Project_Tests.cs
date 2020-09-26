@@ -43,7 +43,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
         /// </remarks>
         private readonly int RootPrefixLength = NativeMethodsShared.IsWindows ? 3 : 1;
 
-        private ITestOutputHelper _output;
+        private readonly ITestOutputHelper _output;
 
         /// <summary>
         /// Clear out the global project collection

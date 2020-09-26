@@ -34,11 +34,11 @@ namespace Microsoft.Build.UnitTests.Definition
     public class ToolsetReaderTests : IDisposable
     {
         // The registry key that is passed as the baseKey parameter to the ToolsetRegistryReader class
-        private RegistryKey _testRegistryKey = null;
+        private readonly RegistryKey _testRegistryKey = null;
         // Subkey "4.0"
-        private RegistryKey _currentVersionRegistryKey = null;
+        private readonly RegistryKey _currentVersionRegistryKey = null;
         // Subkey "ToolsVersions"
-        private RegistryKey _toolsVersionsRegistryKey = null;
+        private readonly RegistryKey _toolsVersionsRegistryKey = null;
 
         // Path to the registry key under HKCU
         // Note that this is a test registry key created solely for unit testing.
@@ -48,7 +48,7 @@ namespace Microsoft.Build.UnitTests.Definition
         /// Store the value of the "VisualStudioVersion" environment variable here so that 
         /// we can unset it for the duration of the test.
         /// </summary>
-        private string _oldVisualStudioVersion;
+        private readonly string _oldVisualStudioVersion;
 
         /// <summary>
         /// Reset the testRegistryKey
@@ -2867,8 +2867,8 @@ namespace Microsoft.Build.UnitTests.Definition
             OpenSubKey
         }
 
-        private WhereToThrow _whereToThrow = WhereToThrow.None;
-        private string _subKeyThatDoesNotExist = null;
+        private readonly WhereToThrow _whereToThrow = WhereToThrow.None;
+        private readonly string _subKeyThatDoesNotExist = null;
 
         /// <summary>
         /// Construct the mock key with a specified key

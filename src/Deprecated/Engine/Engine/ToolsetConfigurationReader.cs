@@ -12,7 +12,7 @@ namespace Microsoft.Build.BuildEngine
     internal class ToolsetConfigurationReader : ToolsetReader
     {
         private ToolsetConfigurationSection configurationSection = null;
-        private ReadApplicationConfiguration readApplicationConfiguration = null;
+        private readonly ReadApplicationConfiguration readApplicationConfiguration = null;
         private bool configurationReadAttempted = false;
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Microsoft.Build.BuildEngine
         /// toolset definition before, since the .NET configuration classes
         /// won't perform this check without respect for case.
         /// </summary>
-        private Dictionary<string, string> previouslySeenToolsVersions = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, string> previouslySeenToolsVersions = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Creates a new element of the collection
@@ -409,7 +409,7 @@ namespace Microsoft.Build.BuildEngine
             /// property definition before, since the .NET configuration classes
             /// won't perform this check without respect for case.
             /// </summary>
-            private Dictionary<string, string> previouslySeenPropertyNames = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            private readonly Dictionary<string, string> previouslySeenPropertyNames = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             
             /// <summary>
             /// Creates a new element

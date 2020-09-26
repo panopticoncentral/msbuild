@@ -27,17 +27,17 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// Cache to keep track of the assemblyLoadInfos based on a given type filter.
         /// </summary>
-        private static ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfLoadedTypesByFilter = new ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
+        private static readonly ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfLoadedTypesByFilter = new ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
 
         /// <summary>
         /// Cache to keep track of the assemblyLoadInfos based on a given type filter for assemblies which are to be loaded for reflectionOnlyLoads.
         /// </summary>
-        private static ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfReflectionOnlyLoadedTypesByFilter = new ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
+        private static readonly ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>> s_cacheOfReflectionOnlyLoadedTypesByFilter = new ConcurrentDictionary<Func<Type, object, bool>, ConcurrentDictionary<AssemblyLoadInfo, AssemblyInfoToLoadedTypes>>();
 
         /// <summary>
         /// Type filter for this typeloader
         /// </summary>
-        private Func<Type, object, bool> _isDesiredType;
+        private readonly Func<Type, object, bool> _isDesiredType;
 
 #if FEATURE_ASSEMBLYLOADCONTEXT
         static TypeLoader()
@@ -244,22 +244,22 @@ namespace Microsoft.Build.Shared
             /// <summary>
             /// Type filter to pick the correct types out of an assembly
             /// </summary>
-            private Func<Type, object, bool> _isDesiredType;
+            private readonly Func<Type, object, bool> _isDesiredType;
 
             /// <summary>
             /// Assembly load information so we can load an assembly
             /// </summary>
-            private AssemblyLoadInfo _assemblyLoadInfo;
+            private readonly AssemblyLoadInfo _assemblyLoadInfo;
 
             /// <summary>
             /// What is the type for the given type name, this may be null if the typeName does not map to a type.
             /// </summary>
-            private ConcurrentDictionary<string, Type> _typeNameToType;
+            private readonly ConcurrentDictionary<string, Type> _typeNameToType;
 
             /// <summary>
             /// List of public types in the assembly which match the type filter and their corresponding types
             /// </summary>
-            private Dictionary<string, Type> _publicTypeNameToType;
+            private readonly Dictionary<string, Type> _publicTypeNameToType;
 
             /// <summary>
             /// Have we scanned the public types for this assembly yet.

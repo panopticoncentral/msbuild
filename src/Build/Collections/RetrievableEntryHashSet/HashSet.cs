@@ -1745,9 +1745,9 @@ namespace Microsoft.Build.Collections
 #endif
         public struct Enumerator : IEnumerator<T>, System.Collections.IEnumerator
         {
-            private RetrievableEntryHashSet<T> _set;
+            private readonly RetrievableEntryHashSet<T> _set;
             private int _index;
-            private int _version;
+            private readonly int _version;
             private T _current;
 
             internal Enumerator(RetrievableEntryHashSet<T> set)

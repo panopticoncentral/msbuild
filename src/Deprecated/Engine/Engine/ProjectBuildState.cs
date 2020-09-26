@@ -318,15 +318,18 @@ namespace Microsoft.Build.BuildEngine
         #region Data
         // Stack of targets which need to be completed before the in progress target can continue
         Stack<string> requiredTargets;
+
         // BuildEventContext for the build context
-        BuildEventContext projectBuildEventContext;
+        readonly BuildEventContext projectBuildEventContext;
         // Index of the currently in progress target
         int indexOfTargetInProgress;
+
         // List of targets that need to be completed in order to complete the context
         // UNDONE should do the right thing and fully unescape before generating this list
-        ArrayList targetNamesToBuild;
+        readonly ArrayList targetNamesToBuild;
+
         // Build request that caused the context to come into existance (either from the host or generated)
-        BuildRequest buildRequest;
+        readonly BuildRequest buildRequest;
         // Current state of the context
         BuildContextState buildContextState;
         #endregion

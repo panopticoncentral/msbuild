@@ -22,7 +22,7 @@ using Xunit;
 public class MSBuildTestAssemblyFixture : IDisposable
 {
     bool _disposed;
-    private TestEnvironment _testEnvironment;
+    private readonly TestEnvironment _testEnvironment;
 
     public MSBuildTestAssemblyFixture()
     {
@@ -123,7 +123,7 @@ public class MSBuildTestAssemblyFixture : IDisposable
 public class MSBuildTestEnvironmentFixture : IDisposable
 {
     bool _disposed;
-    private TestEnvironment _testEnvironment;
+    private readonly TestEnvironment _testEnvironment;
 
     public MSBuildTestEnvironmentFixture()
     {

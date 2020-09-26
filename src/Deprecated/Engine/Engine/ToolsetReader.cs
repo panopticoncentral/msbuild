@@ -11,9 +11,9 @@ namespace Microsoft.Build.BuildEngine
 {
     internal class PropertyDefinition
     {
-        private string name = null;
-        private string value = null;
-        private string source = null;
+        private readonly string name = null;
+        private readonly string value = null;
+        private readonly string source = null;
 
         public PropertyDefinition(string name, string value, string source)
         {

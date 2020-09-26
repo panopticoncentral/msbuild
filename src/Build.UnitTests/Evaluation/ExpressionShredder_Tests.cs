@@ -18,7 +18,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
     /// </summary>
     public class ExpressionShredder_Tests
     {
-        private string[] _medleyTests = new string[]
+        private readonly string[] _medleyTests = new string[]
         {
             "a;@(foo,');');b",
             "x@(z);@(zz)y",

@@ -12,11 +12,11 @@ namespace Microsoft.Build.UnitTests
 {
     sealed public class SdkToolsPathUtility_Tests
     {
-        private string _defaultSdkToolsPath = NativeMethodsShared.IsWindows ? "C:\\ProgramFiles\\WIndowsSDK\\bin" : "/ProgramFiles/WindowsSDK/bin";
-        private TaskLoggingHelper _log = null;
-        private string _toolName = "MyTool.exe";
-        private MockEngine _mockEngine = null;
-        private MockFileExists _mockExists = null;
+        private readonly string _defaultSdkToolsPath = NativeMethodsShared.IsWindows ? "C:\\ProgramFiles\\WIndowsSDK\\bin" : "/ProgramFiles/WindowsSDK/bin";
+        private readonly TaskLoggingHelper _log = null;
+        private readonly string _toolName = "MyTool.exe";
+        private readonly MockEngine _mockEngine = null;
+        private readonly MockFileExists _mockExists = null;
 
         public SdkToolsPathUtility_Tests()
         {
@@ -234,7 +234,7 @@ namespace Microsoft.Build.UnitTests
             /// <summary>
             /// Path to the x86 sdk tools location
             /// </summary>
-            private string _sdkToolsPath = null;
+            private readonly string _sdkToolsPath = null;
             #endregion
 
             #region Constructor

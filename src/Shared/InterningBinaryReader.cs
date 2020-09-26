@@ -27,12 +27,12 @@ namespace Microsoft.Build
         /// <summary>
         /// Shared buffer saves allocating these arrays many times.
         /// </summary>
-        private Buffer _buffer;
+        private readonly Buffer _buffer;
 
         /// <summary>
         /// The decoder used to translate from UTF8 (or whatever).
         /// </summary>
-        private Decoder _decoder;
+        private readonly Decoder _decoder;
 
         /// <summary>
         /// Comment about constructing.

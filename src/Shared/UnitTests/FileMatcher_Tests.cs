@@ -1863,17 +1863,17 @@ namespace Microsoft.Build.UnitTests
             /// <summary>
             /// Array of files (set1)
             /// </summary>
-            private string[] _fileSet1;
+            private readonly string[] _fileSet1;
 
             /// <summary>
             /// Array of files (set2)
             /// </summary>
-            private string[] _fileSet2;
+            private readonly string[] _fileSet2;
 
             /// <summary>
             /// Array of files (set3)
             /// </summary>
-            private string[] _fileSet3;
+            private readonly string[] _fileSet3;
 
             /// <summary>
             /// Number of times a file from set 1 was requested.
@@ -2362,7 +2362,7 @@ namespace Microsoft.Build.UnitTests
          * Validate that SplitFileSpec(...) is returning the expected constituent values.
          *************************************************************************************/
 
-        private static FileMatcher loopBackFileMatcher = new FileMatcher(FileSystems.Default, GetFileSystemEntriesLoopBack);
+        private static readonly FileMatcher loopBackFileMatcher = new FileMatcher(FileSystems.Default, GetFileSystemEntriesLoopBack);
 
         private static void ValidateSplitFileSpec
             (

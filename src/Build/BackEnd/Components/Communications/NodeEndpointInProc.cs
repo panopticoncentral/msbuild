@@ -25,7 +25,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// An object for the two inproc endpoints to synchronize on.
         /// </summary>
-        private static Object s_locker = new Object();
+        private static readonly Object s_locker = new Object();
 
         /// <summary>
         /// The current communication status of the node.
@@ -35,7 +35,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The communications mode
         /// </summary>
-        private EndpointMode _mode;
+        private readonly EndpointMode _mode;
 
         /// <summary>
         /// The peer endpoint
@@ -45,7 +45,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The build component host
         /// </summary>
-        private IBuildComponentHost _componentHost;
+        private readonly IBuildComponentHost _componentHost;
 
         /// <summary>
         /// The packet factory used to route packets.
@@ -57,7 +57,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Object used as a lock source for the async data
         /// </summary>
-        private object _asyncDataMonitor;
+        private readonly object _asyncDataMonitor;
 
         /// <summary>
         /// Set when a packet is available in the packet queue

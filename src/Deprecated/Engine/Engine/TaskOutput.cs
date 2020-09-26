@@ -161,12 +161,12 @@ namespace Microsoft.Build.BuildEngine
         }
 
         // the task parameter bound to this output
-        private XmlAttribute taskParameterAttribute;
+        private readonly XmlAttribute taskParameterAttribute;
         // the item type, if the output is an item vector
-        private XmlAttribute itemNameAttribute;
+        private readonly XmlAttribute itemNameAttribute;
         // the property name, if the output is a property
-        private XmlAttribute propertyNameAttribute;
+        private readonly XmlAttribute propertyNameAttribute;
         // the condition that makes this output usable (can be null)
-        private XmlAttribute conditionAttribute;
+        private readonly XmlAttribute conditionAttribute;
     }
 }

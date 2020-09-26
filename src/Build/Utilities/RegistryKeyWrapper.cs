@@ -21,7 +21,7 @@ namespace Microsoft.Build.Internal
     internal class RegistryKeyWrapper : IDisposable
     {
         // Path to the key this instance wraps
-        private string _registryKeyPath;
+        private readonly string _registryKeyPath;
         // The key this instance wraps
         private RegistryKey _wrappedKey;
         // The hive this registry key lives under

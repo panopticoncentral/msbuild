@@ -13,7 +13,7 @@ namespace Microsoft.Build.UnitTests
         private DirectoryInfo root;
         private TransientIO Parent { get; }
         private string SubFolder { get; }
-        private Dictionary<string, TransientIO> Children = new Dictionary<string, TransientIO>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, TransientIO> Children = new Dictionary<string, TransientIO>(StringComparer.OrdinalIgnoreCase);
 
         private DirectoryInfo EnsureTempRoot()
         {

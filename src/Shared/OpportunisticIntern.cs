@@ -441,7 +441,7 @@ namespace Microsoft.Build
             /// Maps strings that went though the regular (i.e. not hardcoded) interning path to the number of times they have been
             /// seen. The higher the number the better the payoff if the string had been hardcoded.
             /// </summary>
-            private Dictionary<string, int> _missedHardcodedStrings;
+            private readonly Dictionary<string, int> _missedHardcodedStrings;
 
 #endregion
 

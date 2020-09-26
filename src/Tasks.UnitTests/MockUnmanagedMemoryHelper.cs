@@ -14,14 +14,14 @@ namespace Microsoft.Build.UnitTests
     /// </summary>
     public class MockUnmanagedMemoryHelper
     {
-        private List<IntPtr> _allocatedHandles;
+        private readonly List<IntPtr> _allocatedHandles;
 
         // Zero if we're allocating independent chunks of memory; 
         // Something else if we're allocating connected chunks of memory that we'll want to release with one ReleaseHandle
         private IntPtr _mainAllocationHandle = IntPtr.Zero;
 
         // List of linked allocations that we want to release when releasing the <KEY> IntPtr
-        private Dictionary<IntPtr, List<IntPtr>> _dependentAllocations = new Dictionary<IntPtr, List<IntPtr>>();
+        private readonly Dictionary<IntPtr, List<IntPtr>> _dependentAllocations = new Dictionary<IntPtr, List<IntPtr>>();
 
         /// <summary>
         /// Public constructor

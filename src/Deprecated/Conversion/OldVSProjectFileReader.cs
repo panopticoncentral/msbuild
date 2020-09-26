@@ -33,7 +33,7 @@ namespace Microsoft.Build.Conversion
     {
         // This is the underlying text file where we will be reading the raw text
         // from.
-        private StreamReader    oldVSProjectFile;
+        private readonly StreamReader    oldVSProjectFile;
         
         // We will be reading one line at a time out of the text file, and caching
         // it here.

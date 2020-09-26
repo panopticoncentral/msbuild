@@ -17,12 +17,12 @@ namespace Microsoft.Build.Framework
         /// <summary>
         /// Did the build pass or fail
         /// </summary>
-        private bool buildResult;
+        private readonly bool buildResult;
 
         /// <summary>
         /// Target outputs by project
         /// </summary>
-        private List<IDictionary<string, ITaskItem[]>> targetOutputsPerProject;
+        private readonly List<IDictionary<string, ITaskItem[]>> targetOutputsPerProject;
 
         /// <summary>
         /// The constructor takes the result of the build and a list of the target outputs per project

@@ -40,12 +40,12 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// True if the "secret" environment variable MSBUILDNOINPROCNODE is set.
         /// </summary>
-        private static bool s_onlyUseOutOfProcNodes = Environment.GetEnvironmentVariable("MSBUILDNOINPROCNODE") == "1";
+        private static readonly bool s_onlyUseOutOfProcNodes = Environment.GetEnvironmentVariable("MSBUILDNOINPROCNODE") == "1";
 
         /// <summary>
         /// Help diagnose tasks that log after they return.
         /// </summary>
-        private static bool s_breakOnLogAfterTaskReturns = Environment.GetEnvironmentVariable("MSBUILDBREAKONLOGAFTERTASKRETURNS") == "1";
+        private static readonly bool s_breakOnLogAfterTaskReturns = Environment.GetEnvironmentVariable("MSBUILDBREAKONLOGAFTERTASKRETURNS") == "1";
 
         /// <summary>
         /// The build component host
@@ -60,7 +60,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Location of the task node in the original file
         /// </summary>
-        private ElementLocation _taskLocation;
+        private readonly ElementLocation _taskLocation;
 
         /// <summary>
         /// The task logging context
@@ -80,7 +80,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// This reference type is used to block access to a single entry methods of the interface
         /// </summary>
-        private object _callbackMonitor;
+        private readonly object _callbackMonitor;
 
 #if FEATURE_APPDOMAIN
         /// <summary>

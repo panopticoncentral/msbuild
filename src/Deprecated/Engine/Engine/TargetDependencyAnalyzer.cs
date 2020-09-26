@@ -1198,28 +1198,33 @@ namespace Microsoft.Build.BuildEngine
 
         // the project directory, all relative paths are 
         // relative to here
-        private string projectDirectory;
+        private readonly string projectDirectory;
         // the target to analyze
-        private Target targetToAnalyze;
+        private readonly Target targetToAnalyze;
 
         // the value of the target's "Inputs" attribute
         private string targetInputSpecification;
         // the value of the target's "Outputs" attribute
         private string targetOutputSpecification;
         // The XmlAttribute for the "Inputs"
-        private XmlAttribute targetInputsAttribute;
+        private readonly XmlAttribute targetInputsAttribute;
         // The XmlAttribute for the "Outputs"
-        private XmlAttribute targetOutputsAttribute;
+        private readonly XmlAttribute targetOutputsAttribute;
+
         // Details of the dependency analysis for logging
-        ArrayList dependencyAnalysisDetail = new ArrayList();
+        readonly ArrayList dependencyAnalysisDetail = new ArrayList();
+
         // The unique target inputs
-        Hashtable uniqueTargetInputs = new Hashtable(StringComparer.OrdinalIgnoreCase);
+        readonly Hashtable uniqueTargetInputs = new Hashtable(StringComparer.OrdinalIgnoreCase);
+
         // The unique target outputs;
-        Hashtable uniqueTargetOutputs = new Hashtable(StringComparer.OrdinalIgnoreCase);
+        readonly Hashtable uniqueTargetOutputs = new Hashtable(StringComparer.OrdinalIgnoreCase);
+
         // Engine logging service which to log message to
-        EngineLoggingServices loggingService;
+        readonly EngineLoggingServices loggingService;
+
         // Event context information where event is raised from
-        BuildEventContext buildEventContext;
+        readonly BuildEventContext buildEventContext;
     }
 
     /// <summary>
@@ -1237,11 +1242,11 @@ namespace Microsoft.Build.BuildEngine
     /// </summary>
     class DependencyAnalysisLogDetail
     {
-        private OutofdateReason reason;
-        private string inputItemName;
-        private string outputItemName;
-        private string input;
-        private string output;
+        private readonly OutofdateReason reason;
+        private readonly string inputItemName;
+        private readonly string outputItemName;
+        private readonly string input;
+        private readonly string output;
 
         /// <summary>
         /// The reason that we are logging this entry

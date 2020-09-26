@@ -22,18 +22,18 @@ namespace Microsoft.Build.UnitTests.BackEnd
 
     public class RequestBuilder_Tests : IDisposable
     {
-        private AutoResetEvent _newBuildRequestsEvent;
+        private readonly AutoResetEvent _newBuildRequestsEvent;
         private BuildRequestEntry _newBuildRequests_Entry;
         private FullyQualifiedBuildRequest[] _newBuildRequests_FQRequests;
         private BuildRequest[] _newBuildRequests_BuildRequests;
-        private AutoResetEvent _buildRequestCompletedEvent;
+        private readonly AutoResetEvent _buildRequestCompletedEvent;
         private BuildRequestEntry _buildRequestCompleted_Entry;
 
         private MockHost _host;
-        private IRequestBuilder _requestBuilder;
+        private readonly IRequestBuilder _requestBuilder;
         private int _nodeRequestId;
 
-        private string _originalWorkingDirectory;
+        private readonly string _originalWorkingDirectory;
 
         #pragma warning disable xUnit1013
 

@@ -17,11 +17,11 @@ namespace Microsoft.Build.BuildEngine
     internal class RegistryKeyWrapper
     {
         // Path to the key this instance wraps
-        private string registryKeyPath;
+        private readonly string registryKeyPath;
         // The key this instance wraps
         private RegistryKey wrappedKey;
         // The hive this registry key lives under
-        private RegistryKey registryHive;
+        private readonly RegistryKey registryHive;
         // This field will be set to true when we try to open the registry key
         private bool attemptedToOpenRegistryKey = false;
 

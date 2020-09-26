@@ -148,19 +148,19 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The project within which the target containing the task was run
         /// </summary>
-        private Project parentProject;
+        private readonly Project parentProject;
         /// <summary>
         /// The target withing which the task is contained
         /// </summary>
-        private Target parentTarget;
+        private readonly Target parentTarget;
         /// <summary>
         /// The XML node for the task
         /// </summary>
-        private XmlElement taskNode;
+        private readonly XmlElement taskNode;
         /// <summary>
         /// Context within which the task execution was requested
         /// </summary>
-        private ProjectBuildState buildContext;
+        private readonly ProjectBuildState buildContext;
 
         /// <summary>
         /// Task outputs

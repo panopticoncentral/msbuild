@@ -25,7 +25,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Override for ContinueOnError
         /// </summary>
-        private bool _continueOnErrorDefault = true;
+        private readonly bool _continueOnErrorDefault = true;
 
         /// <summary>
         /// Test that an exception is thrown when the task name is null. 

@@ -29,7 +29,7 @@ namespace Microsoft.Build.BuildEngine
         private const string msbuildRegistryPath = @"SOFTWARE\Microsoft\MSBuild";
         
         // Cached registry wrapper at root of the msbuild entries
-        private RegistryKeyWrapper msbuildRegistryWrapper;
+        private readonly RegistryKeyWrapper msbuildRegistryWrapper;
 
         /// <summary>
         /// Default constructor

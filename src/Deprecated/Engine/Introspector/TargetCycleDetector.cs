@@ -362,11 +362,11 @@ namespace Microsoft.Build.BuildEngine
         /// The table of all targets in the dependency graph, indexed by TargetNameStructure which
         /// contains Target name, Project Id, Node Id which uniquely identifies every target in the system
         /// </summary>
-        private Hashtable dependencyGraph;
+        private readonly Hashtable dependencyGraph;
         /// <summary>
         /// List of all outstanding cross node build requests
         /// </summary>
-        private Hashtable outstandingExternalRequests;
+        private readonly Hashtable outstandingExternalRequests;
         /// <summary>
         /// The index used for the breadth first traversal
         /// </summary>
@@ -382,11 +382,11 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Logging service for outputing the loop trace
         /// </summary>
-        private EngineLoggingServices engineLoggingService;
+        private readonly EngineLoggingServices engineLoggingService;
         /// <summary>
         /// Engine callback which is to walk the inprogress execution contexts
         /// </summary>
-        private EngineCallback engineCallback;
+        private readonly EngineCallback engineCallback;
         #endregion
 
         [DebuggerDisplay("Node (Name = { targetState.TargetId.name }, Project = { targetState.TargetId.projectId }), Node = { targetState.TargetId.nodeId })")]

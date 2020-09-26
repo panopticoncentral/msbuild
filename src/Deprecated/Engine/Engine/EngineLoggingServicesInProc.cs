@@ -148,7 +148,7 @@ namespace Microsoft.Build.BuildEngine
         #region Data
 
         // A table mapping logger ids to event sources
-        private Dictionary<int, EventSource> eventSources;
+        private readonly Dictionary<int, EventSource> eventSources;
         // cached pointer to the engines main event source (also available in eventSources[0])
         private readonly EventSource engineEventSource;
 

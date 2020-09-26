@@ -214,7 +214,7 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             }
         }
 
-        private static bool dbgValidateDuplicateViews = false;
+        private static readonly bool dbgValidateDuplicateViews = false;
 
 
         internal  void ValidateNoDuplicates()

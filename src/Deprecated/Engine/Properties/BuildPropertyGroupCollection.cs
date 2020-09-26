@@ -20,7 +20,7 @@ namespace Microsoft.Build.BuildEngine
     {
         #region Member Data
 
-        private GroupingCollection groupingCollection = null;
+        private readonly GroupingCollection groupingCollection = null;
 
         #endregion
 

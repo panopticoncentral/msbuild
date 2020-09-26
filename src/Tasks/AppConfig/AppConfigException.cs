@@ -16,7 +16,7 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// The name of the app.config file.
         /// </summary>
-        private string fileName = String.Empty;
+        private readonly string fileName = String.Empty;
         internal string FileName
         {
             get
@@ -29,7 +29,7 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// The line number with the error. Is initialized to zero
         /// </summary>
-        private int line;
+        private readonly int line;
         internal int Line
         {
             get
@@ -41,7 +41,7 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// The column with the error. Is initialized to zero
         /// </summary>
-        private int column;
+        private readonly int column;
         internal int Column
         {
             get

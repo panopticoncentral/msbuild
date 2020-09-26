@@ -16,7 +16,7 @@ namespace Microsoft.Build.BuildEngine
     {
         #region Properties
 
-        private ArrayList usingTasks;
+        private readonly ArrayList usingTasks;
 
         #endregion
 

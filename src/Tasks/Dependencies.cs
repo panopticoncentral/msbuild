@@ -17,7 +17,7 @@ namespace Microsoft.Build.Tasks
         /// Hashtable of other dependency files.
         /// Key is filename and value is DependencyFile.
         /// </summary>
-        private Hashtable dependencies = new Hashtable();
+        private readonly Hashtable dependencies = new Hashtable();
 
         /// <summary>
         /// Look up a dependency file. Return null if its not there.

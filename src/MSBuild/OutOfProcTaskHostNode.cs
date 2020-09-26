@@ -70,17 +70,17 @@ namespace Microsoft.Build.CommandLine
         /// <summary>
         /// The packet factory.
         /// </summary>
-        private NodePacketFactory _packetFactory;
+        private readonly NodePacketFactory _packetFactory;
 
         /// <summary>
         /// The event which is set when we receive packets.
         /// </summary>
-        private AutoResetEvent _packetReceivedEvent;
+        private readonly AutoResetEvent _packetReceivedEvent;
 
         /// <summary>
         /// The queue of packets we have received but which have not yet been processed.
         /// </summary>
-        private Queue<INodePacket> _receivedPackets;
+        private readonly Queue<INodePacket> _receivedPackets;
 
         /// <summary>
         /// The current configuration for this task host.
@@ -95,7 +95,7 @@ namespace Microsoft.Build.CommandLine
         /// <summary>
         /// The event which is set when we should shut down.
         /// </summary>
-        private ManualResetEvent _shutdownEvent;
+        private readonly ManualResetEvent _shutdownEvent;
 
         /// <summary>
         /// The reason we are shutting down.
@@ -110,7 +110,7 @@ namespace Microsoft.Build.CommandLine
         /// <summary>
         /// The event which is set when a task has completed.  
         /// </summary>
-        private AutoResetEvent _taskCompleteEvent;
+        private readonly AutoResetEvent _taskCompleteEvent;
 
         /// <summary>
         /// Packet containing all the information relating to the 
@@ -121,12 +121,12 @@ namespace Microsoft.Build.CommandLine
         /// <summary>
         /// Object used to synchronize access to taskCompletePacket
         /// </summary>
-        private Object _taskCompleteLock = new Object();
+        private readonly Object _taskCompleteLock = new Object();
 
         /// <summary>
         /// The event which is set when a task is cancelled
         /// </summary>
-        private ManualResetEvent _taskCancelledEvent;
+        private readonly ManualResetEvent _taskCancelledEvent;
 
         /// <summary>
         /// The thread currently executing user task in the TaskRunner

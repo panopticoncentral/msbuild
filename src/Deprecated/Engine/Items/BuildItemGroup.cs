@@ -22,16 +22,16 @@ namespace Microsoft.Build.BuildEngine
         #region Member Data
 
         // Object holding the backing Xml, if any
-        private BuildItemGroupXml xml;
+        private readonly BuildItemGroupXml xml;
 
         // Whether there is backing Xml
         // Can't use (xml==null) because it is consulted during construction of the backing Xml
         // Can't use (parentProject!=null) because Clone() sets it to null, but expects to create a persisted group...
-        private bool isPersisted = false;
+        private readonly bool isPersisted = false;
 
         // If this is a persisted <ItemGroup>, this boolean tells us whether
         // it came from the main project file, or an imported project file.
-        bool importedFromAnotherProject = false;
+        readonly bool importedFromAnotherProject = false;
 
         // These are the loose Items beneath this BuildItemGroup.  This is
         // valid for both persisted and virtual ItemGroups.

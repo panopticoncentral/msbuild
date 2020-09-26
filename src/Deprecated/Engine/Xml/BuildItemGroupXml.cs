@@ -16,7 +16,7 @@ namespace Microsoft.Build.BuildEngine
         #region Fields
 
         // The <BuildItemGroup> element
-        private XmlElement element;
+        private readonly XmlElement element;
         // The Condition attribute on it, if any, to save lookup
         private XmlAttribute conditionAttribute;
         

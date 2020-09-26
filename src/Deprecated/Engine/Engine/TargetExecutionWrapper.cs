@@ -56,12 +56,12 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // Local cache of data from the target being executed
-        private Target targetClass;
-        private Engine parentEngine;
-        private Project parentProject;
-        private XmlElement targetElement;
-        private ArrayList taskElementList;
-        private List<string> targetParameters;
+        private readonly Target targetClass;
+        private readonly Engine parentEngine;
+        private readonly Project parentProject;
+        private readonly XmlElement targetElement;
+        private readonly ArrayList taskElementList;
+        private readonly List<string> targetParameters;
         private ProjectBuildState initiatingBuildContext;
         private BuildEventContext targetBuildEventContext;
 

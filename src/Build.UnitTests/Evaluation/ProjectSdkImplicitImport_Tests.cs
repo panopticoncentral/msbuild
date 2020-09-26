@@ -65,14 +65,14 @@ namespace Microsoft.Build.UnitTests.OM.Construction
 </Project>";
 
         private const string SdkName = "MSBuildUnitTestSdk";
-        private TestEnvironment _env;
+        private readonly TestEnvironment _env;
         private readonly string _testSdkRoot;
         private readonly string _testSdkDirectory;
         private readonly string _sdkPropsPath;
         private readonly string _sdkTargetsPath;
-        private string _sdkPropsContent = "<Project><PropertyGroup><InitialImportProperty>Hello</InitialImportProperty></PropertyGroup></Project>";
-        private string _sdkTargetsContent = "<Project><PropertyGroup><FinalImportProperty>World</FinalImportProperty></PropertyGroup></Project>";
-        private string _projectInnerContents = @"<PropertyGroup><UsedToTestIfImplicitImportsAreInTheCorrectLocation>null</UsedToTestIfImplicitImportsAreInTheCorrectLocation></PropertyGroup>";
+        private readonly string _sdkPropsContent = "<Project><PropertyGroup><InitialImportProperty>Hello</InitialImportProperty></PropertyGroup></Project>";
+        private readonly string _sdkTargetsContent = "<Project><PropertyGroup><FinalImportProperty>World</FinalImportProperty></PropertyGroup></Project>";
+        private readonly string _projectInnerContents = @"<PropertyGroup><UsedToTestIfImplicitImportsAreInTheCorrectLocation>null</UsedToTestIfImplicitImportsAreInTheCorrectLocation></PropertyGroup>";
         private const string SdkNamePropertyName = "MyTestSdkName";
         private const string SdkNameProperty = "$(" + SdkNamePropertyName + ")";
         private const string SdkVersionPropertyName = "MyTestSdkVersion";

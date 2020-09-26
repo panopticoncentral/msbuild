@@ -14,8 +14,8 @@ namespace Microsoft.Build.BuildEngine
     /// </summary>
     internal sealed class FunctionCallExpressionNode : OperatorExpressionNode
     {
-        private ArrayList arguments;
-        private string functionName;
+        private readonly ArrayList arguments;
+        private readonly string functionName;
 
         private FunctionCallExpressionNode() { }
 

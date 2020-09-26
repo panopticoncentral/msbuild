@@ -28,9 +28,9 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         /// For the environment writing test
         /// </summary>
-        private Dictionary<string, string> _environment;
+        private readonly Dictionary<string, string> _environment;
 
-        private static string s_dummyProjectContents = @"
+        private static readonly string s_dummyProjectContents = @"
          <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003'>
             <Target Name='XXX'>
                <Message Text='[hee haw]'/>

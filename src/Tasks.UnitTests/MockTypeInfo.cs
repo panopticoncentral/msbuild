@@ -27,7 +27,7 @@ namespace Microsoft.Build.UnitTests
     /// </summary>
     public class ArrayCompositeTypeInfo : ICompositeTypeInfo
     {
-        private ICompositeTypeInfo _baseElementType;
+        private readonly ICompositeTypeInfo _baseElementType;
 
         public ArrayCompositeTypeInfo(ICompositeTypeInfo baseElement)
         {
@@ -63,7 +63,7 @@ namespace Microsoft.Build.UnitTests
     /// </summary>
     public class PtrCompositeTypeInfo : ICompositeTypeInfo
     {
-        private ICompositeTypeInfo _baseElementType;
+        private readonly ICompositeTypeInfo _baseElementType;
 
         public PtrCompositeTypeInfo(ICompositeTypeInfo baseElement)
         {
@@ -109,12 +109,12 @@ namespace Microsoft.Build.UnitTests
     /// </summary>
     public class MockTypeInfo : ITypeInfo, ICompositeTypeInfo, IFixedTypeInfo
     {
-        static private int s_HREF_IMPLTYPES_OFFSET = 1000;
-        static private int s_HREF_VARS_OFFSET = 2000;
-        static private int s_HREF_FUNCSRET_OFFSET = 3000;
-        static private int s_HREF_FUNCSPARAM_OFFSET = 4000;
-        static private int s_HREF_FUNCSPARAM_OFFSET_PERFUNC = 100;
-        static private int s_HREF_RANGE = 999;
+        private static readonly int s_HREF_IMPLTYPES_OFFSET = 1000;
+        private static readonly int s_HREF_VARS_OFFSET = 2000;
+        private static readonly int s_HREF_FUNCSRET_OFFSET = 3000;
+        private static readonly int s_HREF_FUNCSPARAM_OFFSET = 4000;
+        private static readonly int s_HREF_FUNCSPARAM_OFFSET_PERFUNC = 100;
+        private static readonly int s_HREF_RANGE = 999;
 
         private MockTypeLib _containingTypeLib;
 
@@ -148,11 +148,11 @@ namespace Microsoft.Build.UnitTests
 
         private TYPEATTR _typeAttributes;
 
-        private List<MockTypeInfo> _implementedTypes;
-        private List<ICompositeTypeInfo> _definedVariables;
-        private List<FuncInfo> _definedFunctions;
+        private readonly List<MockTypeInfo> _implementedTypes;
+        private readonly List<ICompositeTypeInfo> _definedVariables;
+        private readonly List<FuncInfo> _definedFunctions;
 
-        private MockUnmanagedMemoryHelper _memoryHelper;
+        private readonly MockUnmanagedMemoryHelper _memoryHelper;
 
         private MockFaultInjectionHelper<MockTypeLibrariesFailurePoints> _faultInjector;
 

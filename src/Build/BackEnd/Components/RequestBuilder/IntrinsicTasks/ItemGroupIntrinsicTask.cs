@@ -26,9 +26,9 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The task instance data
         /// </summary>
-        private ProjectItemGroupTaskInstance _taskInstance;
+        private readonly ProjectItemGroupTaskInstance _taskInstance;
 
-        private EngineFileUtilities _engineFileUtilities;
+        private readonly EngineFileUtilities _engineFileUtilities;
 
         /// <summary>
         /// Instantiates an ItemGroup task
@@ -608,24 +608,24 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The table for all metadata added during expansion
             /// </summary>
-            private Dictionary<string, string> _addTable;
+            private readonly Dictionary<string, string> _addTable;
 
             /// <summary>
             /// The table for metadata which was generated for this batch bucket.
             /// May be null.
             /// </summary>
-            private IMetadataTable _bucketTable;
+            private readonly IMetadataTable _bucketTable;
 
             /// <summary>
             /// The table for metadata from the item definition
             /// May be null.
             /// </summary>
-            private IMetadataTable _itemDefinitionTable;
+            private readonly IMetadataTable _itemDefinitionTable;
 
             /// <summary>
             /// The item type to which this metadata applies.
             /// </summary>
-            private string _itemType;
+            private readonly string _itemType;
 
             /// <summary>
             /// Creates a new metadata table aggregating the bucket and item definition tables.

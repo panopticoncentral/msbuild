@@ -23,14 +23,14 @@ namespace Microsoft.Build.BuildEngine
         /// Debugging aid and emergency exit for customers.
         /// Allows any functions to be used not just the safe list.
         /// </summary>
-        private static bool enableAllPropertyFunctions = (Environment.GetEnvironmentVariable("MSBUILDENABLEALLPROPERTYFUNCTIONS") == "1");
+        private static readonly bool enableAllPropertyFunctions = (Environment.GetEnvironmentVariable("MSBUILDENABLEALLPROPERTYFUNCTIONS") == "1");
 
         // Items and properties to refer to
-        private ReadOnlyLookup lookup;
+        private readonly ReadOnlyLookup lookup;
 
         // If we're only initialized with properties, store them directly
         // instead of using the overhead of a lookup
-        private BuildPropertyGroup properties;
+        private readonly BuildPropertyGroup properties;
 
         // Table of metadata values. 
         // May have some qualified keys (type.name) or all unqualified.
@@ -39,9 +39,9 @@ namespace Microsoft.Build.BuildEngine
         private string implicitMetadataItemType;
 
         // An optional item definition library to refer to when expanding metadata in expressions
-        private SpecificItemDefinitionLibrary specificItemDefinitionLibrary;
+        private readonly SpecificItemDefinitionLibrary specificItemDefinitionLibrary;
 
-        private ExpanderOptions options;
+        private readonly ExpanderOptions options;
 
         /// <summary>
         /// Accessor for the item metadata used for metadata expansion (not counting metadata
@@ -944,27 +944,27 @@ namespace Microsoft.Build.BuildEngine
             /// <summary>
             /// The type that this function will act on
             /// </summary>
-            private Type objectType;
+            private readonly Type objectType;
 
             /// <summary>
             /// The name of the function
             /// </summary>
-            private string name;
+            private readonly string name;
 
             /// <summary>
             /// The arguments for the function
             /// </summary>
-            private string[] arguments;
+            private readonly string[] arguments;
 
             /// <summary>
             /// The expression that constitutes this function
             /// </summary>
-            private string expression;
+            private readonly string expression;
 
             /// <summary>
             /// The property name that is the context for this function
             /// </summary>
-            private string expressionRootName;
+            private readonly string expressionRootName;
 
             /// <summary>
             /// The binding flags that will be used during invocation of this function
@@ -974,7 +974,7 @@ namespace Microsoft.Build.BuildEngine
             /// <summary>
             /// The remainder of the body once the function and arguments have been extracted
             /// </summary>
-            private string remainder;
+            private readonly string remainder;
 
             /// <summary>
             /// Construct a function that will be executed during property evaluation

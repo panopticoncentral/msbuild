@@ -899,7 +899,7 @@ namespace Microsoft.Build.BuildEngine
             /// all the heavy lifting for FrameStack.
             /// </summary>
             /// <owner>t-jeffv, sumedhk</owner>
-            private System.Collections.Stack frames;
+            private readonly System.Collections.Stack frames;
 
             /// <summary>
             /// Create a new, empty, FrameStack.

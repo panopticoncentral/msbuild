@@ -20,12 +20,12 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// The project's full path
         /// </summary>
-        private string _projectFullPath;
+        private readonly string _projectFullPath;
 
         /// <summary>
         /// The parent node logging context this context was derived from.
         /// </summary>
-        private NodeLoggingContext _nodeLoggingContext;
+        private readonly NodeLoggingContext _nodeLoggingContext;
 
         /// <summary>
         /// Constructs a project logging context.
@@ -178,7 +178,7 @@ namespace Microsoft.Build.BackEnd.Logging
             /// <summary>
             /// Enumerable that this proxies
             /// </summary>
-            private IEnumerable<ProjectItemInstance> _backingItems;
+            private readonly IEnumerable<ProjectItemInstance> _backingItems;
 
             /// <summary>
             /// Constructor
@@ -228,7 +228,7 @@ namespace Microsoft.Build.BackEnd.Logging
             /// <summary>
             /// Enumerable that this proxies
             /// </summary>
-            private IEnumerable<ProjectPropertyInstance> _backingProperties;
+            private readonly IEnumerable<ProjectPropertyInstance> _backingProperties;
 
             /// <summary>
             /// Constructor

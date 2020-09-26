@@ -238,7 +238,7 @@ namespace System.Deployment.Internal.CodeSigning
 
     internal class ManifestSignedXml2 : SignedXml
     {
-        private bool _verify = false;
+        private readonly bool _verify = false;
         private const string Sha256SignatureMethodUri = @"http://www.w3.org/2000/09/xmldsig#rsa-sha256";
         private const string Sha256DigestMethod = @"http://www.w3.org/2000/09/xmldsig#sha256";
 
@@ -308,10 +308,10 @@ namespace System.Deployment.Internal.CodeSigning
 
     internal class SignedCmiManifest2
     {
-        private XmlDocument _manifestDom = null;
+        private readonly XmlDocument _manifestDom = null;
         private CmiStrongNameSignerInfo _strongNameSignerInfo = null;
         private CmiAuthenticodeSignerInfo _authenticodeSignerInfo = null;
-        private bool _useSha256;
+        private readonly bool _useSha256;
 
         private const string Sha256SignatureMethodUri = @"http://www.w3.org/2000/09/xmldsig#rsa-sha256";
         private const string Sha256DigestMethod = @"http://www.w3.org/2000/09/xmldsig#sha256";
@@ -1034,14 +1034,14 @@ namespace System.Deployment.Internal.CodeSigning
 
     internal class CmiManifestSigner2
     {
-        private AsymmetricAlgorithm _strongNameKey;
-        private X509Certificate2 _certificate;
+        private readonly AsymmetricAlgorithm _strongNameKey;
+        private readonly X509Certificate2 _certificate;
         private string _description;
         private string _url;
-        private X509Certificate2Collection _certificates;
+        private readonly X509Certificate2Collection _certificates;
         private X509IncludeOption _includeOption;
         private CmiManifestSignerFlag _signerFlag;
-        private bool _useSha256;
+        private readonly bool _useSha256;
 
         private CmiManifestSigner2() { }
 
@@ -1221,7 +1221,7 @@ namespace System.Deployment.Internal.CodeSigning
         private string _hash = null;
         private string _description = null;
         private string _descriptionUrl = null;
-        private CmiAuthenticodeTimestamperInfo _timestamperInfo = null;
+        private readonly CmiAuthenticodeTimestamperInfo _timestamperInfo = null;
 
         internal CmiAuthenticodeSignerInfo() { }
 
@@ -1341,10 +1341,10 @@ namespace System.Deployment.Internal.CodeSigning
 
     internal class CmiAuthenticodeTimestamperInfo
     {
-        private int _error = 0;
-        private X509Chain _timestamperChain = null;
-        private DateTime _timestampTime;
-        private uint _algHash = 0;
+        private readonly int _error = 0;
+        private readonly X509Chain _timestamperChain = null;
+        private readonly DateTime _timestampTime;
+        private readonly uint _algHash = 0;
 
         private CmiAuthenticodeTimestamperInfo() { }
 

@@ -11,7 +11,7 @@ namespace Microsoft.Build.UnitTests
 {
     sealed public class XmlPeek_Tests
     {
-        private string _xmlFileWithNs = @"<?xml version='1.0' encoding='utf-8'?>
+        private readonly string _xmlFileWithNs = @"<?xml version='1.0' encoding='utf-8'?>
 
 <!DOCTYPE plist PUBLIC ""-//Apple//DTD PLIST 1.0//EN"" ""http://www.apple.com/DTDs/PropertyList-1.0.dtd"">
 <class AccessModifier='public' Name='test' xmlns:s='http://nsurl'>
@@ -22,7 +22,7 @@ namespace Microsoft.Build.UnitTests
 </class>
 ";
 
-        private string _xmlFileWithNsWithText = @"<?xml version='1.0' encoding='utf-8'?>
+        private readonly string _xmlFileWithNsWithText = @"<?xml version='1.0' encoding='utf-8'?>
 
 <!DOCTYPE plist PUBLIC ""-//Apple//DTD PLIST 1.0//EN"" ""http://www.apple.com/DTDs/PropertyList-1.0.dtd"">
 <class AccessModifier='public' Name='test' xmlns:s='http://nsurl'>
@@ -33,7 +33,7 @@ namespace Microsoft.Build.UnitTests
 </class>
 ";
 
-        private string _xmlFileNoNsNoDtd = @"<?xml version='1.0' encoding='utf-8'?>
+        private readonly string _xmlFileNoNsNoDtd = @"<?xml version='1.0' encoding='utf-8'?>
         
 <class AccessModifier='public' Name='test'>
   <variable Type='String' Name='a'></variable>

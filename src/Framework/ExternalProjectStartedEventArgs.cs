@@ -72,7 +72,7 @@ namespace Microsoft.Build.Framework
             this.targetNames = targetNames;
         }
 
-        private string projectFile;
+        private readonly string projectFile;
 
         /// <summary>
         /// Project name
@@ -85,7 +85,7 @@ namespace Microsoft.Build.Framework
             }
         }
 
-        private string targetNames;
+        private readonly string targetNames;
 
         /// <summary>
         /// Targets that we will build in the project. This may mean different things for different project types,

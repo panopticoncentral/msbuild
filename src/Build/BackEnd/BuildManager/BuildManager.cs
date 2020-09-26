@@ -230,7 +230,7 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// When the BuildManager was created.
         /// </summary>
-        private DateTime _instantiationTimeUtc;
+        private readonly DateTime _instantiationTimeUtc;
 
         private IEnumerable<DeferredBuildMessage> _deferredBuildMessages;
 

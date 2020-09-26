@@ -20,7 +20,7 @@ namespace Microsoft.Build.BuildEngine.Shared
         private AssemblyName asAssemblyName = null;
         private string asString = null;
 
-        static private AssemblyNameExtension unnamedAssembly = new AssemblyNameExtension();
+        private static readonly AssemblyNameExtension unnamedAssembly = new AssemblyNameExtension();
 
         /// <summary>
         /// Construct an unnamed assembly.

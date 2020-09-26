@@ -42,7 +42,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// A cache of tasks and the AppDomains they are loaded in.
         /// </summary>
-        private Dictionary<ITask, AppDomain> _tasksAndAppDomains = new Dictionary<ITask, AppDomain>();
+        private readonly Dictionary<ITask, AppDomain> _tasksAndAppDomains = new Dictionary<ITask, AppDomain>();
 #endif
 
         /// <summary>

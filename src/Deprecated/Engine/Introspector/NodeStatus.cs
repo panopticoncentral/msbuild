@@ -233,8 +233,8 @@ namespace Microsoft.Build.BuildEngine
         private TargetInProgessState[] stateOfInProgressTargets;
         private Exception unhandledException; // unhandled exception
         private bool traversalType; // if true use breadth first traversal
-        private bool hasExited; // if true the node process is no longer  alive
-        private static BinaryFormatter formatter = new BinaryFormatter();
+        private readonly bool hasExited; // if true the node process is no longer  alive
+        private static readonly BinaryFormatter formatter = new BinaryFormatter();
         internal const int UnrequestedStatus = -1; // used to indicate that the node is generating status without request
         #endregion
 

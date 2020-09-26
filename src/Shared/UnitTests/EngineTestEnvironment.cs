@@ -13,7 +13,7 @@ namespace Microsoft.Build.UnitTests
     public partial class TestEnvironment
     {
         // reset the default build manager and the state it might have accumulated from other tests
-        private object _resetBuildManager = new ResetDefaultBuildManager();
+        private readonly object _resetBuildManager = new ResetDefaultBuildManager();
 
         private class ResetDefaultBuildManager
         {

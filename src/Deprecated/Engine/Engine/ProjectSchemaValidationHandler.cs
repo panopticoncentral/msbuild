@@ -18,16 +18,16 @@ namespace Microsoft.Build.BuildEngine
     internal sealed class ProjectSchemaValidationHandler
     {
         // The parent Engine object for this project.
-        private EngineLoggingServices engineLoggingServices ;
+        private readonly EngineLoggingServices engineLoggingServices ;
 
         // the location of the MSBuild binaries
-        private string binPath;
+        private readonly string binPath;
 
         // Set to true if there was a syntax error in the project file.
         private bool syntaxError;
 
         // Event context information of where the event is raised
-        private BuildEventContext buildEventContext;
+        private readonly BuildEventContext buildEventContext;
 
         #region Constructors
 

@@ -7,7 +7,7 @@ namespace Microsoft.Build.Engine.OM.UnitTests
 {
     public sealed class NugetRestoreTests
     {
-        private ITestOutputHelper _output;
+        private readonly ITestOutputHelper _output;
         public NugetRestoreTests(ITestOutputHelper output)
         {
             _output = output;

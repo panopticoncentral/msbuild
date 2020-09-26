@@ -75,10 +75,10 @@ namespace Microsoft.Build.Tasks
         private ITaskItem[] _outputResources = null;
 
         // List of those output resources that were not actually created, due to an error
-        private ArrayList _unsuccessfullyCreatedOutFiles = new ArrayList();
+        private readonly ArrayList _unsuccessfullyCreatedOutFiles = new ArrayList();
 
         // Storage for names of *all files* written to disk.
-        private ArrayList _filesWritten = new ArrayList();
+        private readonly ArrayList _filesWritten = new ArrayList();
 
         // StronglyTypedLanguage
         private string _stronglyTypedLanguage = null;
@@ -127,19 +127,19 @@ namespace Microsoft.Build.Tasks
 #if FEATURE_APPDOMAIN
         // table of already seen types by their typename
         // note the use of the ordinal comparer that matches the case sensitive Type.GetType usage
-        private Dictionary<string, Type> _typeTable = new Dictionary<string, Type>(StringComparer.Ordinal);
+        private readonly Dictionary<string, Type> _typeTable = new Dictionary<string, Type>(StringComparer.Ordinal);
 
         /// <summary>
         /// Table of aliases for types defined in resx / resw files
         /// Ordinal comparer matches ResXResourceReader's use of a HashTable.
         /// </summary>
-        private Dictionary<string, string> _aliases = new Dictionary<string, string>(StringComparer.Ordinal);
+        private readonly Dictionary<string, string> _aliases = new Dictionary<string, string>(StringComparer.Ordinal);
 #endif // FEATURE_APPDOMAIN
 
 #if FEATURE_RESGEN
         // Our calculation is not quite correct. Using a number substantially less than 32768 in order to
         // be sure we don't exceed it.
-        private static int s_maximumCommandLength = 28000;
+        private static readonly int s_maximumCommandLength = 28000;
 #endif // FEATURE_RESGEN
 
         // Contains the list of paths from which inputs will not be taken into account during up-to-date check.
@@ -921,7 +921,7 @@ namespace Microsoft.Build.Tasks
         }
 
 #if FEATURE_COM_INTEROP
-        private static bool allowMOTW;
+        private static readonly bool allowMOTW;
 
         private const string CLSID_InternetSecurityManager = "7b8a2d94-0ac9-11d1-896c-00c04fb6bfc4";
 
@@ -3942,9 +3942,9 @@ namespace Microsoft.Build.Tasks
         [Serializable]
         internal sealed class TextFileException : Exception
         {
-            private String fileName;
-            private int lineNumber;
-            private int column;
+            private readonly String fileName;
+            private readonly int lineNumber;
+            private readonly int column;
 
             /// <summary>
             /// Fxcop want to have the correct basic exception constructors implemented
@@ -3989,8 +3989,8 @@ namespace Microsoft.Build.Tasks
     internal class AssemblyNamesTypeResolutionService : ITypeResolutionService
     {
         private Hashtable _cachedAssemblies;
-        private ITaskItem[] _referencePaths;
-        private Hashtable _cachedTypes = new Hashtable();
+        private readonly ITaskItem[] _referencePaths;
+        private readonly Hashtable _cachedTypes = new Hashtable();
 
         /// <summary>
         /// Constructor, initialized with the set of resolved reference paths passed

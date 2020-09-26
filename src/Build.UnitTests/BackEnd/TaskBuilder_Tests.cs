@@ -32,14 +32,14 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// The mock component host and logger
         /// </summary>
-        private MockHost _host;
+        private readonly MockHost _host;
 
         private readonly ITestOutputHelper _testOutput;
 
         /// <summary>
         /// The temporary project we use to run the test
         /// </summary>
-        private ProjectInstance _testProject;
+        private readonly ProjectInstance _testProject;
 
         /// <summary>
         /// Prepares the environment for the test.
@@ -1078,39 +1078,39 @@ namespace ClassLibrary2
             /// <summary>
             /// The config cache
             /// </summary>
-            private IConfigCache _configCache;
+            private readonly IConfigCache _configCache;
 
             /// <summary>
             /// The logging service
             /// </summary>
-            private ILoggingService _loggingService;
+            private readonly ILoggingService _loggingService;
 
             /// <summary>
             /// The results cache
             /// </summary>
-            private IResultsCache _resultsCache;
+            private readonly IResultsCache _resultsCache;
 
             /// <summary>
             /// The request builder
             /// </summary>
-            private IRequestBuilder _requestBuilder;
+            private readonly IRequestBuilder _requestBuilder;
 
             /// <summary>
             /// The target builder
             /// </summary>
-            private ITargetBuilder _targetBuilder;
+            private readonly ITargetBuilder _targetBuilder;
 
             /// <summary>
             /// The build parameters.
             /// </summary>
-            private BuildParameters _buildParameters;
+            private readonly BuildParameters _buildParameters;
 
             /// <summary>
             /// Retrieves the LegacyThreadingData associated with a particular component host
             /// </summary>
-            private LegacyThreadingData _legacyThreadingData;
+            private readonly LegacyThreadingData _legacyThreadingData;
 
-            private ISdkResolverService _sdkResolverService;
+            private readonly ISdkResolverService _sdkResolverService;
 
             /// <summary>
             /// Constructor

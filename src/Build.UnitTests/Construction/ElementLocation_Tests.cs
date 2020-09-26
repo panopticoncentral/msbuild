@@ -22,7 +22,7 @@ namespace Microsoft.Build.UnitTests.Construction
         /// <summary>
         /// Path to the common targets
         /// </summary>
-        private string _pathToCommonTargets =
+        private readonly string _pathToCommonTargets =
 #if FEATURE_INSTALLED_MSBUILD
             Path.Combine(FrameworkLocationHelper.PathToDotNetFrameworkV45, "Microsoft.Common.targets");
 #else

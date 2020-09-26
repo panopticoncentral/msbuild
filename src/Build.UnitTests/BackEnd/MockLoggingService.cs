@@ -19,7 +19,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
     /// </summary>
     internal class MockLoggingService : ILoggingService
     {
-        private Action<string> _writer;
+        private readonly Action<string> _writer;
 
         public MockLoggingService(Action<string> writter = null)
         {

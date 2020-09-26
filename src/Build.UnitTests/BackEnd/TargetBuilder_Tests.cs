@@ -1586,44 +1586,44 @@ namespace Microsoft.Build.UnitTests.BackEnd
             /// <summary>
             /// The config cache
             /// </summary>
-            private IConfigCache _configCache;
+            private readonly IConfigCache _configCache;
 
             /// <summary>
             /// The logging service
             /// </summary>
-            private ILoggingService _loggingService;
+            private readonly ILoggingService _loggingService;
 
             /// <summary>
             /// The results cache
             /// </summary>
-            private IResultsCache _resultsCache;
+            private readonly IResultsCache _resultsCache;
 
             /// <summary>
             /// The request builder
             /// </summary>
-            private IRequestBuilder _requestBuilder;
+            private readonly IRequestBuilder _requestBuilder;
 
             /// <summary>
             /// The mock task builder
             /// </summary>
-            private ITaskBuilder _taskBuilder;
+            private readonly ITaskBuilder _taskBuilder;
 
             /// <summary>
             /// The target builder
             /// </summary>
-            private ITargetBuilder _targetBuilder;
+            private readonly ITargetBuilder _targetBuilder;
 
             /// <summary>
             /// The build parameters
             /// </summary>
-            private BuildParameters _buildParameters;
+            private readonly BuildParameters _buildParameters;
 
             /// <summary>
             /// Retrieves the LegacyThreadingData associated with a particular component host
             /// </summary>
-            private LegacyThreadingData _legacyThreadingData;
+            private readonly LegacyThreadingData _legacyThreadingData;
 
-            private ISdkResolverService _sdkResolverService;
+            private readonly ISdkResolverService _sdkResolverService;
 
             /// <summary>
             /// Constructor

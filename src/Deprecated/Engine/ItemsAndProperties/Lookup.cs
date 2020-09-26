@@ -73,14 +73,14 @@ namespace Microsoft.Build.BuildEngine
         /// We have to keep them separate, because the adds and removes etc need to be applied to the table
         /// below when we leave a scope.
         /// </summary>
-        private LinkedList<LookupEntry> lookupEntries = new LinkedList<LookupEntry>();
+        private readonly LinkedList<LookupEntry> lookupEntries = new LinkedList<LookupEntry>();
 
         /// <summary>
         /// Projects store their items in a hashtable of item groups by name (which we handle in our lookup table)
         /// but also in a single item group. When we leave scope the last time, we have to update this item group as 
         /// well. This is only used when we leave scope the last time.
         /// </summary>
-        private BuildItemGroup projectItems;
+        private readonly BuildItemGroup projectItems;
 
         /// <summary>
         /// When we are asked for all the items of a certain type using the GetItems() method, we may have to handle items
@@ -101,7 +101,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Library of default metadata to apply to items added to this lookup.
         /// </summary>
-        private ItemDefinitionLibrary itemDefinitionLibrary;
+        private readonly ItemDefinitionLibrary itemDefinitionLibrary;
 
         #endregion
 
@@ -1089,7 +1089,7 @@ namespace Microsoft.Build.BuildEngine
     /// </summary>
     internal class ReadOnlyLookup
     {
-        private Lookup lookup;
+        private readonly Lookup lookup;
 
         internal ReadOnlyLookup(Lookup lookup)
         {
@@ -1129,7 +1129,7 @@ namespace Microsoft.Build.BuildEngine
         private Dictionary<string, Dictionary<BuildItem, Dictionary<string, string>>> modifies;
         private BuildPropertyGroup properties;
         private BuildPropertyGroup propertySets;
-        private int threadIdThatEnteredScope;
+        private readonly int threadIdThatEnteredScope;
         private bool truncateLookupsAtThisScope;
 
         internal LookupEntry(Hashtable items, BuildPropertyGroup properties)

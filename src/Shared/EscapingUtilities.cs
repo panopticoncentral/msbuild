@@ -22,7 +22,7 @@ namespace Microsoft.Build.Shared
         /// Optional cache of escaped strings for use when needing to escape in performance-critical scenarios with significant
         /// expected string reuse.
         /// </summary>
-        private static Dictionary<string, string> s_unescapedToEscapedStrings = new Dictionary<string, string>(StringComparer.Ordinal);
+        private static readonly Dictionary<string, string> s_unescapedToEscapedStrings = new Dictionary<string, string>(StringComparer.Ordinal);
 
         private static bool IsHexDigit(char character)
         {

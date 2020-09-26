@@ -22,7 +22,7 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// The type of the generated tasks.
         /// </summary>
-        private Type _taskType;
+        private readonly Type _taskType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReflectableTaskPropertyInfo"/> class.

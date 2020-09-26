@@ -85,7 +85,7 @@ namespace Microsoft.Build.CommandLine
         }
 
         // the invalid switch causing this exception (can be null)
-        private string invalidSwitch;
+        private readonly string invalidSwitch;
 
         /// <summary>
         /// Serialize the contents of the class.

@@ -16,8 +16,8 @@ namespace Microsoft.Build.Evaluation
     {
         class EvaluatorData : IEvaluatorData<P, I, M, D>
         {
-            IEvaluatorData<P, I, M, D> _wrappedData;
-            Func<string, ICollection<I>> _itemGetter;
+            readonly IEvaluatorData<P, I, M, D> _wrappedData;
+            readonly Func<string, ICollection<I>> _itemGetter;
 
             public EvaluatorData(IEvaluatorData<P, I, M, D> wrappedData, Func<string, ICollection<I>> itemGetter)
             {

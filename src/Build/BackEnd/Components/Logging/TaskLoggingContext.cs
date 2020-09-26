@@ -16,17 +16,17 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// The target context in which this task is being built.
         /// </summary>
-        private TargetLoggingContext _targetLoggingContext;
+        private readonly TargetLoggingContext _targetLoggingContext;
 
         /// <summary>
         /// The task instance
         /// </summary>
-        private ProjectTargetInstanceChild _task;
+        private readonly ProjectTargetInstanceChild _task;
 
         /// <summary>
         /// The name of the task
         /// </summary>
-        private string _taskName;
+        private readonly string _taskName;
 
         /// <summary>
         /// Constructs a task logging context from a parent target context and a task node.

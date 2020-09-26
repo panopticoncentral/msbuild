@@ -19,7 +19,7 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// Wrapped value
         /// </summary>
-        private T _value;
+        private readonly T _value;
 
         /// <summary>
         /// Constructor

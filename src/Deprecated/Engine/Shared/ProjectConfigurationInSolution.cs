@@ -24,7 +24,7 @@ namespace Microsoft.Build.BuildEngine.Shared
             this.includeInBuild = includeInBuild;
         }
 
-        private bool includeInBuild;
+        private readonly bool includeInBuild;
 
         /// <summary>
         /// true if this project configuration should be built as part of its parent solution configuration

@@ -23,7 +23,7 @@ namespace Microsoft.Build.UnitTests
         /// <returns></returns>
         internal delegate AssemblyNameExtension ProduceAssemblyNameEx(string name);
 
-        private static string[] s_assemblyStrings =
+        private static readonly string[] s_assemblyStrings =
         {
             "System.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
             "System.Xml, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
@@ -40,7 +40,7 @@ namespace Microsoft.Build.UnitTests
             "System.Drawing"
         };
 
-        private static string[] s_assembliesForPartialMatch =
+        private static readonly string[] s_assembliesForPartialMatch =
         {
             "System.Xml, Version=10.0.0.0, Culture=en, PublicKeyToken=b03f5f7f11d50a3a, Retargetable=Yes",
             "System.Xml, Version=10.0.0.0, Culture=en, PublicKeyToken=b03f5f7f11d50a3a, Retargetable=No",
@@ -52,7 +52,7 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         /// All the different ways the same assembly name can be represented.
         /// </summary>
-        private static ProduceAssemblyNameEx[] s_producers =
+        private static readonly ProduceAssemblyNameEx[] s_producers =
         {
             new ProduceAssemblyNameEx(ProduceAsString),
             new ProduceAssemblyNameEx(ProduceAsAssemblyName),

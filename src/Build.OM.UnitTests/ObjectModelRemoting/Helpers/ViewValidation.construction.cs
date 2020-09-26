@@ -265,7 +265,7 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             return LinkedObjectsFactory.GetLink(obj) != null;
         }
 
-        private static bool dbgIgnoreLinked = false; 
+        private static readonly bool dbgIgnoreLinked = false; 
         public static void VerifyNotLinked(object obj)
         {
             if (dbgIgnoreLinked) return;

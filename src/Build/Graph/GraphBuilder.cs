@@ -44,7 +44,7 @@ namespace Microsoft.Build.Graph
         private readonly ProjectInterpretation _projectInterpretation;
 
         private readonly ProjectGraph.ProjectInstanceFactoryFunc _projectInstanceFactory;
-        private IReadOnlyDictionary<string, IReadOnlyCollection<string>> _solutionDependencies;
+        private readonly IReadOnlyDictionary<string, IReadOnlyCollection<string>> _solutionDependencies;
 
         public GraphBuilder(
             IEnumerable<ProjectGraphEntryPoint> entryPoints,
@@ -607,7 +607,7 @@ namespace Microsoft.Build.Graph
 
         internal class GraphEdges
         {
-            private ConcurrentDictionary<(ProjectGraphNode, ProjectGraphNode), ProjectItemInstance> ReferenceItems =
+            private readonly ConcurrentDictionary<(ProjectGraphNode, ProjectGraphNode), ProjectItemInstance> ReferenceItems =
                 new ConcurrentDictionary<(ProjectGraphNode, ProjectGraphNode), ProjectItemInstance>();
 
             internal int Count => ReferenceItems.Count;

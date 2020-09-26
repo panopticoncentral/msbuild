@@ -43,8 +43,8 @@ namespace Microsoft.Build.BuildEngine
         private int numberOfProcessors = 1;
         private LoggerVerbosity verbosity;
         private WriteHandler write;
-        private ColorSetter colorSet;
-        private ColorResetter colorReset;
+        private readonly ColorSetter colorSet;
+        private readonly ColorResetter colorReset;
         private string parameters;
         private bool skipProjectStartedText = false;
         private bool? showSummary;

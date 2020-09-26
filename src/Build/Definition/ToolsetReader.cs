@@ -26,7 +26,7 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// The global properties used to read the toolset.
         /// </summary>
-        private PropertyDictionary<ProjectPropertyInstance> _globalProperties;
+        private readonly PropertyDictionary<ProjectPropertyInstance> _globalProperties;
 
         /// <summary>
         /// The environment properties used to read the toolset.

@@ -49,7 +49,7 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// Cached registry wrapper at root of the msbuild entries
         /// </summary>
-        private RegistryKeyWrapper _msbuildRegistryWrapper;
+        private readonly RegistryKeyWrapper _msbuildRegistryWrapper;
 
         /// <summary>
         /// Default constructor

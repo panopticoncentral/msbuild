@@ -26,7 +26,7 @@ namespace Microsoft.Build.BuildEngine
             set { this.parentProject = value; }
         }
 
-        private XmlElement importElement = null;
+        private readonly XmlElement importElement = null;
 
         /// <summary>
         /// Returns the source XmlElement this Import is based on.
@@ -36,7 +36,7 @@ namespace Microsoft.Build.BuildEngine
             get { return this.importElement; }
         }
 
-        private bool importedFromAnotherProject;
+        private readonly bool importedFromAnotherProject;
 
         /// <summary>
         /// Returns true if this Import came from an imported project
@@ -47,7 +47,7 @@ namespace Microsoft.Build.BuildEngine
             get { return this.importedFromAnotherProject; }
         }
 
-        private XmlAttribute projectPathAttribute = null;
+        private readonly XmlAttribute projectPathAttribute = null;
 
         /// <summary>
         /// Returns the original import path from the Import element

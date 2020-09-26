@@ -23,7 +23,7 @@ namespace Microsoft.Build.Construction
         /// <summary>
         /// The singleton empty element location.
         /// </summary>
-        private static ElementLocation s_emptyElementLocation = new SmallElementLocation(null, 0, 0);
+        private static readonly ElementLocation s_emptyElementLocation = new SmallElementLocation(null, 0, 0);
 
         /// <summary>
         /// The file from which this particular element originated.  It may
@@ -233,17 +233,17 @@ namespace Microsoft.Build.Construction
             /// <summary>
             /// The source file.
             /// </summary>
-            private string file;
+            private readonly string file;
 
             /// <summary>
             /// The source line.
             /// </summary>
-            private int line;
+            private readonly int line;
 
             /// <summary>
             /// The source column.
             /// </summary>
-            private int column;
+            private readonly int column;
 
             /// <summary>
             /// Constructor for the case where we have most or all information.
@@ -309,17 +309,17 @@ namespace Microsoft.Build.Construction
             /// <summary>
             /// The source file.
             /// </summary>
-            private string file;
+            private readonly string file;
 
             /// <summary>
             /// The source line.
             /// </summary>
-            private ushort line;
+            private readonly ushort line;
 
             /// <summary>
             /// The source column.
             /// </summary>
-            private ushort column;
+            private readonly ushort column;
 
             /// <summary>
             /// Constructor for the case where we have most or all information.

@@ -318,7 +318,7 @@ namespace Microsoft.Build.Framework
         // (a) this event will not be thrown by tasks, so it should not generally cross AppDomain boundaries
         // (b) this event still makes sense when this field is "null"
         [NonSerialized]
-        private IEnumerable items;
+        private readonly IEnumerable items;
 
         /// <summary>
         /// List of items in this project. This is a live, read-only list.

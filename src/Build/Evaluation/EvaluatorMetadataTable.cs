@@ -26,7 +26,7 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// The type of item the metadata should be considered to apply to.
         /// </summary>
-        private string _implicitItemType;
+        private readonly string _implicitItemType;
 
         /// <summary>
         /// Creates a new table using the specified item type.

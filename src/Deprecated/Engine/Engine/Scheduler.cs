@@ -408,7 +408,7 @@ namespace Microsoft.Build.BuildEngine
         /// NodeId of the engine who instantiated the scheduler. This is used to determine if a
         /// BuildRequest should be build locally as the project has already been loaded on this node.
         /// </summary>
-        private int localNodeId;
+        private readonly int localNodeId;
 
         /// <summary>
         /// An array of nodes to which the scheduler can schedule work.
@@ -462,7 +462,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Reference to the engine who instantiated the scheduler
         /// </summary>
-        private Engine parentEngine;
+        private readonly Engine parentEngine;
 
         /// <summary>
         /// Number of requests a node should have in an unblocked state before the system switches to a depth first traversal strategy.

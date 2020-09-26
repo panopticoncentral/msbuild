@@ -17,7 +17,7 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// The property name
         /// </summary>
-        private string _name;
+        private readonly string _name;
 
         /// <summary>
         /// The property value
@@ -27,7 +27,7 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// The property source
         /// </summary>
-        private IElementLocation _source;
+        private readonly IElementLocation _source;
 
         /// <summary>
         /// Creates a new property

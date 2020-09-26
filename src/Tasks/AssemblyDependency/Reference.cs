@@ -22,18 +22,18 @@ namespace Microsoft.Build.Tasks
         /// A hash table is used to remove duplicates.
         /// All source items that inspired this reference (possibly indirectly through a dependency chain).
         /// </summary>
-        private Dictionary<string, ITaskItem> _sourceItems = new Dictionary<string, ITaskItem>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, ITaskItem> _sourceItems = new Dictionary<string, ITaskItem>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// A list of unique dependencies.
         /// </summary>
-        private HashSet<Reference> _dependees = new HashSet<Reference>();
+        private readonly HashSet<Reference> _dependees = new HashSet<Reference>();
 
         /// <summary>
         /// Hashset of Reference which depend on this reference
         /// A list of unique dependencies.
         /// </summary>
-        private HashSet<Reference> _dependencies = new HashSet<Reference>();
+        private readonly HashSet<Reference> _dependencies = new HashSet<Reference>();
 
         /// <summary>
         /// Scatter files associated with this reference.
@@ -49,7 +49,7 @@ namespace Microsoft.Build.Tasks
         /// Contains any file extension that are related to this file. Pdbs and xmls are related.
         /// This is an extension string starting with "."
         /// </summary>
-        private List<string> _relatedFileExtensions = new List<string>();
+        private readonly List<string> _relatedFileExtensions = new List<string>();
 
         /// <summary>
         /// Contains satellite files for this reference.
@@ -66,7 +66,7 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// AssemblyNames of references that lost collision conflicts with this reference.
         /// </summary>
-        private List<AssemblyNameExtension> _conflictVictims = new List<AssemblyNameExtension>();
+        private readonly List<AssemblyNameExtension> _conflictVictims = new List<AssemblyNameExtension>();
 
         /// <summary>
         /// These are the versions (type UnificationVersion) that were unified from.
@@ -118,22 +118,22 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// Set containing the names the reference was remapped from
         /// </summary>
-        private HashSet<AssemblyRemapping> _remappedAssemblyNames = new HashSet<AssemblyRemapping>();
+        private readonly HashSet<AssemblyRemapping> _remappedAssemblyNames = new HashSet<AssemblyRemapping>();
 
         /// <summary>
         /// Delegate to determine if the file is a winmd file or not
         /// </summary>
-        private IsWinMDFile _isWinMDFile;
+        private readonly IsWinMDFile _isWinMDFile;
 
         /// <summary>
         /// Delegate to check to see if the file exists on disk
         /// </summary>
-        private FileExists _fileExists;
+        private readonly FileExists _fileExists;
 
         /// <summary>
         /// Delegate to get the imageruntime version from a file.
         /// </summary>
-        private GetAssemblyRuntimeVersion _getRuntimeVersion;
+        private readonly GetAssemblyRuntimeVersion _getRuntimeVersion;
 
         internal Reference(IsWinMDFile isWinMDFile, FileExists fileExists, GetAssemblyRuntimeVersion getRuntimeVersion)
         {

@@ -15,12 +15,12 @@ namespace Microsoft.Build.BuildEngine
     internal class BuildEventManager
     {
         #region Data
-        private Dictionary<BuildEventContext, ProjectStartedEventMinimumFields> projectStartedEvents;
-        private Dictionary<BuildEventContext, TargetStartedEventMinimumFields> targetStartedEvents;
-        private Dictionary<string, int> projectTargetKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-        private Dictionary<string, int> projectKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-        private static ComparerContextNodeId<BuildEventContext> compareContextNodeId = new ComparerContextNodeId<BuildEventContext>();
-        private static ComparerContextNodeIdTargetId<BuildEventContext> compareContextNodeIdTargetId = new ComparerContextNodeIdTargetId<BuildEventContext>();
+        private readonly Dictionary<BuildEventContext, ProjectStartedEventMinimumFields> projectStartedEvents;
+        private readonly Dictionary<BuildEventContext, TargetStartedEventMinimumFields> targetStartedEvents;
+        private readonly Dictionary<string, int> projectTargetKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, int> projectKey = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        private static readonly ComparerContextNodeId<BuildEventContext> compareContextNodeId = new ComparerContextNodeId<BuildEventContext>();
+        private static readonly ComparerContextNodeIdTargetId<BuildEventContext> compareContextNodeIdTargetId = new ComparerContextNodeIdTargetId<BuildEventContext>();
         private int projectIncrementKey;
         #endregion
 
@@ -297,15 +297,15 @@ namespace Microsoft.Build.BuildEngine
     internal class ProjectStartedEventMinimumFields
     {
         #region Data
-        private DateTime timeStamp;
-        private string targetNames;
-        private string projectFile;
+        private readonly DateTime timeStamp;
+        private readonly string targetNames;
+        private readonly string projectFile;
         private bool showProjectFinishedEvent;
         private bool errorInProject;
-        private int projectId;
-        private ProjectFullKey projectFullKey;
-        private BuildEventContext buildEventContext;
-        private ProjectStartedEventMinimumFields parentProjectStartedEvent;
+        private readonly int projectId;
+        private readonly ProjectFullKey projectFullKey;
+        private readonly BuildEventContext buildEventContext;
+        private readonly ProjectStartedEventMinimumFields parentProjectStartedEvent;
         #endregion
 
         #region Properties
@@ -432,12 +432,12 @@ namespace Microsoft.Build.BuildEngine
     internal class TargetStartedEventMinimumFields
     {
         #region Data
-        private DateTime timeStamp;
-        private string targetName;
-        private string targetFile;
+        private readonly DateTime timeStamp;
+        private readonly string targetName;
+        private readonly string targetFile;
         private bool showTargetFinishedEvent;
         private bool errorInTarget;
-        private BuildEventContext buildEventContext;
+        private readonly BuildEventContext buildEventContext;
         #endregion
 
         #region Properties
@@ -519,9 +519,9 @@ namespace Microsoft.Build.BuildEngine
     internal class ErrorWarningSummaryDictionaryKey
     {
         #region Data
-        private BuildEventContext entryPointContext;
-        private string targetName;
-        private static ComparerContextNodeId<BuildEventContext> eventComparer = new ComparerContextNodeId<BuildEventContext>();
+        private readonly BuildEventContext entryPointContext;
+        private readonly string targetName;
+        private static readonly ComparerContextNodeId<BuildEventContext> eventComparer = new ComparerContextNodeId<BuildEventContext>();
         #endregion
 
         #region Constructor

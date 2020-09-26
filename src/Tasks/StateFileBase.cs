@@ -25,7 +25,7 @@ namespace Microsoft.Build.Tasks
         private const byte CurrentSerializationVersion = 5;
 
         // Version this instance is serialized with.
-        private byte _serializedVersion = CurrentSerializationVersion;
+        private readonly byte _serializedVersion = CurrentSerializationVersion;
 
         /// <summary>
         /// Writes the contents of this object out to the specified file.

@@ -84,7 +84,7 @@ namespace Microsoft.Build.BackEnd.Logging
         /// We use a BindingFlags.Public flag here because the getter is public, so although the setter is internal,
         /// it is only discoverable with Reflection using the Public flag (go figure!)
         /// </remarks>
-        private static Lazy<PropertyInfo> s_projectStartedEventArgsGlobalProperties = new Lazy<PropertyInfo>(() => typeof(ProjectStartedEventArgs).GetProperty("GlobalProperties", BindingFlags.Public | BindingFlags.Instance), LazyThreadSafetyMode.PublicationOnly);
+        private static readonly Lazy<PropertyInfo> s_projectStartedEventArgsGlobalProperties = new Lazy<PropertyInfo>(() => typeof(ProjectStartedEventArgs).GetProperty("GlobalProperties", BindingFlags.Public | BindingFlags.Instance), LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// A cached reflection accessor for an internal member.
@@ -93,14 +93,14 @@ namespace Microsoft.Build.BackEnd.Logging
         /// We use a BindingFlags.Public flag here because the getter is public, so although the setter is internal,
         /// it is only discoverable with Reflection using the Public flag (go figure!)
         /// </remarks>
-        private static Lazy<PropertyInfo> s_projectStartedEventArgsToolsVersion = new Lazy<PropertyInfo>(() => typeof(ProjectStartedEventArgs).GetProperty("ToolsVersion", BindingFlags.Public | BindingFlags.Instance), LazyThreadSafetyMode.PublicationOnly);
+        private static readonly Lazy<PropertyInfo> s_projectStartedEventArgsToolsVersion = new Lazy<PropertyInfo>(() => typeof(ProjectStartedEventArgs).GetProperty("ToolsVersion", BindingFlags.Public | BindingFlags.Instance), LazyThreadSafetyMode.PublicationOnly);
 
         #region Data
 
         /// <summary>
         /// The mapping of build request configuration ids to project file names.
         /// </summary>
-        private Dictionary<int, string> _projectFileMap;
+        private readonly Dictionary<int, string> _projectFileMap;
 
         /// <summary>
         /// The current state of the logging service
@@ -159,7 +159,7 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// The IConfigCache instance obtained from componentHost (stored here to avoid repeated dictionary lookups).
         /// </summary>
-        private Lazy<IConfigCache> _configCache;
+        private readonly Lazy<IConfigCache> _configCache;
 
         /// <summary>
         /// The next project ID to assign when a project evaluation started event is received.
@@ -184,7 +184,7 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// What node is this logging service running on
         /// </summary>
-        private int _nodeId = 0;
+        private readonly int _nodeId = 0;
 
         /// <summary>
         /// Whether to include evaluation metaprojects in events.
@@ -234,14 +234,14 @@ namespace Microsoft.Build.BackEnd.Logging
         /// It should also be low enough that we do not accumulate enough messages to cause
         /// virtual memory exhaustion in extremely large builds.
         /// </summary>
-        private uint _queueCapacity = DefaultQueueCapacity;
+        private readonly uint _queueCapacity = DefaultQueueCapacity;
 
         /// <summary>
         /// By default our logMode is Asynchronous. We do this
         /// because we are hoping it will make the system
         /// more responsive when there are a large number of logging messages
         /// </summary>
-        private LoggerMode _logMode = LoggerMode.Asynchronous;
+        private readonly LoggerMode _logMode = LoggerMode.Asynchronous;
 
         #endregion
 

@@ -16,7 +16,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The build component host
         /// </summary>
-        private IBuildComponentHost _componentHost;
+        private readonly IBuildComponentHost _componentHost;
 
         private readonly bool _enableReuse;
 

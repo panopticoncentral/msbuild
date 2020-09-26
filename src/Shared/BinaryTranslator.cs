@@ -48,12 +48,12 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The stream used as a source or destination for data.
             /// </summary>
-            private Stream _packetStream;
+            private readonly Stream _packetStream;
 
             /// <summary>
             /// The binary reader used in read mode.
             /// </summary>
-            private BinaryReader _reader;
+            private readonly BinaryReader _reader;
 
             /// <summary>
             /// Constructs a serializer from the specified stream, operating in the designated mode.
@@ -654,12 +654,12 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The stream used as a source or destination for data.
             /// </summary>
-            private Stream _packetStream;
+            private readonly Stream _packetStream;
 
             /// <summary>
             /// The binary writer used in write mode.
             /// </summary>
-            private BinaryWriter _writer;
+            private readonly BinaryWriter _writer;
 
             /// <summary>
             /// Constructs a serializer from the specified stream, operating in the designated mode.

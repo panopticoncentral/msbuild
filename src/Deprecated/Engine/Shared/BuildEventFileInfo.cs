@@ -172,14 +172,14 @@ namespace Microsoft.Build.BuildEngine.Shared
         #endregion
 
         // the filename/path
-        private string file;
+        private readonly string file;
         // the line number of interest in the file
-        private int line;
+        private readonly int line;
         // the column number of interest in the file
-        private int column;
+        private readonly int column;
         // the last line in a range of interesting lines in the file
-        private int endLine;
+        private readonly int endLine;
         // the last column in a range of interesting columns in the file
-        private int endColumn;
+        private readonly int endColumn;
     }
 }

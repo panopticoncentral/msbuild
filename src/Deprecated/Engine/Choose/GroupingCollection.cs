@@ -19,11 +19,11 @@ namespace Microsoft.Build.BuildEngine
         #region Member Data
 
         // This is the list of groups contained in this collection.
-        private ArrayList combinedGroupList = null;
+        private readonly ArrayList combinedGroupList = null;
         private int propertyGroupCount = 0;
         private int itemGroupCount = 0;
         private int chooseCount = 0;
-        private GroupingCollection parentGroupingCollection;
+        private readonly GroupingCollection parentGroupingCollection;
 
         #endregion
 

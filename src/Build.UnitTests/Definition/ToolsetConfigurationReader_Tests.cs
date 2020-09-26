@@ -22,7 +22,7 @@ namespace Microsoft.Build.UnitTests.Definition
     /// </summary>
     public class ToolsetConfigurationReaderTests : IDisposable
     {
-        private static string s_msbuildToolsets = "msbuildToolsets";
+        private static readonly string s_msbuildToolsets = "msbuildToolsets";
 
         public void Dispose()
         {

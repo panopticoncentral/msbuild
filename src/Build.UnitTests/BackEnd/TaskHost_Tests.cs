@@ -26,32 +26,32 @@ namespace Microsoft.Build.UnitTests.BackEnd
         /// <summary>
         /// Task host for the test
         /// </summary>
-        private TaskHost _taskHost;
+        private readonly TaskHost _taskHost;
 
         /// <summary>
         /// Mock host for the tests
         /// </summary>
-        private MockHost _mockHost;
+        private readonly MockHost _mockHost;
 
         /// <summary>
         /// Custom logger for the tests
         /// </summary>
-        private MyCustomLogger _customLogger;
+        private readonly MyCustomLogger _customLogger;
 
         /// <summary>
         /// Element location for the tests
         /// </summary>
-        private ElementLocation _elementLocation;
+        private readonly ElementLocation _elementLocation;
 
         /// <summary>
         /// Logging service for the tests
         /// </summary>
-        private ILoggingService _loggingService;
+        private readonly ILoggingService _loggingService;
 
         /// <summary>
         /// Mock request callback that provides the build results.
         /// </summary>
-        private MockIRequestBuilderCallback _mockRequestCallback;
+        private readonly MockIRequestBuilderCallback _mockRequestCallback;
 
         /// <summary>
         /// Set up and initialize before each test is run

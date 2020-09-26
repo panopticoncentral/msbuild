@@ -590,15 +590,17 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Callback interface to communicate with the engine
         /// </summary>
-        private EngineCallback engineCallback;
+        private readonly EngineCallback engineCallback;
+
         /// <summary>
         /// The mode in which the TEM is running
         /// </summary>
-        TaskExecutionModuleMode moduleMode;
+        readonly TaskExecutionModuleMode moduleMode;
+
         /// <summary>
         /// The class used to execute user tasks.
         /// </summary>
-        TaskWorkerThread workerThread;
+        readonly TaskWorkerThread workerThread;
 
         // Data shared between all worker threads within the TEM
         /// <summary>
@@ -608,7 +610,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Event indicated a decrease in overallThreadCount due to an exit of a thread
         /// </summary>
-        private ManualResetEvent threadOverallCountEvent;
+        private readonly ManualResetEvent threadOverallCountEvent;
         /// <summary>
         /// Count of active thread (i.e. threads in user code). Has to be either 0 or 1
         /// </summary>
@@ -616,7 +618,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Event indicating a decrease in activeThreadCount due to a thread leaving user code
         /// </summary>
-        private ManualResetEvent threadActiveCountEvent;
+        private readonly ManualResetEvent threadActiveCountEvent;
         /// <summary>
         /// Time stamp of last execution of user code. Only valid if activeThreadCount == 0.
         /// </summary>
@@ -629,7 +631,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Specifies if the timing data on task execution should be collected
         /// </summary>
-        private bool profileExecution;
+        private readonly bool profileExecution;
         /// <summary>
         /// Total time spent executing task code. Only valid if profileExecution is true.
         /// </summary>
@@ -640,9 +642,9 @@ namespace Microsoft.Build.BuildEngine
         /// Single process mode (IsRunningMultipleNodes = false) is where the engine is initialized with the number of cpus = 1 and the engine is not a child engine.
         /// The engine is in multi process mode (IsRunningMultipleNodes = true) when the engine is initialized with a number of cpus > 1 or the engine is a child engine.
         /// </summary>
-        private bool isRunningMultipleNodes;
+        private readonly bool isRunningMultipleNodes;
 
-        private static StringBuilder currentDirectoryBuffer = new StringBuilder(270);
+        private static readonly StringBuilder currentDirectoryBuffer = new StringBuilder(270);
 
         /// <summary>
         /// In a multiproc build this is the maximum number of build requests which will be sent at a time to the parent engine
@@ -655,7 +657,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The nodeId of the node the TaskExecutionModule is running on
         /// </summary>
-        private int nodeId = -1;
+        private readonly int nodeId = -1;
 
         #endregion
 

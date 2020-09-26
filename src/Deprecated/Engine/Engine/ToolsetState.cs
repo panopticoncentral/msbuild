@@ -307,13 +307,13 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // The parent Engine object used for logging
-        private Engine parentEngine;
+        private readonly Engine parentEngine;
 
         // Logging service for posting messages
-        private EngineLoggingServices loggingServices;
+        private readonly EngineLoggingServices loggingServices;
 
         // The settings for this toolset (version name, path, and properties)
-        private Toolset toolset;
+        private readonly Toolset toolset;
 
         // these files list all default tasks and task assemblies that do not need to be explicitly declared by projects
         private const string defaultTasksFilePattern = "*.tasks";
@@ -328,8 +328,8 @@ namespace Microsoft.Build.BuildEngine
         private ProjectSchemaValidationHandler schemaValidator;
 
         // private delegates to make unit testing the TaskRegistry support easier
-        private GetFiles getFiles = null;
-        private LoadXmlFromPath loadXmlFromPath = null;
+        private readonly GetFiles getFiles = null;
+        private readonly LoadXmlFromPath loadXmlFromPath = null;
 
         #endregion
     }

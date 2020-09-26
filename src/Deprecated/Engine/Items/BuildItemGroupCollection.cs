@@ -22,7 +22,7 @@ namespace Microsoft.Build.BuildEngine
     {
         #region Member Data
 
-        private GroupingCollection groupingCollection;
+        private readonly GroupingCollection groupingCollection;
         #endregion
 
         #region Constructors

@@ -21,7 +21,7 @@ namespace Microsoft.Build.Graph.UnitTests
 {
     public class GraphLoadedFromSolutionTests : IDisposable
     {
-        private TestEnvironment _env;
+        private readonly TestEnvironment _env;
 
         public GraphLoadedFromSolutionTests(ITestOutputHelper output)
         {

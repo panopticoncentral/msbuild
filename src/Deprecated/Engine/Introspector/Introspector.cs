@@ -354,9 +354,9 @@ namespace Microsoft.Build.BuildEngine
         #endregion
 
         #region Data
-        private Engine parentEngine;
-        private ProjectManager projectManager;
-        private NodeManager nodeManager;
+        private readonly Engine parentEngine;
+        private readonly ProjectManager projectManager;
+        private readonly NodeManager nodeManager;
         private NodeStatus[] previousStatus;
         private NodeStatus previousLocalStatus;
         private long ignoreTimeout;

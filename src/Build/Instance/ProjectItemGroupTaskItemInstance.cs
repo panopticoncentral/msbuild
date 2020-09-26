@@ -91,12 +91,12 @@ namespace Microsoft.Build.Execution
         /// <summary>
         /// Location of matchOnMetadata, if any
         /// </summary>
-        private ElementLocation _matchOnMetadataLocation;
+        private readonly ElementLocation _matchOnMetadataLocation;
 
         /// <summary>
         /// Location of metadataMatchingSchema, if any
         /// </summary>
-        private ElementLocation _matchOnMetadataOptionsLocation;
+        private readonly ElementLocation _matchOnMetadataOptionsLocation;
 
         /// <summary>
         /// Location of keepMetadata, if any

@@ -780,7 +780,7 @@ namespace Microsoft.Build.UnitTests
             }
         }
 
-        private string _pathToArbitraryBogusFile = NativeMethodsShared.IsWindows // OK on 64 bit as well
+        private readonly string _pathToArbitraryBogusFile = NativeMethodsShared.IsWindows // OK on 64 bit as well
                                                         ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "notepad.exe")
                                                         : "/bin/cat";
 
@@ -1571,7 +1571,7 @@ namespace Microsoft.Build.UnitTests
         /// </summary>
         internal class IgnoreProjectExtensionsHelper
         {
-            private List<string> _directoryFileNameList;
+            private readonly List<string> _directoryFileNameList;
 
             /// <summary>
             /// Takes in a list of file names to simulate as being in a directory

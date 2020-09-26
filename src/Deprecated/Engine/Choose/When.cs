@@ -25,11 +25,11 @@ namespace Microsoft.Build.BuildEngine
             ProcessOtherwise,
         };
 
-        private GroupingCollection propertyAndItemLists = null;
-        private Project parentProject = null;
+        private readonly GroupingCollection propertyAndItemLists = null;
+        private readonly Project parentProject = null;
 
         // This is the "Condition" attribute on the <PropertyGroup> element above.
-        private XmlAttribute conditionAttribute = null;
+        private readonly XmlAttribute conditionAttribute = null;
 
         #endregion
 

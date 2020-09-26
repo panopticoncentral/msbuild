@@ -336,11 +336,11 @@ namespace Microsoft.Build.BuildEngine
         #endregion
 
         #region Data
-        private LocalNode localNode;
-        private DualQueue<LocalCallDescriptor> nodeCommandQueue;
-        private DualQueue<LocalCallDescriptor> nodeHiPriCommandQueue;
+        private readonly LocalNode localNode;
+        private readonly DualQueue<LocalCallDescriptor> nodeCommandQueue;
+        private readonly DualQueue<LocalCallDescriptor> nodeHiPriCommandQueue;
         private SharedMemory sharedMemory;
-        private ManualResetEvent exitCommunicationThreads;
+        private readonly ManualResetEvent exitCommunicationThreads;
         private bool writerThreadHasExited;
         private Thread writerThread;
 
@@ -348,7 +348,7 @@ namespace Microsoft.Build.BuildEngine
         private static ManualResetEvent replyFromParentArrived;
 
         // K: call id; V: ReplyData class with the wait event and reply call descriptor
-        private Hashtable repliesFromParent;
+        private readonly Hashtable repliesFromParent;
         #endregion
     }
 }

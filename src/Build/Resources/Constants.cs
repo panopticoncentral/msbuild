@@ -174,7 +174,7 @@ namespace Microsoft.Build.Internal
         /// <summary>
         /// Locker to protect initialization
         /// </summary>
-        private static Object s_locker = new Object();
+        private static readonly Object s_locker = new Object();
 
         static AvailableStaticMethods()
         {

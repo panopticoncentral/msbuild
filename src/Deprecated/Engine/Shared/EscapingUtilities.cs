@@ -190,6 +190,6 @@ namespace Microsoft.Build.BuildEngine.Shared
         /// (that would require rewriting the algorithm) but since it seems unlikely that we ever do, this should
         /// be good enough to avoid complicating the algorithm at this point.
         /// </summary>
-        private static char[] charsToEscape = { '%', '*', '?', '@', '$', '(', ')', ';', '\'' };
+        private static readonly char[] charsToEscape = { '%', '*', '?', '@', '$', '(', ')', ';', '\'' };
     }
 }

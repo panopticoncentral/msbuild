@@ -73,7 +73,7 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// Whether the cache should log activity to the Debug.Out stream
         /// </summary>
-        private static bool s_debugLogCacheActivity;
+        private static readonly bool s_debugLogCacheActivity;
 
         /// <summary>
         /// The map of weakly-held ProjectRootElement's
@@ -94,12 +94,12 @@ namespace Microsoft.Build.Evaluation
         /// whenever it is requested, and update with the latest content of that
         /// file if it has changed.
         /// </summary>
-        private bool _autoReloadFromDisk;
+        private readonly bool _autoReloadFromDisk;
 
         /// <summary>
         /// Locking object for this shared cache
         /// </summary>
-        private Object _locker = new Object();
+        private readonly Object _locker = new Object();
 
         /// <summary>
         /// Static constructor to choose cache size.

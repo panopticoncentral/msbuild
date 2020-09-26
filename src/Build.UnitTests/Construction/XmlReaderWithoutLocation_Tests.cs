@@ -12,7 +12,7 @@ namespace Microsoft.Build.UnitTests.Construction
     {
         private class XmlReaderNoIXmlLineInfo : XmlReader
         {
-            private XmlReader _wrappedReader;
+            private readonly XmlReader _wrappedReader;
 
             public XmlReaderNoIXmlLineInfo(XmlReader wrappedReader)
             {

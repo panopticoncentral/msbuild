@@ -39,7 +39,7 @@ namespace Microsoft.Build.BuildEngine
         }
 
         #region Data
-        private int requestId;
+        private readonly int requestId;
         #endregion
     }
     #endregion
@@ -86,7 +86,7 @@ namespace Microsoft.Build.BuildEngine
         }
 
         #region Data
-        private Exception e;
+        private readonly Exception e;
         #endregion
     }
     #endregion
@@ -127,8 +127,8 @@ namespace Microsoft.Build.BuildEngine
         }
 
         #region Data
-        private bool breadthFirstTraversal;
-        private bool changeLocalTraversalOnly;
+        private readonly bool breadthFirstTraversal;
+        private readonly bool changeLocalTraversalOnly;
         #endregion
     }
     #endregion

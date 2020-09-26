@@ -37,7 +37,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Mapping of manager-produced node IDs to the provider hosting the node.
         /// </summary>
-        private Dictionary<int, INodeProvider> _nodeIdToProvider;
+        private readonly Dictionary<int, INodeProvider> _nodeIdToProvider;
 
         /// <summary>
         /// The packet factory used to translate and route packets
@@ -52,7 +52,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The nodeID for the inproc node.
         /// </summary>
-        private int _inprocNodeId = 1;
+        private readonly int _inprocNodeId = 1;
 
         /// <summary>
         /// Flag indicating when the nodes have been shut down.

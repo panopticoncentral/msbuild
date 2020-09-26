@@ -18,7 +18,7 @@ namespace Microsoft.Build.Construction
         /// <summary>
         /// Synchronization object.
         /// </summary>
-        private object _locker = new Object();
+        private readonly object _locker = new Object();
 
         /// <summary>
         /// Add a string to the table.

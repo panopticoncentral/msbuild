@@ -23,15 +23,15 @@ namespace Microsoft.Build.Graph.UnitTests
     [ActiveIssue("https://github.com/Microsoft/msbuild/issues/4368")]
     public class ProjectGraphTests : IDisposable
     {
-        private TestEnvironment _env;
+        private readonly TestEnvironment _env;
 
         private static readonly string ProjectReferenceTargetsWithMultitargeting = @"<ItemGroup>
                                                                                         <!-- Item order is important to ensure outer build targets are put in front of inner build ones -->
                                                                                         <ProjectReferenceTargets Include='A' Targets='AHelperInner;A' />
                                                                                         <ProjectReferenceTargets Include='A' Targets='AHelperOuter' OuterBuild='true' />
                                                                                      </ItemGroup>";
-        private static string[] NonOuterBuildTargets = {"AHelperOuter", "AHelperInner", "A"};
-        private static string[] OuterBuildTargets = {"AHelperOuter"};
+        private static readonly string[] NonOuterBuildTargets = {"AHelperOuter", "AHelperInner", "A"};
+        private static readonly string[] OuterBuildTargets = {"AHelperOuter"};
 
         private static readonly string OuterBuildSpecificationWithProjectReferenceTargets = MultitargetingSpecificationPropertyGroup + ProjectReferenceTargetsWithMultitargeting;
 

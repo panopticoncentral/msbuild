@@ -392,10 +392,10 @@ namespace Microsoft.Build.CommandLine
 
         // for each recognized switch that doesn't take parameters, this array indicates if the switch has been detected on the
         // command line
-        private DetectedParameterlessSwitch[] _parameterlessSwitches;
+        private readonly DetectedParameterlessSwitch[] _parameterlessSwitches;
         // for each recognized switch that takes parameters, this array indicates if the switch has been detected on the command
         // line, and it provides a store for the switch parameters
-        private DetectedParameterizedSwitch[] _parameterizedSwitches;
+        private readonly DetectedParameterizedSwitch[] _parameterizedSwitches;
         // NOTE: the above arrays are instance members because this class is not required to be a singleton
 
         /// <summary>

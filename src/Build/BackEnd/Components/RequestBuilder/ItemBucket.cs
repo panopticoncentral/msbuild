@@ -24,7 +24,7 @@ namespace Microsoft.Build.BackEnd
         /// This single object contains all of the data necessary to perform expansion of metadata, properties,
         /// and items.
         /// </summary>
-        private Expander<ProjectPropertyInstance, ProjectItemInstance> _expander;
+        private readonly Expander<ProjectPropertyInstance, ProjectItemInstance> _expander;
 
         /// <summary>
         /// Metadata in this bucket
@@ -34,7 +34,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The items for this bucket.
         /// </summary>
-        private Lookup _lookup;
+        private readonly Lookup _lookup;
 
         /// <summary>
         /// When buckets are being created for batching purposes, this indicates which order the 
@@ -43,12 +43,12 @@ namespace Microsoft.Build.BackEnd
         /// bucket created gets bucketSequenceNumber=0, the second bucket created gets 
         /// bucketSequenceNumber=1, etc.
         /// </summary>
-        private int _bucketSequenceNumber;
+        private readonly int _bucketSequenceNumber;
 
         /// <summary>
         /// The entry we enter when we create the bucket.
         /// </summary>
-        private Lookup.Scope _lookupEntry;
+        private readonly Lookup.Scope _lookupEntry;
 
         #endregion
 

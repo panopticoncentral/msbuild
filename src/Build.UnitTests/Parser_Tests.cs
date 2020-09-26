@@ -16,7 +16,7 @@ namespace Microsoft.Build.UnitTests
         /// <summary>
         ///  Make a fake element location for methods who need one.
         /// </summary>
-        private MockElementLocation _elementLocation = MockElementLocation.Instance;
+        private readonly MockElementLocation _elementLocation = MockElementLocation.Instance;
 
         /// <summary>
         /// </summary>

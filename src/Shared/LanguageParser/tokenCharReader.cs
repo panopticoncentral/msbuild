@@ -16,7 +16,7 @@ namespace Microsoft.Build.Shared.LanguageParser
     internal class TokenCharReader
     {
         // The sources 
-        private StreamMappedString _sources;
+        private readonly StreamMappedString _sources;
         // Current character offset within sources.
         private int _position;
         // The current line. One-relative.

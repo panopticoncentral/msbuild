@@ -23,7 +23,7 @@ namespace Microsoft.Build.Framework
             _runtimeVersion = runtimeVersion;
         }
 
-        private string _runtimeVersion;
+        private readonly string _runtimeVersion;
 
         /// <summary>
         /// Returns the runtime version the attribute was constructed with,

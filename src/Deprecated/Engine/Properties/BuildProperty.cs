@@ -66,7 +66,7 @@ namespace Microsoft.Build.BuildEngine
         // is null, which means the property is not persisted, we should not store
         // the name/value pair in an XML attribute, because the property name
         // may contain illegal XML characters.
-        private string propertyName = null;
+        private readonly string propertyName = null;
 
         // We'll still store the value no matter what, because fetching the inner
         // XML can be an expensive operation.
@@ -86,7 +86,7 @@ namespace Microsoft.Build.BuildEngine
         //
         // If this property is not represented by an actual XML element in the 
         // project file, it's okay if this is null.
-        private XmlElement propertyElement = null;
+        private readonly XmlElement propertyElement = null;
 
         // This is the specific XML attribute in the above XML element which 
         // contains the "Condition".
@@ -97,7 +97,7 @@ namespace Microsoft.Build.BuildEngine
         private BuildPropertyGroup parentPersistedPropertyGroup = null;
 
         // Dictionary to intern the value and finalEscapedValue strings as they are deserialized
-        private static Dictionary<string, string> customInternTable = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private static readonly Dictionary<string, string> customInternTable = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         #endregion
 
         #region CustomSerializationToStream

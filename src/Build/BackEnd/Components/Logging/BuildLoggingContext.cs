@@ -20,7 +20,7 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// True if this context comes from the in-proc node.
         /// </summary>
-        private bool _isInProcNode;
+        private readonly bool _isInProcNode;
 
         /// <summary>
         /// Constructs the logging context from a logging service and an event context.

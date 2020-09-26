@@ -15,7 +15,7 @@ namespace Microsoft.Build.Shared.LanguageParser
         /// <summary>
         /// The raw binary stream that's being read.
         /// </summary>
-        private Stream _binaryStream;
+        private readonly Stream _binaryStream;
 
         /// <summary>
         /// The reader on top of binaryStream. This is what interprets the encoding.
@@ -26,7 +26,7 @@ namespace Microsoft.Build.Shared.LanguageParser
         /// When false, try to guess the encoding of binaryStream. When true, force the 
         /// encoding to ANSI.
         /// </summary>
-        private bool _forceANSI;
+        private readonly bool _forceANSI;
 
         /// <summary>
         /// The page number that 'currentPage' is pointing to.
@@ -61,7 +61,7 @@ namespace Microsoft.Build.Shared.LanguageParser
         /// <summary>
         /// Size of pages to use for reading from source file.
         /// </summary>
-        private int _pageSize = 0;
+        private readonly int _pageSize = 0;
 
         /// <summary>
         /// Construct.

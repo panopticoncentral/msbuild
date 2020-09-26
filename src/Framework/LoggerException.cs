@@ -135,8 +135,8 @@ namespace Microsoft.Build.Framework
         #endregion
 
         // the error code for this exception's message (not the inner exception)
-        private string errorCode;
+        private readonly string errorCode;
         // the F1-help keyword for the host IDE
-        private string helpKeyword;
+        private readonly string helpKeyword;
     }
 }

@@ -14,9 +14,9 @@ namespace Microsoft.Build.BuildEngine.Shared
     /// <owner>SumedhK</owner>
     internal class TypeLoader
     {
-        private Dictionary<AssemblyLoadInfo, List<Type>> cacheOfAllDesiredTypesInAnAssembly = new Dictionary<AssemblyLoadInfo, List<Type>>();
+        private readonly Dictionary<AssemblyLoadInfo, List<Type>> cacheOfAllDesiredTypesInAnAssembly = new Dictionary<AssemblyLoadInfo, List<Type>>();
 
-        private TypeFilter isDesiredType;
+        private readonly TypeFilter isDesiredType;
 
         /// <summary>
         /// Constructor.

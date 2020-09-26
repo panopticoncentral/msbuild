@@ -24,12 +24,12 @@ namespace Microsoft.Build.BackEnd.Logging
         /// <summary>
         /// The project to which this target is attached.
         /// </summary>
-        private ProjectLoggingContext _projectLoggingContext;
+        private readonly ProjectLoggingContext _projectLoggingContext;
 
         /// <summary>
         /// The target being built.
         /// </summary>
-        private ProjectTargetInstance _target;
+        private readonly ProjectTargetInstance _target;
 
         /// <summary>
         /// Creates a new target logging context from an existing project context and target.
@@ -127,7 +127,7 @@ namespace Microsoft.Build.BackEnd.Logging
             /// <summary>
             /// Enumerable that this proxies
             /// </summary>
-            private IEnumerable<TaskItem> _backingItems;
+            private readonly IEnumerable<TaskItem> _backingItems;
 
             /// <summary>
             /// Constructor

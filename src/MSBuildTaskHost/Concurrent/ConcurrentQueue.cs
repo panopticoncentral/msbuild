@@ -40,7 +40,7 @@ namespace Microsoft.Build.Shared.Concurrent
         /// Lock used to protect cross-segment operations, including any updates to <see cref="_tail"/> or <see cref="_head"/>
         /// and any operations that need to get a consistent view of them.
         /// </summary>
-        private object _crossSegmentLock;
+        private readonly object _crossSegmentLock;
         /// <summary>The current tail segment.</summary>
         private volatile Segment _tail;
         /// <summary>The current head segment.</summary>

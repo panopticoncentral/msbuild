@@ -26,9 +26,9 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
         private const string system2Path = "c:\\clr2\\System.dll";
         private const string system1Path = "c:\\clr2\\System1.dll";
 
-        private GetAssemblyRuntimeVersion _runtimeVersion = new GetAssemblyRuntimeVersion(MockGetRuntimeVersion);
-        private GetPathFromFusionName _getPathFromFusionName = new GetPathFromFusionName(MockGetPathFromFusionName);
-        private GetGacEnumerator _gacEnumerator = new GetGacEnumerator(MockAssemblyCacheEnumerator);
+        private readonly GetAssemblyRuntimeVersion _runtimeVersion = new GetAssemblyRuntimeVersion(MockGetRuntimeVersion);
+        private readonly GetPathFromFusionName _getPathFromFusionName = new GetPathFromFusionName(MockGetPathFromFusionName);
+        private readonly GetGacEnumerator _gacEnumerator = new GetGacEnumerator(MockAssemblyCacheEnumerator);
 
         public GlobalAssemblyCacheTests(ITestOutputHelper output) : base(output)
         {
@@ -956,7 +956,7 @@ namespace Microsoft.Build.UnitTests.ResolveAssemblyReference_Tests
 
         internal class MockEnumerator : IEnumerable<AssemblyNameExtension>
         {
-            private List<string> _assembliesToEnumerate = null;
+            private readonly List<string> _assembliesToEnumerate = null;
             private List<string>.Enumerator _enumerator;
 
             public MockEnumerator(List<string> assembliesToEnumerate)

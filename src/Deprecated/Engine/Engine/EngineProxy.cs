@@ -33,18 +33,18 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The full path to the project that's currently building.
         /// </summary>
-        private string parentProjectFullFileName;
+        private readonly string parentProjectFullFileName;
 
         /// <summary>
         /// The project file that contains the XML for task. This may be an import file and not the primary
         /// project file
         /// </summary>
-        private string projectFileOfTaskNode;
+        private readonly string projectFileOfTaskNode;
 
         /// <summary>
         /// The token identifing the context of this evaluation
         /// </summary>
-        private int handleId;
+        private readonly int handleId;
 
         /// <summary>
         /// Continue on error value per batch exposed via IBuildEngine
@@ -70,7 +70,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// This reference type is used to block access to a single entry methods of the interface
         /// </summary>
-        private object callbackMonitor;
+        private readonly object callbackMonitor;
 
         /// <summary>
         /// A client sponsor is a class

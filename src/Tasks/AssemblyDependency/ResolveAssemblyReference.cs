@@ -106,7 +106,7 @@ namespace Microsoft.Build.Tasks
         private string[] _fullFrameworkFolders = Array.Empty<string>();
         private string[] _latestTargetFrameworkDirectories = Array.Empty<string>();
         private bool _copyLocalDependenciesWhenParentReferenceInGac = true;
-        private Dictionary<string, MessageImportance> _showAssemblyFoldersExLocations = new Dictionary<string, MessageImportance>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, MessageImportance> _showAssemblyFoldersExLocations = new Dictionary<string, MessageImportance>(StringComparer.OrdinalIgnoreCase);
         private bool _logVerboseSearchResults = false;
         private WarnOrErrorOnTargetArchitectureMismatchBehavior _warnOrErrorOnTargetArchitectureMismatch = WarnOrErrorOnTargetArchitectureMismatchBehavior.Warning;
         private bool _unresolveFrameworkAssembliesFromHigherFrameworks = false;
@@ -888,7 +888,7 @@ namespace Microsoft.Build.Tasks
         /// <summary>
         /// Storage for names of all files writen to disk.
         /// </summary>
-        private List<ITaskItem> _filesWritten = new List<ITaskItem>();
+        private readonly List<ITaskItem> _filesWritten = new List<ITaskItem>();
 
         /// <summary>
         /// The names of all files written to disk.

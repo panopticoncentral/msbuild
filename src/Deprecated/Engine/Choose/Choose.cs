@@ -18,13 +18,13 @@ namespace Microsoft.Build.BuildEngine
     internal class Choose : IItemPropertyGrouping
     {
         #region Member Data
-        private ArrayList whenClauseList = null;
-        private When otherwiseClause = null;
+        private readonly ArrayList whenClauseList = null;
+        private readonly When otherwiseClause = null;
         private When whenLastTaken = null;
 
         // If this is a persisted <Choose>, this boolean tells us whether
         // it came from the main project file, or an imported project file.
-        private bool importedFromAnotherProject;
+        private readonly bool importedFromAnotherProject;
 
         // Maximum nesting level of <Choose> elements. No reasonable project needs more
         // than this.

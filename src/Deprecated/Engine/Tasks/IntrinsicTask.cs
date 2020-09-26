@@ -320,25 +320,30 @@ namespace Microsoft.Build.BuildEngine
         #region Fields
 
         // the XML backing the task
-        private XmlElement taskNodeXmlElement;
+        private readonly XmlElement taskNodeXmlElement;
         // the logging services provider
-        private EngineLoggingServices loggingServices;
+        private readonly EngineLoggingServices loggingServices;
         // event contextual information where the event is fired from
-        private BuildEventContext buildEventContext;
+        private readonly BuildEventContext buildEventContext;
+
         // whether the backing type is a property group, or an item group
-        BackingType backingType;
+        readonly BackingType backingType;
+
         // backing property group, if any
-        BuildPropertyGroup backingPropertyGroup;
+        readonly BuildPropertyGroup backingPropertyGroup;
+
         // backing xml for a backing item group, if any
-        BuildItemGroupXml backingItemGroupXml;
+        readonly BuildItemGroupXml backingItemGroupXml;
+
         // children of the backing item group, if any
-        List<BuildItemGroupChildXml> backingBuildItemGroupChildren = null;
+        readonly List<BuildItemGroupChildXml> backingBuildItemGroupChildren = null;
+
         // directory in which the project is executing -- the current directory needed to expand wildcards
-        string executionDirectory;
+        readonly string executionDirectory;
         // the conditional expression that controls task execution
-        private XmlAttribute conditionAttribute;
+        private readonly XmlAttribute conditionAttribute;
         // the library of default metadata that any new items should inherit
-        private ItemDefinitionLibrary itemDefinitionLibrary;
+        private readonly ItemDefinitionLibrary itemDefinitionLibrary;
         #endregion
 
         #region Nested Types

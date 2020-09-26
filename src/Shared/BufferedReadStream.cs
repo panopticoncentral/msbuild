@@ -9,9 +9,8 @@ namespace Microsoft.Build.BackEnd
     internal class BufferedReadStream : Stream
     {
         const int BUFFER_SIZE = 1024;
-
-        Stream _innerStream;
-        byte[] _buffer;
+        readonly Stream _innerStream;
+        readonly byte[] _buffer;
 
         //  The number of bytes in the buffer that have been read from the underlying stream but not read by consumers of this stream
         int _currentlyBufferedByteCount;

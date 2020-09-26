@@ -135,7 +135,7 @@ namespace Microsoft.Build.BuildEngine
 
         // An array of hashtables with cached expression trees for all the combinations of condition strings 
         // and parser options
-        private static volatile Hashtable[] cachedExpressionTrees = new Hashtable[8 /* == ParserOptions.AllowAll*/]
+        private static readonly Hashtable[] cachedExpressionTrees = new Hashtable[8 /* == ParserOptions.AllowAll*/]
             {
                 new Hashtable(StringComparer.OrdinalIgnoreCase), new Hashtable(StringComparer.OrdinalIgnoreCase), 
                 new Hashtable(StringComparer.OrdinalIgnoreCase), new Hashtable(StringComparer.OrdinalIgnoreCase), 

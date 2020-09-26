@@ -44,7 +44,7 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             public ExporterFactory ExportFactory { get; }
         }
 
-        private static List<ElementInfo> canonicalTypes = new List<ElementInfo>()
+        private static readonly List<ElementInfo> canonicalTypes = new List<ElementInfo>()
         {
             ElementInfo.New<ProjectRootElement               , MockProjectRootElementLinkRemoter>(),
             ElementInfo.New<ProjectChooseElement             , MockProjectChooseElementLinkRemoter>(),

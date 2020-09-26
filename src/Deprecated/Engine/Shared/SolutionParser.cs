@@ -86,13 +86,13 @@ namespace Microsoft.Build.BuildEngine.Shared
         private string defaultPlatformName;
 
         //List of warnings that occurred while parsing solution
-        private ArrayList solutionParserWarnings = null;
+        private readonly ArrayList solutionParserWarnings = null;
 
         //List of comments that occurred while parsing solution
-        private ArrayList solutionParserComments = null;
+        private readonly ArrayList solutionParserComments = null;
 
         // unit-testing only
-        private ArrayList solutionParserErrorCodes = null;
+        private readonly ArrayList solutionParserErrorCodes = null;
 
         StreamReader reader = null;
         int currentLineNumber = 0;

@@ -72,7 +72,7 @@ namespace Microsoft.Build.Framework
             this.succeeded = succeeded;
         }
 
-        private string projectFile;
+        private readonly string projectFile;
 
         /// <summary>
         /// Project name
@@ -85,7 +85,7 @@ namespace Microsoft.Build.Framework
             }
         }
 
-        private bool succeeded;
+        private readonly bool succeeded;
 
         /// <summary>
         /// True if project built successfully, false otherwise

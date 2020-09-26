@@ -120,17 +120,17 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// Dictionary of methods used to read BuildEventArgs.
         /// </summary>
-        private static Dictionary<LoggingEventType, MethodInfo> s_readMethodCache = new Dictionary<LoggingEventType, MethodInfo>();
+        private static readonly Dictionary<LoggingEventType, MethodInfo> s_readMethodCache = new Dictionary<LoggingEventType, MethodInfo>();
 
         /// <summary>
         /// Dictionary of methods used to write BuildEventArgs.
         /// </summary>
-        private static Dictionary<LoggingEventType, MethodInfo> s_writeMethodCache = new Dictionary<LoggingEventType, MethodInfo>();
+        private static readonly Dictionary<LoggingEventType, MethodInfo> s_writeMethodCache = new Dictionary<LoggingEventType, MethodInfo>();
 
         /// <summary>
         /// Dictionary of assemblies we've added to the resolver.
         /// </summary>
-        private static HashSet<string> s_customEventsLoaded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private static readonly HashSet<string> s_customEventsLoaded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
 #if FEATURE_APPDOMAIN
         /// <summary>
@@ -142,12 +142,12 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// The object used to synchronize access to shared data.
         /// </summary>
-        private static object s_lockObject = new Object();
+        private static readonly object s_lockObject = new Object();
 
         /// <summary>
         /// Delegate for translating targetfinished events. 
         /// </summary>
-        private TargetFinishedTranslator _targetFinishedTranslator = null;
+        private readonly TargetFinishedTranslator _targetFinishedTranslator = null;
 
         #region Data
 

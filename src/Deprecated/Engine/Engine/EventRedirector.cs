@@ -47,9 +47,9 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // The Id of the central logger to which this event should be forwarded
-        private int loggerId;
+        private readonly int loggerId;
         // The engine logging service that will forward the event to the right central logger
-        private EngineLoggingServices loggingService;
+        private readonly EngineLoggingServices loggingService;
         #endregion
     }
 }

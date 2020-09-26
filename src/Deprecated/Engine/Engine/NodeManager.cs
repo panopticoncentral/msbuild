@@ -317,15 +317,15 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// Pointer to the parent engine
         /// </summary>
-        private Engine parentEngine;
+        private readonly Engine parentEngine;
         /// <summary>
         /// List of node information of nodes provided by registered node providers
         /// </summary>
-        private List<ProvidersNodeInformation> nodeList;
+        private readonly List<ProvidersNodeInformation> nodeList;
         /// <summary>
         /// List of registered node providers
         /// </summary>
-        private List<INodeProvider> nodeProviders;
+        private readonly List<INodeProvider> nodeProviders;
         /// <summary>
         /// Array of status summaries from the node
         /// </summary>
@@ -337,7 +337,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// An event activated when status message arrives
         /// </summary>
-        private ManualResetEvent statusMessageReceived;
+        private readonly ManualResetEvent statusMessageReceived;
         /// <summary>
         /// Local TEM used for executing tasks within the current process
         /// </summary>
@@ -411,16 +411,16 @@ namespace Microsoft.Build.BuildEngine
 
         #region Data
         // Index from nodeProvider of a node which it manages
-        private int nodeIndex;
+        private readonly int nodeIndex;
 
         // Node description of node in nodeProvider referenced by nodeIndex;
-        private INodeDescription description;
+        private readonly INodeDescription description;
 
         // Reference to the nodeProvider which manages the node referenced by nodeIndex
-        private INodeProvider nodeProvider;
+        private readonly INodeProvider nodeProvider;
 
         // The nodeId issued by the engine to this node
-        private int nodeId;
+        private readonly int nodeId;
         #endregion
     }
 }

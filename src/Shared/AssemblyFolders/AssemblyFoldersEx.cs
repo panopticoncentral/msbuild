@@ -44,12 +44,12 @@ namespace Microsoft.Build.Shared
         /// <summary>
         /// The list of directory names found from the registry.
         /// </summary>
-        private List<AssemblyFoldersExInfo> _directoryNames = new List<AssemblyFoldersExInfo>();
+        private readonly List<AssemblyFoldersExInfo> _directoryNames = new List<AssemblyFoldersExInfo>();
 
         /// <summary>
         /// Set of unique paths to directories found from the registry
         /// </summary>
-        private HashSet<string> _uniqueDirectoryPaths = new HashSet<string>();
+        private readonly HashSet<string> _uniqueDirectoryPaths = new HashSet<string>();
 
         /// <summary>
         /// Construct.

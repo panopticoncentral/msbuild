@@ -40,8 +40,8 @@ namespace Microsoft.Build.Evaluation
             EndOfInput
         };
 
-        private TokenType _tokenType;
-        private string _tokenString;
+        private readonly TokenType _tokenType;
+        private readonly string _tokenString;
 
         /// <summary>
         /// Constructor for types that don't have values

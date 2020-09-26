@@ -356,21 +356,21 @@ namespace Microsoft.Build.Exceptions
         #endregion
 
         // the project file that caused this exception
-        private string file;
+        private readonly string file;
         // the invalid line number in the project
-        private int lineNumber;
+        private readonly int lineNumber;
         // the invalid column number in the project
-        private int columnNumber;
+        private readonly int columnNumber;
         // the end of a range of invalid lines in the project
-        private int endLineNumber;
+        private readonly int endLineNumber;
         // the end of a range of invalid columns in the project
-        private int endColumnNumber;
+        private readonly int endColumnNumber;
         // the error sub-category that describes the type of this error
-        private string errorSubcategory;
+        private readonly string errorSubcategory;
         // the error code for the exception message
-        private string errorCode;
+        private readonly string errorCode;
         // the F1-help keyword for the host IDE
-        private string helpKeyword;
+        private readonly string helpKeyword;
         // Has this errors been sent to the loggers?
         private bool hasBeenLogged = false;
     }

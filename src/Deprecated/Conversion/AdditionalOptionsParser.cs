@@ -141,7 +141,7 @@ namespace Microsoft.Build.Conversion
     internal sealed class AdditionalOptionsParser
     {
         // These are all that we recognize in the AdditionalOptions    
-        private CompSwitchInfo[] validCompilerSwitches = new CompSwitchInfo[] {
+        private readonly CompSwitchInfo[] validCompilerSwitches = new CompSwitchInfo[] {
             #region Info on the compiler switches to be parsed from AdditionalOptions
             // /codepage:<n>
             new CompSwitchInfo(

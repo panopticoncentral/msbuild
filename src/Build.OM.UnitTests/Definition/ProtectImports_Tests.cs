@@ -74,7 +74,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
         /// <summary>
         /// Import filename
         /// </summary>
-        private string _importFilename;
+        private readonly string _importFilename;
 
         #region Test lifetime
 

@@ -135,7 +135,7 @@ namespace Microsoft.Build.Evaluation
             /// searchPaths definition before, since the .NET configuration classes
             /// won't perform this check without respect for case.
             /// </summary>
-            private Dictionary<string, string> _previouslySeenOS = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            private readonly Dictionary<string, string> _previouslySeenOS = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             /// <summary>
             /// Type of the collection
@@ -310,7 +310,7 @@ namespace Microsoft.Build.Evaluation
             /// property definition before, since the .NET configuration classes
             /// won't perform this check without respect for case.
             /// </summary>
-            private Dictionary<string, string> _previouslySeenPropertyNames = new Dictionary<string, string>(MSBuildNameIgnoreCaseComparer.Default);
+            private readonly Dictionary<string, string> _previouslySeenPropertyNames = new Dictionary<string, string>(MSBuildNameIgnoreCaseComparer.Default);
 
     #endregion
 
@@ -489,7 +489,7 @@ namespace Microsoft.Build.Evaluation
         /// toolset definition before, since the .NET configuration classes
         /// won't perform this check without respect for case.
         /// </summary>
-        private Dictionary<string, string> _previouslySeenToolsVersions = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, string> _previouslySeenToolsVersions = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Type of the collection

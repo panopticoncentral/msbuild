@@ -187,9 +187,9 @@ namespace Microsoft.Build.BuildEngine.Shared
         #endregion
 
         // the type that was loaded
-        private Type type;
+        private readonly Type type;
         // the assembly the type was loaded from
-        private AssemblyLoadInfo assembly;
+        private readonly AssemblyLoadInfo assembly;
 
         // cache of names of required properties on this type
         private Dictionary<string, string> namesOfPropertiesWithRequiredAttribute;

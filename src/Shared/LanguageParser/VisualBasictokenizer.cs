@@ -29,10 +29,10 @@ namespace Microsoft.Build.Shared.LanguageParser
         internal class ExpectedValidOctalDigitToken : SyntaxErrorToken { }
 
         // The source lines
-        private Stream _binaryStream = null;
+        private readonly Stream _binaryStream = null;
 
         // Whether or not to force ANSI reading.
-        private bool _forceANSI;
+        private readonly bool _forceANSI;
 
         /*
          * Method:  VisualBasicTokenizer

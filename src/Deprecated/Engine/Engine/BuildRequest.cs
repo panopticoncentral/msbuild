@@ -822,7 +822,7 @@ namespace Microsoft.Build.BuildEngine
         private Hashtable resultByTarget;
         private bool buildCompleted;
         private bool buildSucceeded;
-        private Hashtable globalPropertiesPassedByTask;
+        private readonly Hashtable globalPropertiesPassedByTask;
         private int nodeIndex;
         private Engine parentEngine;
         private Project projectToBuild;

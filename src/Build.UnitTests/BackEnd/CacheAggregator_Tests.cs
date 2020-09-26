@@ -16,7 +16,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
 {
     public class CacheAggregator_Tests
     {
-        private CacheAggregator aggregator;
+        private readonly CacheAggregator aggregator;
 
         public CacheAggregator_Tests()
         {

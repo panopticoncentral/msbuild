@@ -1213,22 +1213,22 @@ namespace Microsoft.Build.BackEnd
         #endregion
 
         // the project whose target we are analyzing.
-        private ProjectInstance _project;
+        private readonly ProjectInstance _project;
         // the target to analyze
-        private ProjectTargetInstance _targetToAnalyze;
+        private readonly ProjectTargetInstance _targetToAnalyze;
 
         // the value of the target's "Inputs" attribute
-        private string _targetInputSpecification;
+        private readonly string _targetInputSpecification;
         // the value of the target's "Outputs" attribute
-        private string _targetOutputSpecification;
+        private readonly string _targetOutputSpecification;
 
         // Details of the dependency analysis for logging
         private readonly List<DependencyAnalysisLogDetail> _dependencyAnalysisDetail = new List<DependencyAnalysisLogDetail>();
 
         // Engine logging service which to log message to
-        private ILoggingService _loggingService;
+        private readonly ILoggingService _loggingService;
         // Event context information where event is raised from
-        private BuildEventContext _buildEventContext;
+        private readonly BuildEventContext _buildEventContext;
 
         /// <summary>
         /// By default we do not sort target inputs and outputs as it has significant perf impact.
@@ -1239,13 +1239,13 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The unique target inputs.
         /// </summary>
-        private IDictionary<string, object> _uniqueTargetInputs =
+        private readonly IDictionary<string, object> _uniqueTargetInputs =
                    (s_sortInputsOutputs ? (IDictionary<string, object>)new SortedDictionary<string, object>(StringComparer.OrdinalIgnoreCase) : (IDictionary<string, object>)new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase));
 
         /// <summary>
         /// The unique target outputs.
         /// </summary>
-        private IDictionary<string, object> _uniqueTargetOutputs =
+        private readonly IDictionary<string, object> _uniqueTargetOutputs =
                    (s_sortInputsOutputs ? (IDictionary<string, object>)new SortedDictionary<string, object>(StringComparer.OrdinalIgnoreCase) : (IDictionary<string, object>)new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase));
     }
 
@@ -1264,11 +1264,11 @@ namespace Microsoft.Build.BackEnd
     /// </summary>
     internal class DependencyAnalysisLogDetail
     {
-        private OutofdateReason _reason;
-        private string _inputItemName;
-        private string _outputItemName;
-        private string _input;
-        private string _output;
+        private readonly OutofdateReason _reason;
+        private readonly string _inputItemName;
+        private readonly string _outputItemName;
+        private readonly string _input;
+        private readonly string _output;
 
         /// <summary>
         /// The reason that we are logging this entry

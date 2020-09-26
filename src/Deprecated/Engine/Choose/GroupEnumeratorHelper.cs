@@ -29,10 +29,10 @@ namespace Microsoft.Build.BuildEngine
 
         // Reference to the GroupingCollection object to get the
         // enumerator from.
-        private GroupingCollection groupingCollection;
+        private readonly GroupingCollection groupingCollection;
 
         // Type of enumerator to return
-        private ListType type;
+        private readonly ListType type;
 
         #endregion
 

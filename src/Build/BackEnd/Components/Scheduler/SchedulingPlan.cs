@@ -22,27 +22,27 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The configuration cache.
         /// </summary>
-        private IConfigCache _configCache;
+        private readonly IConfigCache _configCache;
 
         /// <summary>
         /// The active scheduling data.
         /// </summary>
-        private SchedulingData _schedulingData;
+        private readonly SchedulingData _schedulingData;
 
         /// <summary>
         /// Mapping of project full paths to plan configuration data.
         /// </summary>
-        private Dictionary<string, PlanConfigData> _configPathToData = new Dictionary<string, PlanConfigData>();
+        private readonly Dictionary<string, PlanConfigData> _configPathToData = new Dictionary<string, PlanConfigData>();
 
         /// <summary>
         /// Mapping of configuration ids to plan configuration data.
         /// </summary>
-        private Dictionary<int, PlanConfigData> _configIdToData = new Dictionary<int, PlanConfigData>();
+        private readonly Dictionary<int, PlanConfigData> _configIdToData = new Dictionary<int, PlanConfigData>();
 
         /// <summary>
         /// Mapping of configuration ids to the set of configurations which were traversed to get to this configuration.
         /// </summary>
-        private Dictionary<int, List<Stack<PlanConfigData>>> _configIdToPaths = new Dictionary<int, List<Stack<PlanConfigData>>>();
+        private readonly Dictionary<int, List<Stack<PlanConfigData>>> _configIdToPaths = new Dictionary<int, List<Stack<PlanConfigData>>>();
 
         /// <summary>
         /// Constructor.
@@ -580,12 +580,12 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The configuration id.
             /// </summary>
-            private int _configId;
+            private readonly int _configId;
 
             /// <summary>
             /// The full path to the project.
             /// </summary>
-            private string _configFullPath;
+            private readonly string _configFullPath;
 
             /// <summary>
             /// The amount of time spent in the configuration.
@@ -600,12 +600,12 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The set of references.
             /// </summary>
-            private HashSet<PlanConfigData> _references = new HashSet<PlanConfigData>();
+            private readonly HashSet<PlanConfigData> _references = new HashSet<PlanConfigData>();
 
             /// <summary>
             /// The set of referrers.
             /// </summary>
-            private HashSet<PlanConfigData> _referrers = new HashSet<PlanConfigData>();
+            private readonly HashSet<PlanConfigData> _referrers = new HashSet<PlanConfigData>();
 
             /// <summary>
             /// Constructor.

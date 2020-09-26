@@ -134,7 +134,7 @@ namespace Microsoft.Build.Internal
         /// <summary>
         /// Whether to trace communications
         /// </summary>
-        private static bool s_trace = String.Equals(Environment.GetEnvironmentVariable("MSBUILDDEBUGCOMM"), "1", StringComparison.Ordinal);
+        private static readonly bool s_trace = String.Equals(Environment.GetEnvironmentVariable("MSBUILDDEBUGCOMM"), "1", StringComparison.Ordinal);
 
         /// <summary>
         /// Place to dump trace

@@ -237,27 +237,27 @@ namespace Microsoft.Build.UnitTests.BackEnd
 
         private MockHost _host;
 
-        private AutoResetEvent _requestCompleteEvent;
+        private readonly AutoResetEvent _requestCompleteEvent;
         private BuildRequest _requestComplete_Request;
         private BuildResult _requestComplete_Result;
 
-        private AutoResetEvent _requestResumedEvent;
+        private readonly AutoResetEvent _requestResumedEvent;
         private BuildRequest _requestResumed_Request;
 
-        private AutoResetEvent _newRequestEvent;
+        private readonly AutoResetEvent _newRequestEvent;
         private BuildRequestBlocker _newRequest_Request;
 
-        private AutoResetEvent _engineStatusChangedEvent;
+        private readonly AutoResetEvent _engineStatusChangedEvent;
         private BuildRequestEngineStatus _engineStatusChanged_Status;
 
-        private AutoResetEvent _newConfigurationEvent;
+        private readonly AutoResetEvent _newConfigurationEvent;
         private BuildRequestConfiguration _newConfiguration_Config;
 
-        private AutoResetEvent _engineExceptionEvent;
+        private readonly AutoResetEvent _engineExceptionEvent;
         private Exception _engineException_Exception;
 
-        private IBuildRequestEngine _engine;
-        private IConfigCache _cache;
+        private readonly IBuildRequestEngine _engine;
+        private readonly IConfigCache _cache;
         private int _nodeRequestId;
         private int _globalRequestId;
 

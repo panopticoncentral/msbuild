@@ -18,7 +18,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         /// <summary>
         /// metadata hash
         /// </summary>
-        private Lazy<Dictionary<string, string>> _metadata;
+        private readonly Lazy<Dictionary<string, string>> _metadata;
 
         /// <summary>
         /// Constructor

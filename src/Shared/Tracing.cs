@@ -20,7 +20,7 @@ namespace Microsoft.Build.Internal
         /// <summary>
         /// A dictionary of named counters
         /// </summary>
-        private static Dictionary<string, int> s_counts;
+        private static readonly Dictionary<string, int> s_counts;
 
         /// <summary>
         /// Last time logging happened
@@ -40,7 +40,7 @@ namespace Microsoft.Build.Internal
         /// <summary>
         /// Short name of the current assembly - to distinguish statics when this type is shared into different assemblies
         /// </summary> 
-        private static string s_currentAssemblyName;
+        private static readonly string s_currentAssemblyName;
 #pragma warning restore 649
 
 #if DEBUG

@@ -139,7 +139,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// If this engine is running in child mode the parent node is used to post logging messages
         /// </summary>
-        private Node parentNode;
+        private readonly Node parentNode;
 
         /// <summary>
         /// Current count of items in the array of events (access should be protected with loggingQueueReadLock)

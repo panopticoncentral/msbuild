@@ -71,12 +71,12 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The BuildRequestEntry to which this target invocation belongs
         /// </summary>
-        private BuildRequestEntry _requestEntry;
+        private readonly BuildRequestEntry _requestEntry;
 
         /// <summary>
         /// The specification of the target being built.
         /// </summary>
-        private TargetSpecification _targetSpecification;
+        private readonly TargetSpecification _targetSpecification;
 
         /// <summary>
         /// The Target being built.  This will be null until the GetTargetInstance() is called, which
@@ -101,32 +101,32 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The parent entry, which is waiting for us to complete before proceeding.
         /// </summary>
-        private TargetEntry _parentTarget;
+        private readonly TargetEntry _parentTarget;
 
         /// <summary>
         /// Why the parent target built this target.
         /// </summary>
-        private TargetBuiltReason _buildReason;
+        private readonly TargetBuiltReason _buildReason;
 
         /// <summary>
         /// The expander used to expand item and property markup to evaluated values.
         /// </summary>
-        private Expander<ProjectPropertyInstance, ProjectItemInstance> _expander;
+        private readonly Expander<ProjectPropertyInstance, ProjectItemInstance> _expander;
 
         /// <summary>
         /// The lookup containing our environment.
         /// </summary>
-        private Lookup _baseLookup;
+        private readonly Lookup _baseLookup;
 
         /// <summary>
         /// The build component host.
         /// </summary>
-        private IBuildComponentHost _host;
+        private readonly IBuildComponentHost _host;
 
         /// <summary>
         /// The target builder callback
         /// </summary>
-        private ITargetBuilderCallback _targetBuilderCallback;
+        private readonly ITargetBuilderCallback _targetBuilderCallback;
 
         /// <summary>
         /// A queue of legacy CallTarget lookup scopes to leave when this target is finished.

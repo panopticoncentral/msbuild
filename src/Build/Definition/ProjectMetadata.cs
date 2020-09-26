@@ -48,7 +48,7 @@ namespace Microsoft.Build.Evaluation
         /// If there are none above this is null.
         /// If the project has not been reevaluated since the last modification this value may be incorrect.
         /// </summary>
-        private ProjectMetadata _predecessor;
+        private readonly ProjectMetadata _predecessor;
 
         /// <summary>
         /// External projects support

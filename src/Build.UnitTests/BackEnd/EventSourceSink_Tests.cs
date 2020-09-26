@@ -385,7 +385,7 @@ namespace Microsoft.Build.UnitTests.Logging
             /// throw certain exceptions in the event handlers. This can be null if
             /// no exception is to be thrown.
             /// </summary>
-            private Exception _exceptionInHandlers;
+            private readonly Exception _exceptionInHandlers;
 
             /// <summary>
             /// Was the event handler entered into, this tells us whether or not the event
@@ -696,47 +696,47 @@ namespace Microsoft.Build.UnitTests.Logging
             /// <summary>
             /// Build Started Event
             /// </summary>
-            private static BuildStartedEventArgs s_buildStarted = new BuildStartedEventArgs("Message", "Help");
+            private static readonly BuildStartedEventArgs s_buildStarted = new BuildStartedEventArgs("Message", "Help");
 
             /// <summary>
             /// Generic Build Event
             /// </summary>
-            private static GenericBuildEventArgs s_genericBuild = new GenericBuildEventArgs();
+            private static readonly GenericBuildEventArgs s_genericBuild = new GenericBuildEventArgs();
 
             /// <summary>
             /// Generic Build Status Event
             /// </summary>
-            private static GenericBuildStatusEventArgs s_genericBuildStatus = new GenericBuildStatusEventArgs();
+            private static readonly GenericBuildStatusEventArgs s_genericBuildStatus = new GenericBuildStatusEventArgs();
 
             /// <summary>
             /// Build Finished Event
             /// </summary>
-            private static BuildFinishedEventArgs s_buildFinished = new BuildFinishedEventArgs("Message", "Keyword", true);
+            private static readonly BuildFinishedEventArgs s_buildFinished = new BuildFinishedEventArgs("Message", "Keyword", true);
 
             /// <summary>
             /// Build Message Event
             /// </summary>
-            private static BuildMessageEventArgs s_buildMessage = new BuildMessageEventArgs("Message2", "help", "sender", MessageImportance.Normal);
+            private static readonly BuildMessageEventArgs s_buildMessage = new BuildMessageEventArgs("Message2", "help", "sender", MessageImportance.Normal);
 
             /// <summary>
             /// Task Started Event
             /// </summary>
-            private static TaskStartedEventArgs s_taskStarted = new TaskStartedEventArgs("message", "help", "projectFile", "taskFile", "taskName");
+            private static readonly TaskStartedEventArgs s_taskStarted = new TaskStartedEventArgs("message", "help", "projectFile", "taskFile", "taskName");
 
             /// <summary>
             /// Task Finished Event
             /// </summary>
-            private static TaskFinishedEventArgs s_taskFinished = new TaskFinishedEventArgs("message", "help", "projectFile", "taskFile", "taskName", true);
+            private static readonly TaskFinishedEventArgs s_taskFinished = new TaskFinishedEventArgs("message", "help", "projectFile", "taskFile", "taskName", true);
 
             /// <summary>
             /// Task Command Line Event
             /// </summary>
-            private static TaskCommandLineEventArgs s_taskCommandLine = new TaskCommandLineEventArgs("commandLine", "taskName", MessageImportance.Low);
+            private static readonly TaskCommandLineEventArgs s_taskCommandLine = new TaskCommandLineEventArgs("commandLine", "taskName", MessageImportance.Low);
 
             /// <summary>
             /// Build Warning Event
             /// </summary>
-            private static BuildWarningEventArgs s_buildWarning = new BuildWarningEventArgs("SubCategoryForSchemaValidationErrors", "MSB4000", "file", 1, 2, 3, 4, "message", "help", "sender")
+            private static readonly BuildWarningEventArgs s_buildWarning = new BuildWarningEventArgs("SubCategoryForSchemaValidationErrors", "MSB4000", "file", 1, 2, 3, 4, "message", "help", "sender")
             {
                 BuildEventContext = new BuildEventContext(1, 2, 3, 4, 5, 6)
             };
@@ -744,27 +744,27 @@ namespace Microsoft.Build.UnitTests.Logging
             /// <summary>
             /// Build Error Event
             /// </summary>
-            private static BuildErrorEventArgs s_buildError = new BuildErrorEventArgs("SubCategoryForSchemaValidationErrors", "MSB4000", "file", 1, 2, 3, 4, "message", "help", "sender");
+            private static readonly BuildErrorEventArgs s_buildError = new BuildErrorEventArgs("SubCategoryForSchemaValidationErrors", "MSB4000", "file", 1, 2, 3, 4, "message", "help", "sender");
 
             /// <summary>
             /// Target Started Event
             /// </summary>
-            private static TargetStartedEventArgs s_targetStarted = new TargetStartedEventArgs("message", "help", "targetName", "ProjectFile", "targetFile");
+            private static readonly TargetStartedEventArgs s_targetStarted = new TargetStartedEventArgs("message", "help", "targetName", "ProjectFile", "targetFile");
 
             /// <summary>
             /// Target Finished Event
             /// </summary>
-            private static TargetFinishedEventArgs s_targetFinished = new TargetFinishedEventArgs("message", "help", "targetName", "ProjectFile", "targetFile", true);
+            private static readonly TargetFinishedEventArgs s_targetFinished = new TargetFinishedEventArgs("message", "help", "targetName", "ProjectFile", "targetFile", true);
 
             /// <summary>
             /// Project Started Event
             /// </summary>
-            private static ProjectStartedEventArgs s_projectStarted = new ProjectStartedEventArgs(-1, "message", "help", "ProjectFile", "targetNames", null, null, null);
+            private static readonly ProjectStartedEventArgs s_projectStarted = new ProjectStartedEventArgs(-1, "message", "help", "ProjectFile", "targetNames", null, null, null);
 
             /// <summary>
             /// Project Finished Event
             /// </summary>
-            private static ProjectFinishedEventArgs s_projectFinished = new ProjectFinishedEventArgs("message", "help", "ProjectFile", true)
+            private static readonly ProjectFinishedEventArgs s_projectFinished = new ProjectFinishedEventArgs("message", "help", "ProjectFile", true)
             {
                 BuildEventContext = s_buildWarning.BuildEventContext
             };
@@ -772,12 +772,12 @@ namespace Microsoft.Build.UnitTests.Logging
             /// <summary>
             /// External Project Started Event
             /// </summary>
-            private static ExternalProjectStartedEventArgs s_externalProjectStarted = new ExternalProjectStartedEventArgs("message", "help", "senderName", "projectFile", "targetNames");
+            private static readonly ExternalProjectStartedEventArgs s_externalProjectStarted = new ExternalProjectStartedEventArgs("message", "help", "senderName", "projectFile", "targetNames");
 
             /// <summary>
             /// Event source on which the events will be raised.
             /// </summary>
-            private EventSourceSink _sourceForEvents;
+            private readonly EventSourceSink _sourceForEvents;
 
             #endregion
 

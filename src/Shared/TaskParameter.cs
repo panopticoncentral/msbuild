@@ -502,7 +502,7 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The full path to the project that originally defined this item.
             /// </summary>
-            private string _escapedDefiningProject = null;
+            private readonly string _escapedDefiningProject = null;
 
             /// <summary>
             /// The custom metadata

@@ -69,8 +69,8 @@ namespace Microsoft.Build.BuildEngine.Shared
         private string projectName;          // For example, "WindowsApplication1"
         private string relativePath;         // Relative from .SLN file.  For example, "WindowsApplication1\WindowsApplication1.csproj"
         private string projectGuid;          // The unique Guid assigned to this project or SLN folder.
-        private ArrayList dependencies;     // A list of strings representing the Guids of the dependent projects.
-        private ArrayList projectReferences; // A list of strings representing the guids of referenced projects.
+        private readonly ArrayList dependencies;     // A list of strings representing the Guids of the dependent projects.
+        private readonly ArrayList projectReferences; // A list of strings representing the guids of referenced projects.
                                              // This is only used for VC/Venus projects
         private string parentProjectGuid;    // If this project (or SLN folder) is within a SLN folder, this is the Guid of the parent SLN folder.
         private string uniqueProjectName;    // For example, "MySlnFolder\MySubSlnFolder\WindowsApplication1"
@@ -85,7 +85,7 @@ namespace Microsoft.Build.BuildEngine.Shared
         /// K: full solution configuration name (cfg + platform)
         /// V: project configuration 
         /// </summary>
-        private Dictionary<string, ProjectConfigurationInSolution> projectConfigurations;
+        private readonly Dictionary<string, ProjectConfigurationInSolution> projectConfigurations;
 
         #endregion
 

@@ -19,7 +19,7 @@ namespace Microsoft.Build.BuildEngine
         private Hashtable readonlyData = null;
 
         // This is used to synchronize access to the readonlyData and writeableData fields.
-        private object sharedLock;
+        private readonly object sharedLock;
 
         // Carry around the StringComparer when possible to make Clear less expensive.
         StringComparer stringComparer = null;

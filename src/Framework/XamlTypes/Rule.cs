@@ -388,7 +388,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         /// <summary>
         /// Thread synchronization.
         /// </summary>
-        private object _syncObject = new object();
+        private readonly object _syncObject = new object();
 
         /// <summary>
         /// See the <see cref="EvaluatedCategories"/> property.

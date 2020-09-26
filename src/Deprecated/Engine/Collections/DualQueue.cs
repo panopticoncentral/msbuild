@@ -283,7 +283,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// This event is set when the queue contains items to read.
         /// </summary>
-        private ManualResetEvent queueReadyEvent;
+        private readonly ManualResetEvent queueReadyEvent;
 
         /// <summary>
         /// This event is set when the queue is empty
@@ -293,7 +293,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// This object protects the posting queue.
         /// </summary>
-        private object queueLock;
+        private readonly object queueLock;
 
         /// <summary>
         /// This queue reference serves as the "posting queue". This queue reference
@@ -304,12 +304,12 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// One of the two behind-the-scenes queues that are swapped.
         /// </summary>
-        private Queue<T> backingQueueA;
+        private readonly Queue<T> backingQueueA;
 
         /// <summary>
         /// One of the two behind-the-scenes queues that are swapped.
         /// </summary>
-        private Queue<T> backingQueueB;
+        private readonly Queue<T> backingQueueB;
 
         /// <summary>
         /// Count of the current writer queue - we only own the reader queue in Count so we have to keep 

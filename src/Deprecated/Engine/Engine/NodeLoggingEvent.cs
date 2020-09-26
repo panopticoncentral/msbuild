@@ -275,10 +275,10 @@ namespace Microsoft.Build.BuildEngine
         // The actual event wrapped by this container class
         private BuildEventArgs e;
         // Just need one of each per app domain
-        private static BinaryFormatter binaryFormatter = new BinaryFormatter();
+        private static readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
         private TaskEngineAssemblyResolver resolver;
         private static Hashtable customEventsLoaded;
-        private static object lockObject = new object();
+        private static readonly object lockObject = new object();
         #endregion
     }
 

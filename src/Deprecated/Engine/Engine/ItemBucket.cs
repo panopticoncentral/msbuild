@@ -27,7 +27,7 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The items for this bucket.
         /// </summary>
-        private Lookup lookup;
+        private readonly Lookup lookup;
 
         /// <summary>
         /// When buckets are being created for batching purposes, this indicates which order the 
@@ -36,7 +36,7 @@ namespace Microsoft.Build.BuildEngine
         /// bucket created gets bucketSequenceNumber=0, the second bucket created gets 
         /// bucketSequenceNumber=1, etc.
         /// </summary>
-        private int bucketSequenceNumber;
+        private readonly int bucketSequenceNumber;
 
         #endregion
 

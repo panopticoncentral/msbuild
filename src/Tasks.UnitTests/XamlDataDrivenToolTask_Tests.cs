@@ -16,7 +16,7 @@ namespace Microsoft.Build.UnitTests.XamlDataDrivenToolTask_Tests
     /// </summary>
     public class GeneratedTask
     {
-        private Assembly _fakeTaskDll;
+        private readonly Assembly _fakeTaskDll;
 
         public GeneratedTask()
         {

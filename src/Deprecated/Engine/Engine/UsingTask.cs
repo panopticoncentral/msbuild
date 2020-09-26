@@ -16,7 +16,7 @@ namespace Microsoft.Build.BuildEngine
     {
         #region Properties
 
-        private bool importedFromAnotherProject;
+        private readonly bool importedFromAnotherProject;
 
         /// <summary>
         /// Returns true if this UsingTask was imported from another project
@@ -27,7 +27,7 @@ namespace Microsoft.Build.BuildEngine
             get { return this.importedFromAnotherProject; }
         }
 
-        private XmlAttribute taskNameAttribute = null;
+        private readonly XmlAttribute taskNameAttribute = null;
 
         /// <summary>
         /// The task name
@@ -46,7 +46,7 @@ namespace Microsoft.Build.BuildEngine
             get { return this.taskNameAttribute; }
         }
 
-        private XmlAttribute assemblyNameAttribute = null;
+        private readonly XmlAttribute assemblyNameAttribute = null;
 
         /// <summary>
         /// The name of the assembly containing the task
@@ -65,7 +65,7 @@ namespace Microsoft.Build.BuildEngine
             get { return this.assemblyNameAttribute; }
         }
 
-        private XmlAttribute assemblyFileAttribute = null;
+        private readonly XmlAttribute assemblyFileAttribute = null;
 
         /// <summary>
         /// The assembly file containing the task
@@ -84,7 +84,7 @@ namespace Microsoft.Build.BuildEngine
             get { return this.assemblyFileAttribute; } 
         }
 
-        private XmlAttribute conditionAttribute = null;
+        private readonly XmlAttribute conditionAttribute = null;
 
         /// <summary>
         /// The condition string for this UsingTask

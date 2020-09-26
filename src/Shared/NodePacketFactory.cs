@@ -14,7 +14,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Mapping of packet types to factory information.
         /// </summary>
-        private Dictionary<NodePacketType, PacketFactoryRecord> _packetFactories;
+        private readonly Dictionary<NodePacketType, PacketFactoryRecord> _packetFactories;
 
         /// <summary>
         /// Constructor
@@ -76,12 +76,12 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The handler to invoke when the packet is deserialized.
             /// </summary>
-            private INodePacketHandler _handler;
+            private readonly INodePacketHandler _handler;
 
             /// <summary>
             /// The method used to construct a packet from a translator stream.
             /// </summary>
-            private NodePacketFactoryMethod _factoryMethod;
+            private readonly NodePacketFactoryMethod _factoryMethod;
 
             /// <summary>
             /// Constructor.

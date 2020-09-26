@@ -36,7 +36,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
 {
     public class Expander_Tests
     {
-        private string _dateToParse = new DateTime(2010, 12, 25).ToString(CultureInfo.CurrentCulture);
+        private readonly string _dateToParse = new DateTime(2010, 12, 25).ToString(CultureInfo.CurrentCulture);
         private static readonly string s_rootPathPrefix = NativeMethodsShared.IsWindows ? "C:\\" : Path.VolumeSeparatorChar.ToString();
 
         [Fact]

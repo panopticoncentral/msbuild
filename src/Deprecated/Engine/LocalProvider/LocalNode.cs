@@ -580,11 +580,11 @@ namespace Microsoft.Build.BuildEngine
 
         private Node node;
         private SharedMemory sharedMemory;
-        private LocalNodeCallback engineCallback;
+        private readonly LocalNodeCallback engineCallback;
         private int parentProcessId;
-        private int nodeNumber;
+        private readonly int nodeNumber;
         private Thread readerThread;
-        private static object dumpFileLocker = new Object();
+        private static readonly object dumpFileLocker = new Object();
 
         // Public named events
         // If this event is set the node host process is currently running
@@ -605,15 +605,15 @@ namespace Microsoft.Build.BuildEngine
         // use 
         private static EventWaitHandle globalNodeActivate;
         // Private local events
-        private static ManualResetEvent communicationThreadExitEvent = new ManualResetEvent(false);
-        private static ManualResetEvent shutdownEvent = new ManualResetEvent(false);
-        private static ManualResetEvent notInUseEvent = new ManualResetEvent(false);
+        private static readonly ManualResetEvent communicationThreadExitEvent = new ManualResetEvent(false);
+        private static readonly ManualResetEvent shutdownEvent = new ManualResetEvent(false);
+        private static readonly ManualResetEvent notInUseEvent = new ManualResetEvent(false);
 
         /// <summary>
         /// Indicates the node is now in use. This means the node has recieved an activate command with initialization
         /// data from the parent procss
         /// </summary>
-        private static ManualResetEvent inUseEvent    = new ManualResetEvent(false);
+        private static readonly ManualResetEvent inUseEvent    = new ManualResetEvent(false);
 
         /// <summary>
         /// Randomly generated file name for all exceptions thrown by this node that need to be dumped to a file.

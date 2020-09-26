@@ -58,17 +58,17 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Content of the environment variable  MSBUILDSCHEDULINGUNLIMITED
         /// </summary>
-        private string _schedulingUnlimitedVariable;
+        private readonly string _schedulingUnlimitedVariable;
 
         /// <summary>
         /// If MSBUILDSCHEDULINGUNLIMITED is set, this flag will make AtSchedulingLimit() always return false
         /// </summary>
-        private bool _schedulingUnlimited;
+        private readonly bool _schedulingUnlimited;
 
         /// <summary>
         /// If MSBUILDNODELIMITOFFSET is set, this will add an offset to the limit used in AtSchedulingLimit()
         /// </summary>
-        private int _nodeLimitOffset;
+        private readonly int _nodeLimitOffset;
 
         /// <summary>
         /// { nodeId -> NodeInfo }
@@ -119,17 +119,17 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Flag indicating that we are supposed to dump the scheduler state to the disk periodically.
         /// </summary>
-        private bool _debugDumpState;
+        private readonly bool _debugDumpState;
 
         /// <summary>
         /// Flag used for debugging by forcing all scheduling to go out-of-proc.
         /// </summary>
-        private bool _forceAffinityOutOfProc;
+        private readonly bool _forceAffinityOutOfProc;
 
         /// <summary>
         /// The path into which debug files will be written.
         /// </summary>
-        private string _debugDumpPath;
+        private readonly string _debugDumpPath;
 
         /// <summary>
         /// If MSBUILDCUSTOMSCHEDULER = CustomSchedulerForSQL, the user may also choose to set

@@ -49,9 +49,9 @@ namespace Microsoft.Build.BuildEngine
         #endregion
 
         #region Member Data
-        private int handleId;
-        private int requestId;
-        private CacheScope resultsCache;
+        private readonly int handleId;
+        private readonly int requestId;
+        private readonly CacheScope resultsCache;
         #endregion
     }
 }

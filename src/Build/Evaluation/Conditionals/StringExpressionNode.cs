@@ -14,14 +14,14 @@ namespace Microsoft.Build.Evaluation
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
     internal sealed class StringExpressionNode : OperandExpressionNode
     {
-        private string _value;
+        private readonly string _value;
         private string _cachedExpandedValue;
 
         /// <summary>
         /// Whether the string potentially has expandable content,
         /// such as a property expression or escaped character.
         /// </summary>
-        private bool _expandable;
+        private readonly bool _expandable;
 
         internal StringExpressionNode(string value, bool expandable)
         {

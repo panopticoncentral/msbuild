@@ -19,7 +19,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// <summary>
         /// Parameter element with all attributes set
         /// </summary>
-        private static string s_contentAllAttributesSet = @"
+        private static readonly string s_contentAllAttributesSet = @"
                     <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003' >
                         <UsingTask TaskName='SuperTask' AssemblyFile='af' TaskFactory='AssemblyFactory'>
                            <ParameterGroup>
@@ -32,7 +32,7 @@ namespace Microsoft.Build.UnitTests.OM.Construction
         /// <summary>
         /// Parameter element with no attributes set
         /// </summary>
-        private static string s_contentNoAttributesSet = @"
+        private static readonly string s_contentNoAttributesSet = @"
                     <Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003' >
                         <UsingTask TaskName='SuperTask' AssemblyFile='af' TaskFactory='AssemblyFactory'>
                            <ParameterGroup>

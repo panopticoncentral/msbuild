@@ -23,14 +23,14 @@ namespace Microsoft.Build.BuildEngine
     /// </summary>
     internal sealed class Scanner
     {
-        private string expression;
+        private readonly string expression;
         private int parsePoint;
         private Token lookahead;
         private bool errorState;
         private int errorPosition;
         // What we found instead of what we were looking for
         private string unexpectedlyFound = null; 
-        private ParserOptions options;
+        private readonly ParserOptions options;
         private string errorResource = null;
         
         // Shared instances of "hardcoded" token strings. These are only used 

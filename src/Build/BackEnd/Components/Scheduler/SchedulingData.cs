@@ -702,22 +702,22 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The time the event took place.
             /// </summary>
-            private DateTime _eventTime;
+            private readonly DateTime _eventTime;
 
             /// <summary>
             /// The request involved in the event.
             /// </summary>
-            private SchedulableRequest _request;
+            private readonly SchedulableRequest _request;
 
             /// <summary>
             /// The state of the request before the event.
             /// </summary>
-            private SchedulableRequestState _oldState;
+            private readonly SchedulableRequestState _oldState;
 
             /// <summary>
             /// The state of the request as a result of the event.
             /// </summary>
-            private SchedulableRequestState _newState;
+            private readonly SchedulableRequestState _newState;
 
             /// <summary>
             /// Constructor.

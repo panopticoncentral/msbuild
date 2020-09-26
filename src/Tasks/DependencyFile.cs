@@ -19,13 +19,13 @@ namespace Microsoft.Build.Tasks
     internal class DependencyFile
     {
         // Filename
-        private string filename;
+        private readonly string filename;
 
         // Date and time the file was last modified           
-        private DateTime lastModified;
+        private readonly DateTime lastModified;
 
         // Whether the file exists or not.
-        private bool exists = false;
+        private readonly bool exists = false;
 
         /// <summary>
         /// The name of the file.

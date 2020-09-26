@@ -36,9 +36,9 @@ namespace Microsoft.Build.UnitTests
     internal static class ObjectModelHelpers
     {
         private const string msbuildNamespace = "http://schemas.microsoft.com/developer/msbuild/2003";
-        private static string s_msbuildDefaultToolsVersion = MSBuildConstants.CurrentToolsVersion;
-        private static string s_msbuildAssemblyVersion = MSBuildConstants.CurrentAssemblyVersion;
-        private static string s_currentVisualStudioVersion = MSBuildConstants.CurrentVisualStudioVersion;
+        private static readonly string s_msbuildDefaultToolsVersion = MSBuildConstants.CurrentToolsVersion;
+        private static readonly string s_msbuildAssemblyVersion = MSBuildConstants.CurrentAssemblyVersion;
+        private static readonly string s_currentVisualStudioVersion = MSBuildConstants.CurrentVisualStudioVersion;
 
         /// <summary>
         /// Return the current Visual Studio version

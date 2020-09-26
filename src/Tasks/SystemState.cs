@@ -26,38 +26,38 @@ namespace Microsoft.Build.Tasks
         /// Cache at the SystemState instance level. Has the same contents as <see cref="instanceLocalFileStateCache"/>.
         /// It acts as a flag to enforce that an entry has been checked for staleness only once.
         /// </summary>
-        private Dictionary<string, FileState> upToDateLocalFileStateCache = new Dictionary<string, FileState>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, FileState> upToDateLocalFileStateCache = new Dictionary<string, FileState>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Cache at the SystemState instance level. It is serialized and reused between instances.
         /// </summary>
-        private Hashtable instanceLocalFileStateCache = new Hashtable(StringComparer.OrdinalIgnoreCase);
+        private readonly Hashtable instanceLocalFileStateCache = new Hashtable(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// LastModified information is purely instance-local. It doesn't make sense to
         /// cache this for long periods of time since there's no way (without actually 
         /// calling File.GetLastWriteTimeUtc) to tell whether the cache is out-of-date.
         /// </summary>
-        private Dictionary<string, DateTime> instanceLocalLastModifiedCache = new Dictionary<string, DateTime>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, DateTime> instanceLocalLastModifiedCache = new Dictionary<string, DateTime>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// DirectoryExists information is purely instance-local. It doesn't make sense to
         /// cache this for long periods of time since there's no way (without actually 
         /// calling Directory.Exists) to tell whether the cache is out-of-date.
         /// </summary>
-        private Dictionary<string, bool> instanceLocalDirectoryExists = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, bool> instanceLocalDirectoryExists = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// GetDirectories information is also purely instance-local. This information
         /// is only considered good for the lifetime of the task (or whatever) that owns 
         /// this instance.
         /// </summary>
-        private Dictionary<string, string[]> instanceLocalDirectories = new Dictionary<string, string[]>(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, string[]> instanceLocalDirectories = new Dictionary<string, string[]>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Additional level of caching kept at the process level.
         /// </summary>
-        private static ConcurrentDictionary<string, FileState> s_processWideFileStateCache = new ConcurrentDictionary<string, FileState>(StringComparer.OrdinalIgnoreCase);
+        private static readonly ConcurrentDictionary<string, FileState> s_processWideFileStateCache = new ConcurrentDictionary<string, FileState>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// XML tables of installed assemblies.
@@ -113,7 +113,7 @@ namespace Microsoft.Build.Tasks
             /// <summary>
             /// The last modified time for this file.
             /// </summary>
-            private DateTime lastModified;
+            private readonly DateTime lastModified;
 
             /// <summary>
             /// The fusion name of this file.

@@ -154,7 +154,7 @@ namespace Microsoft.Build.Shared
         internal unsafe struct PROCESSOR_RELATIONSHIP
         {
             public byte Flags;
-            private byte EfficiencyClass;
+            private readonly byte EfficiencyClass;
             private fixed byte Reserved[20];
             public ushort GroupCount;
             public IntPtr GroupInfo;
@@ -272,7 +272,7 @@ namespace Microsoft.Build.Shared
             /// <summary>
             /// Size of the structure, in bytes. You must set this member before calling GlobalMemoryStatusEx.
             /// </summary>
-            private uint _length;
+            private readonly uint _length;
 
             /// <summary>
             /// Number between 0 and 100 that specifies the approximate percentage of physical
@@ -374,7 +374,7 @@ namespace Microsoft.Build.Shared
 #endif
             }
 
-            private uint _nLength;
+            private readonly uint _nLength;
 
             public IntPtr lpSecurityDescriptor;
 

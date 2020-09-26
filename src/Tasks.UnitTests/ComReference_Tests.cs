@@ -11,7 +11,7 @@ namespace Microsoft.Build.UnitTests
 {
     sealed public class ComReference_Tests
     {
-        private static Dictionary<string, string> s_existingFiles = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private static readonly Dictionary<string, string> s_existingFiles = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         private static Dictionary<string, string> ExistingFilesDictionary
         {

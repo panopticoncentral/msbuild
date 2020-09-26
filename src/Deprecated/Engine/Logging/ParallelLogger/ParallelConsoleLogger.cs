@@ -1559,11 +1559,11 @@ namespace Microsoft.Build.BuildEngine
         #endregion
 
         #region internal MemberData
-        private static ComparerContextNodeId<BuildEventContext> compareContextNodeId = new ComparerContextNodeId<BuildEventContext>();
-        private static ComparerContextNodeIdTargetId<BuildEventContext> compareContextNodeIdTargetId = new ComparerContextNodeIdTargetId<BuildEventContext>();
+        private static readonly ComparerContextNodeId<BuildEventContext> compareContextNodeId = new ComparerContextNodeId<BuildEventContext>();
+        private static readonly ComparerContextNodeIdTargetId<BuildEventContext> compareContextNodeIdTargetId = new ComparerContextNodeIdTargetId<BuildEventContext>();
         private BuildEventContext lastDisplayedBuildEventContext;
         private int bufferWidth = -1;
-        private object lockObject = new Object();
+        private readonly object lockObject = new Object();
         private int prefixWidth = 0;
         private ProjectFullKey lastProjectFullKey = new ProjectFullKey(-1, -1);
         private bool alignMessages;

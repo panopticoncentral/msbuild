@@ -13,7 +13,7 @@ namespace Microsoft.Build.Evaluation
         class ItemFactoryWrapper : IItemFactory<I, I>
         {
             ProjectItemElement _itemElement;
-            IItemFactory<I, I> _wrappedItemFactory;
+            readonly IItemFactory<I, I> _wrappedItemFactory;
 
             public ItemFactoryWrapper(ProjectItemElement itemElement, IItemFactory<I, I> wrappedItemFactory)
             {

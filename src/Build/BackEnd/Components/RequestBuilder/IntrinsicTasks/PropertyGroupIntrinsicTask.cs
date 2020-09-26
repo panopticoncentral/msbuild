@@ -20,7 +20,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The original task instance data.
         /// </summary>
-        private ProjectPropertyGroupTaskInstance _taskInstance;
+        private readonly ProjectPropertyGroupTaskInstance _taskInstance;
 
         /// <summary>
         /// Create a new PropertyGroup task.

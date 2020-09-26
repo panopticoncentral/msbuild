@@ -61,7 +61,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The request collection to which this belongs.
         /// </summary>
-        private SchedulingData _schedulingData;
+        private readonly SchedulingData _schedulingData;
 
         /// <summary>
         /// The current state.
@@ -76,12 +76,12 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// The BuildRequest this class represents.
         /// </summary>
-        private BuildRequest _request;
+        private readonly BuildRequest _request;
 
         /// <summary>
         /// The schedulable request which issued this request.
         /// </summary>
-        private SchedulableRequest _parent;
+        private readonly SchedulableRequest _parent;
 
         /// <summary>
         /// The list of targets which were actively building at the time we were blocked.
@@ -92,12 +92,12 @@ namespace Microsoft.Build.BackEnd
         /// The requests which must complete before we can continue executing.  Indexed by global request id and node request id.
         /// Each global request id may have multiple requests which map to it, but they will have separate node request ids.
         /// </summary>
-        private Dictionary<BlockingRequestKey, SchedulableRequest> _requestsWeAreBlockedBy;
+        private readonly Dictionary<BlockingRequestKey, SchedulableRequest> _requestsWeAreBlockedBy;
 
         /// <summary>
         /// The requests which cannot continue until we have finished executing.
         /// </summary>
-        private HashSet<SchedulableRequest> _requestsWeAreBlocking;
+        private readonly HashSet<SchedulableRequest> _requestsWeAreBlocking;
 
         /// <summary>
         /// The time this request was created.
@@ -117,7 +117,7 @@ namespace Microsoft.Build.BackEnd
         /// <summary>
         /// Records of the amount of time spent in each of the states.
         /// </summary>
-        private Dictionary<SchedulableRequestState, ScheduleTimeRecord> _timeRecords;
+        private readonly Dictionary<SchedulableRequestState, ScheduleTimeRecord> _timeRecords;
 
         /// <summary>
         /// Constructor.
@@ -658,12 +658,12 @@ namespace Microsoft.Build.BackEnd
             /// <summary>
             /// The global request id.
             /// </summary>
-            private int _globalRequestId;
+            private readonly int _globalRequestId;
 
             /// <summary>
             /// The request id known to the node.
             /// </summary>
-            private int _nodeRequestId;
+            private readonly int _nodeRequestId;
 
             /// <summary>
             /// Constructor over a request.

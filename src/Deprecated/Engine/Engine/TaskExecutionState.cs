@@ -235,17 +235,17 @@ namespace Microsoft.Build.BuildEngine
 
         #region Fields set by the Engine thread
 
-        private TaskExecutionMode howToExecuteTask;
+        private readonly TaskExecutionMode howToExecuteTask;
 
-        private Lookup lookupForInference;
-        private Lookup lookupForExecution;
+        private readonly Lookup lookupForInference;
+        private readonly Lookup lookupForExecution;
         
-        private ITaskHost hostObject;
-        private string projectFileOfTaskNode;
-        private string parentProjectFullFileName;
-        private string executionDirectory;
+        private readonly ITaskHost hostObject;
+        private readonly string projectFileOfTaskNode;
+        private readonly string parentProjectFullFileName;
+        private readonly string executionDirectory;
         private int handleId;
-        private BuildEventContext buildEventContext;
+        private readonly BuildEventContext buildEventContext;
 
         #endregion
 
@@ -253,10 +253,10 @@ namespace Microsoft.Build.BuildEngine
 
         private TaskExecutionModule parentModule;
         private EngineLoggingServices loggingService;
-        private XmlElement taskXmlNode;
+        private readonly XmlElement taskXmlNode;
         private long startTime;
         private bool profileExecution;
-        private static StringBuilder currentDirectoryBuffer = new StringBuilder(270);
+        private static readonly StringBuilder currentDirectoryBuffer = new StringBuilder(270);
 
         #endregion
     }

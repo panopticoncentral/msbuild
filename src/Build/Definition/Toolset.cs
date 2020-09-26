@@ -171,17 +171,17 @@ namespace Microsoft.Build.Evaluation
         /// <summary>
         /// Delegate to retrieving files.  For unit testing only.
         /// </summary>
-        private DirectoryGetFiles _getFiles;
+        private readonly DirectoryGetFiles _getFiles;
 
         /// <summary>
         /// Delegate to check to see if a directory exists
         /// </summary>
-        private DirectoryExists _directoryExists = null;
+        private readonly DirectoryExists _directoryExists = null;
 
         /// <summary>
         /// Delegate for loading Xml.  For unit testing only.
         /// </summary>
-        private LoadXmlFromPath _loadXmlFromPath;
+        private readonly LoadXmlFromPath _loadXmlFromPath;
 
         /// <summary>
         /// Expander to expand the properties and items in the using tasks files

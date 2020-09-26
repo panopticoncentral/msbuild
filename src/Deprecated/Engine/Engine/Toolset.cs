@@ -13,13 +13,13 @@ namespace Microsoft.Build.BuildEngine
     public class Toolset
     {
         // Name of the tools version
-        private string toolsVersion;
+        private readonly string toolsVersion;
 
         // The MSBuildBinPath (and ToolsPath) for this tools version
         private string toolsPath;
 
         // Properties 
-        private BuildPropertyGroup properties;
+        private readonly BuildPropertyGroup properties;
 
         /// <summary>
         /// Constructor taking only tools version and a matching tools path

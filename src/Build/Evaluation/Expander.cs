@@ -139,23 +139,23 @@ namespace Microsoft.Build.Evaluation
         /// Those characters which indicate that an expression may contain expandable
         /// expressions.
         /// </summary>
-        private static char[] s_expandableChars = { '$', '%', '@' };
+        private static readonly char[] s_expandableChars = { '$', '%', '@' };
 
         /// <summary>
         /// The CultureInfo from the invariant culture. Used to avoid allocations for
         /// perfoming IndexOf etc.
         /// </summary>
-        private static CompareInfo s_invariantCompareInfo = CultureInfo.InvariantCulture.CompareInfo;
+        private static readonly CompareInfo s_invariantCompareInfo = CultureInfo.InvariantCulture.CompareInfo;
 
         /// <summary>
         /// Properties to draw on for expansion.
         /// </summary>
-        private IPropertyProvider<P> _properties;
+        private readonly IPropertyProvider<P> _properties;
 
         /// <summary>
         /// Items to draw on for expansion.
         /// </summary>
-        private IItemProvider<I> _items;
+        private readonly IItemProvider<I> _items;
 
         /// <summary>
         /// Metadata to draw on for expansion.
@@ -842,12 +842,12 @@ namespace Microsoft.Build.Evaluation
                 /// <summary>
                 /// Source of the metadata.
                 /// </summary>
-                private IMetadataTable _metadata;
+                private readonly IMetadataTable _metadata;
 
                 /// <summary>
                 /// Whether to expand built-in metadata, custom metadata, or both kinds.
                 /// </summary>
-                private ExpanderOptions _options;
+                private readonly ExpanderOptions _options;
 
                 /// <summary>
                 /// Constructor taking a source of metadata.
@@ -2089,7 +2089,7 @@ namespace Microsoft.Build.Evaluation
                 /// <summary>
                 /// A cache of previously created item function delegates.
                 /// </summary>
-                private static ConcurrentDictionary<string, ItemTransformFunction> s_transformFunctionDelegateCache = new ConcurrentDictionary<string, ItemTransformFunction>(StringComparer.OrdinalIgnoreCase);
+                private static readonly ConcurrentDictionary<string, ItemTransformFunction> s_transformFunctionDelegateCache = new ConcurrentDictionary<string, ItemTransformFunction>(StringComparer.OrdinalIgnoreCase);
 
                 /// <summary>
                 /// Delegate that represents the signature of all item transformation functions
@@ -2799,22 +2799,22 @@ namespace Microsoft.Build.Evaluation
                 /// <summary>
                 /// The delegate that points to the transform function.
                 /// </summary>
-                private IntrinsicItemFunctions<S>.ItemTransformFunction _transform;
+                private readonly IntrinsicItemFunctions<S>.ItemTransformFunction _transform;
 
                 /// <summary>
                 /// Arguments to pass to the transform function as parsed out of the project file.
                 /// </summary>
-                private string[] _arguments;
+                private readonly string[] _arguments;
 
                 /// <summary>
                 /// The element location of the transform expression.
                 /// </summary>
-                private IElementLocation _elementLocation;
+                private readonly IElementLocation _elementLocation;
 
                 /// <summary>
                 /// The name of the function that this class will call.
                 /// </summary>
-                private string _functionName;
+                private readonly string _functionName;
 
                 /// <summary>
                 /// TransformFunction constructor.
@@ -2862,17 +2862,17 @@ namespace Microsoft.Build.Evaluation
                 /// <summary>
                 /// The current ItemSpec of the item being matched.
                 /// </summary>
-                private string _itemSpec;
+                private readonly string _itemSpec;
 
                 /// <summary>
                 /// Item used as the source of metadata.
                 /// </summary>
-                private IItem _sourceOfMetadata;
+                private readonly IItem _sourceOfMetadata;
 
                 /// <summary>
                 /// Location of the match.
                 /// </summary>
-                private IElementLocation _elementLocation;
+                private readonly IElementLocation _elementLocation;
 
                 /// <summary>
                 /// Constructor.
@@ -3065,27 +3065,27 @@ namespace Microsoft.Build.Evaluation
             /// <summary>
             /// The type of this function's receiver.
             /// </summary>
-            private Type _receiverType;
+            private readonly Type _receiverType;
 
             /// <summary>
             /// The name of the function.
             /// </summary>
-            private string _methodMethodName;
+            private readonly string _methodMethodName;
 
             /// <summary>
             /// The arguments for the function.
             /// </summary>
-            private string[] _arguments;
+            private readonly string[] _arguments;
 
             /// <summary>
             /// The expression that this function is part of.
             /// </summary>
-            private string _expression;
+            private readonly string _expression;
 
             /// <summary>
             /// The property name that this function is applied on.
             /// </summary>
-            private string _receiver;
+            private readonly string _receiver;
 
             /// <summary>
             /// The binding flags that will be used during invocation of this function.
@@ -3095,14 +3095,14 @@ namespace Microsoft.Build.Evaluation
             /// <summary>
             /// The remainder of the body once the function and arguments have been extracted.
             /// </summary>
-            private string _remainder;
+            private readonly string _remainder;
 
             /// <summary>
             /// List of properties which have been used but have not been initialized yet.
             /// </summary>
-            private UsedUninitializedProperties _usedUninitializedProperties;
+            private readonly UsedUninitializedProperties _usedUninitializedProperties;
 
-            private IFileSystem _fileSystem;
+            private readonly IFileSystem _fileSystem;
 
             /// <summary>
             /// Construct a function that will be executed during property evaluation.

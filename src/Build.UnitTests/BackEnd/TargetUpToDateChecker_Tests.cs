@@ -21,7 +21,7 @@ namespace Microsoft.Build.UnitTests.BackEnd
 {
     public class TargetUpToDateChecker_Tests : IDisposable
     {
-        private MockHost _mockHost;
+        private readonly MockHost _mockHost;
         private readonly ITestOutputHelper _testOutputHelper;
 
         public TargetUpToDateChecker_Tests(ITestOutputHelper testOutputHelper)

@@ -177,7 +177,7 @@ namespace Microsoft.Build.BuildEngine
         #region Data
         private int requestingCallNumber;
         private object replyData;
-        private static BinaryFormatter formatter = new BinaryFormatter();
+        private static readonly BinaryFormatter formatter = new BinaryFormatter();
         #endregion
 
         #region CustomSerializationToStream

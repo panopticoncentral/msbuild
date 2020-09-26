@@ -87,7 +87,7 @@ namespace Microsoft.Build.Tasks
         private readonly GetAssemblyRuntimeVersion _getRuntimeVersion;
 #if FEATURE_WIN32_REGISTRY
         /// <summary> Delegate to get the base registry key for AssemblyFoldersEx</summary>
-        private OpenBaseKey _openBaseKey;
+        private readonly OpenBaseKey _openBaseKey;
 #endif
         /// <summary>Version of the runtime we are targeting</summary>
         private readonly Version _targetedRuntimeVersion;

@@ -36,7 +36,7 @@ namespace Microsoft.Build.BuildEngine.Shared
             }
         }
 
-        private string configurationName;
+        private readonly string configurationName;
 
         /// <summary>
         /// The configuration part of this, uh, configuration - e.g. "Debug", "Release"
@@ -47,7 +47,7 @@ namespace Microsoft.Build.BuildEngine.Shared
             get { return this.configurationName; }
         }
 
-        private string platformName;
+        private readonly string platformName;
 
         /// <summary>
         /// The platform part of this configuration - e.g. "Any CPU", "Win32"
@@ -58,7 +58,7 @@ namespace Microsoft.Build.BuildEngine.Shared
             get { return this.platformName; }
         }
 
-        private string fullName;
+        private readonly string fullName;
 
         /// <summary>
         /// The full name of this configuration - e.g. "Debug|Any CPU"

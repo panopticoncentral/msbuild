@@ -30,14 +30,14 @@ namespace Microsoft.Build.BuildEngine
         // project file.  If this BuildPropertyGroup object doesn't represent an
         // actual <PropertyGroup> element in the XMake project file, it's 
         // okay if this remains null throughout the life of this object.
-        private XmlElement propertyGroupElement = null;
+        private readonly XmlElement propertyGroupElement = null;
 
         // If this is a persisted <PropertyGroup>, this boolean tells us whether
         // it came from the main project file, or an imported project file.
-        private bool importedFromAnotherProject = false;
+        private readonly bool importedFromAnotherProject = false;
 
         // the ownerDocument is used for creating and adding new properties
-        private XmlDocument ownerDocument = null;
+        private readonly XmlDocument ownerDocument = null;
 
         // This is the "Condition" attribute on the <PropertyGroup> element above.
         private XmlAttribute conditionAttribute = null;
@@ -64,7 +64,7 @@ namespace Microsoft.Build.BuildEngine
         // is only valid (non-null) if this is a persisted <PropertyGroup>.
         // For virtual property groups (e.g., evaluated property groups, 
         // global property groups, etc.), this will remain null.
-        private ArrayList propertyList = null;
+        private readonly ArrayList propertyList = null;
 
         // Contains the name of the project file this property group was
         // imported from.  This string will only be set if the property group

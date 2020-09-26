@@ -21,7 +21,7 @@ namespace Microsoft.Build.BuildEngine
         #region Member Data
 
         // The task XML element, if this is a persisted target.  
-        private XmlElement taskElement = null;
+        private readonly XmlElement taskElement = null;
 
         // This is the "Condition" attribute on the task element.
         private XmlAttribute conditionAttribute = null;
@@ -33,11 +33,11 @@ namespace Microsoft.Build.BuildEngine
         private Target parentTarget= null;
 
         // The name of the task.
-        private string taskName = String.Empty;
+        private readonly string taskName = String.Empty;
 
         // If this is a persisted task element, this boolean tells us whether
         // it came from the main project file or an imported project file.
-        private bool importedFromAnotherProject = false;
+        private readonly bool importedFromAnotherProject = false;
 
         // This is the optional host object for this particular task.  The actual task
         // object will get passed this host object, and can communicate with it as it

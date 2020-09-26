@@ -18,7 +18,7 @@ namespace Microsoft.Build.BuildEngine
     internal class BuildPropertyGroupProxy : IEnumerable
     {
         // Property group that this proxies
-        private BuildPropertyGroup backingPropertyGroup;
+        private readonly BuildPropertyGroup backingPropertyGroup;
 
         private BuildPropertyGroupProxy()
         { 

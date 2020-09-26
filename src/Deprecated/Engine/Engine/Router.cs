@@ -187,17 +187,17 @@ namespace Microsoft.Build.BuildEngine
         /// <summary>
         /// The node manager is used as a proxy for communication with child nodes
         /// </summary>
-        NodeManager nodeManager;
+        readonly NodeManager nodeManager;
 
         /// <summary>
         /// The parent engine who instantiated the router
         /// </summary>
-        Engine parentEngine;
+        readonly Engine parentEngine;
 
         /// <summary>
         /// Scheduler who is responsible for determining which nodes a build request should be sent to.
         /// </summary>
-        Scheduler scheduler;
+        readonly Scheduler scheduler;
 
         /// <summary>
         /// Is the router instantiated on a child process

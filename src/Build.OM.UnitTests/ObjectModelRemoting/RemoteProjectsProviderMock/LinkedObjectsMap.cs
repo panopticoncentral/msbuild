@@ -29,10 +29,10 @@ namespace Microsoft.Build.UnitTests.OM.ObjectModelRemoting
             }
         }
 
-        private static Dictionary<UInt32, LinkedObjectsMap<KeyType>> collections = new Dictionary<UInt32, LinkedObjectsMap<KeyType>>();
+        private static readonly Dictionary<UInt32, LinkedObjectsMap<KeyType>> collections = new Dictionary<UInt32, LinkedObjectsMap<KeyType>>();
 
-        private Dictionary<UInt32, WeakHolder> activeLinks = new Dictionary<UInt32, WeakHolder>();
-        private Dictionary<KeyType, WeakHolder> indexByKey = new Dictionary<KeyType, WeakHolder>();
+        private readonly Dictionary<UInt32, WeakHolder> activeLinks = new Dictionary<UInt32, WeakHolder>();
+        private readonly Dictionary<KeyType, WeakHolder> indexByKey = new Dictionary<KeyType, WeakHolder>();
 
 
         private static void Remove(UInt32 collectionId, UInt32 id)

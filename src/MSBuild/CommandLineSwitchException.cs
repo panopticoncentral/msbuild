@@ -92,7 +92,7 @@ namespace Microsoft.Build.CommandLine
         }
 
         // the invalid switch causing this exception
-        private string commandLineArg;
+        private readonly string commandLineArg;
 
         /// <summary>
         /// Serialize the contents of the class.
